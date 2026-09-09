@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hyperlink with Frame</title>
+	 <script>
+        // Disable right-click
+        document.addEventListener("contextmenu", function(event) {
+            event.preventDefault();
+            alert("Right-click is disabled on this page.");
+        });
+    </script> 
+</head>
+<frameset rows="35%,65%">
+    <frame src="disable.html" name="menu">
+    <frame src="main.html" name="content">
+</frameset>
+
+<body>
+</body>
+</html>

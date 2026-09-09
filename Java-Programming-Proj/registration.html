@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration</title>
+<style>
+  :root {
+    --ink: #1c1c1a;
+    --muted: #6b6a63;
+    --line: #ddd9cf;
+    --accent: #2f5d50;
+    --bg: #faf8f3;
+    --card: #ffffff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 48px 20px;
+  }
+  h1 { font-size: 22px; font-weight: 600; margin: 0 0 4px; }
+  p.sub { color: var(--muted); margin: 0 0 28px; font-size: 14px; }
+  .wrap { width: 100%; max-width: 480px; }
+  form {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 24px;
+  }
+  label { display: block; font-size: 13px; font-weight: 600; margin: 14px 0 6px; }
+  label:first-child { margin-top: 0; }
+  input, textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: inherit;
+    background: #fff;
+  }
+  input:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .err { color: #b3402a; font-size: 12px; margin-top: 4px; min-height: 14px; }
+  button {
+    margin-top: 18px;
+    width: 100%;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  button:hover { background: #244a40; }
+  .list-heading {
+    margin: 36px 0 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+  }
+  .entry {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 12px 14px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    animation: fade .25s ease;
+  }
+  .entry .name { font-weight: 600; }
+  .entry .meta { color: var(--muted); font-size: 12px; margin-top: 2px; }
+  .entry .topic { margin-top: 6px; }
+  .empty { color: var(--muted); font-size: 13px; font-style: italic; }
+  @keyframes fade { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
+</style>
+</head>
+<body>
+<div style="text-align:right;">
+			<a href="index.html" target="_blank" style="background-color:blue; color:white;
+          padding:0px 0px;
+          text-decoration:none;
+          border-radius:2px;
+          font-size:15px;">
+   Back To Main Home Page</div>
+</a><br><br>
+<div class="wrap">
+  <h1>Presentation Registration</h1>
+  <p class="sub">Fill in your details below — you'll see your response appear instantly.</p>
+
+  <form id="regForm" novalidate>
+    <label for="htNo">HT No.</label>
+    <input type="text" id="htNo" placeholder="HT NO.">
+    <div class="err" id="htNoErr"></div>
+
+    <label for="firstName">First name</label>
+    <input type="text" id="firstName" placeholder="First Name">
+    <div class="err" id="firstNameErr"></div>
+
+    <label for="lastName">Last name</label>
+    <input type="text" id="lastName" placeholder="Last Name">
+    <div class="err" id="lastNameErr"></div>
+
+    <label for="email">Email-id</label>
+    <input type="email" id="email" placeholder="@gmail.com">
+    <div class="err" id="emailErr"></div>
+
+    <label for="topic">Presentation topic name</label>
+    <input type="text" id="topic" placeholder="Java Programming">
+    <div class="err" id="topicErr"></div>
+
+    <button type="submit">Register</button>
+  </form>
+
+  <div class="list-heading">
+    <span>Responses</span>
+    <span id="count">0</span>
+  </div>
+  <div id="list">
+    <p class="empty" id="emptyMsg">No responses yet — be the first!</p>
+  </div>
+</div>
+
+<script>
+  const form = document.getElementById('regForm');
+  const list = document.getElementById('list');
+  const emptyMsg = document.getElementById('emptyMsg');
+  const countEl = document.getElementById('count');
+  let responses = [];
+
+  function render() {
+    countEl.textContent = responses.length;
+    list.innerHTML = '';
+    if (responses.length === 0) {
+      list.appendChild(emptyMsg);
+      return;
+    }
+    responses.slice().reverse().forEach(r => {
+      const div = document.createElement('div');
+      div.className = 'entry';
+      div.innerHTML = `
+        <div class="name">${escapeHtml(r.firstName)} ${escapeHtml(r.lastName)} <span style="color:var(--muted);font-weight:400;">(${escapeHtml(r.htNo)})</span></div>
+        <div class="meta">${escapeHtml(r.email)} • ${r.time}</div>
+        <div class="topic">${escapeHtml(r.topic)}</div>
+      `;
+      list.appendChild(div);
+    });
+  }
+
+  function escapeHtml(str) {
+    const d = document.createElement('div');
+    d.textContent = str;
+    return d.innerHTML;
+  }
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const htNoEl = document.getElementById('htNo');
+    const firstNameEl = document.getElementById('firstName');
+    const lastNameEl = document.getElementById('lastName');
+    const emailEl = document.getElementById('email');
+    const topicEl = document.getElementById('topic');
+
+    const htNoErr = document.getElementById('htNoErr');
+    const firstNameErr = document.getElementById('firstNameErr');
+    const lastNameErr = document.getElementById('lastNameErr');
+    const emailErr = document.getElementById('emailErr');
+    const topicErr = document.getElementById('topicErr');
+
+    htNoErr.textContent = '';
+    firstNameErr.textContent = '';
+    lastNameErr.textContent = '';
+    emailErr.textContent = '';
+    topicErr.textContent = '';
+
+    let valid = true;
+    if (!htNoEl.value.trim()) {
+      htNoErr.textContent = 'Enter your HT No.';
+      valid = false;
+    }
+    if (!firstNameEl.value.trim()) {
+      firstNameErr.textContent = 'Enter your first name';
+      valid = false;
+    }
+    if (!lastNameEl.value.trim()) {
+      lastNameErr.textContent = 'Enter your last name';
+      valid = false;
+    }
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(emailEl.value.trim())) {
+      emailErr.textContent = 'Enter a valid email';
+      valid = false;
+    }
+    if (!topicEl.value.trim()) {
+      topicErr.textContent = 'Enter your presentation topic';
+      valid = false;
+    }
+    if (!valid) return;
+
+    responses.push({
+      htNo: htNoEl.value.trim(),
+      firstName: firstNameEl.value.trim(),
+      lastName: lastNameEl.value.trim(),
+      email: emailEl.value.trim(),
+      topic: topicEl.value.trim(),
+      time: new Date().toLocaleString()
+    });
+
+    // Persist locally so entries survive a page refresh on this browser.
+    try { localStorage.setItem('registrationResponses', JSON.stringify(responses)); } catch (err) {}
+
+    form.reset();
+    render();
+  });
+
+  // Load any previously saved responses on page load.
+  try {
+    const saved = localStorage.getItem('registrationResponses');
+    if (saved) responses = JSON.parse(saved);
+  } catch (err) {}
+  render();
+</script>
+
+</body>
+</html>

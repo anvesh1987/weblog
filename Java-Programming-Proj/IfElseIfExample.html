@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Programming</title>
+
+<style>
+
+        body {
+			 user-select: none;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .box {
+            border: 3px solid #333;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: white;
+            border-radius: 10px;
+        }
+
+        .left {
+            text-align: left;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .right {
+            text-align: right;
+        }
+
+        .justify {
+            text-align: justify;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 2px solid #555;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        img {
+            border: 4px solid #007BFF;
+            border-radius: 8px;
+            width: 200px;
+        }
+    </style>
+		<script>
+        // Disable right-click
+       document.addEventListener("contextmenu", function(event) {
+         event.preventDefault();
+          alert("Right-click is disabled on this page.");
+       });
+		
+		document.addEventListener("contextmenu", e => e.preventDefault());
+
+		document.addEventListener("copy", e => {
+		e.preventDefault();
+		alert("Copying is disabled.");
+});
+
+document.addEventListener("keydown", e => {
+    if (
+        (e.ctrlKey && ["c", "u", "a", "x"].includes(e.key.toLowerCase())) ||
+        e.key === "F12"
+    ) {
+        e.preventDefault();
+    }
+});
+		
+    </script>
+
+</head>
+<body>
+
+    <div class="box center">
+        <h4>If Else-IfExample
+
+
+
+</h4>
+		<p style="text-align:right;">
+    <a href="main.html">Home</a>
+</p>
+    </div>
+
+    <div class="box left">  
+        <p>
+
+public class IfElseIfExample<br>
+{<br>
+public static void main(String[] args)<br>
+{<br>
+int marks=65;<br>
+if(marks<50)<br>
+{<br>
+System.out.println("fail");<br>
+}<br>
+else if(marks>=50 && marks<60)<br>
+{<br>
+System.out.println("D grade");<br>
+}<br>
+else if(marks>=60 && marks<70)<br>
+{<br>
+System.out.println("C grade");<br>
+}<br>
+else if(marks>=70 && marks<80)<br>
+{<br>
+System.out.println("B grade");<br>
+}<br>
+else if(marks>=80 && marks<90)<br>
+{<br>
+System.out.println("A grade");<br>
+}<br>
+else if(marks>=90 && marks<100)<br>
+{<br>
+System.out.println("A+ grade");<br>
+}<br>
+else<br>
+{<br>
+System.out.println("Invalid!");<br>
+}<br>
+}<br>
+}<br>
+
+
+
+
+
+
+        </p>
+    </div>
+
+</body>
+</html>

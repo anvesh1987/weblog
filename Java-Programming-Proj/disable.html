@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Right Click Disabled</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #FFF0F5, #D3D3D3);
+            margin: 0;
+            padding: 10px;
+            text-align: center;
+            color: #808000;
+        }
+
+        .container {
+            max-width: 250px;
+            margin: auto;
+            background: rgba(255,255,255,0.15);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            font-size: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        button {
+            background: white;
+            color: #D2691E;
+            border: none;
+            padding: 12px 25px;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #C0C0C0;
+        }
+    </style>
+
+    <script>
+        // Disable right-click
+        document.addEventListener("contextmenu", function(event) {
+            event.preventDefault();
+            alert("Right-click is disabled on this page.");
+        });
+    </script>
+
+</head>
+
+<body>
+
+<div class="container">
+    <h2>JAVA PROGRAMMING </h2>
+	<h3> II YR - CSE - G </h3>
+	
+
+   <!--  <p>
+        This webpage demonstrates how to disable the browser's
+        right-click context menu using JavaScript.
+    </p>
+
+    <button onclick="alert('Button Clicked!')">
+        Click Me
+    </button> -->
+</div>
+	
+</body>
+</html>

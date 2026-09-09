@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UNIT-II PROGRAMS</title>
+	    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            background-image: url("anu.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            opacity: 0.4;      /* Transparency */
+            z-index: -1;       /* Keep image behind content */
+        }
+
+        h1 {
+            text-align: center;
+            color: darkblue;
+            margin-top: 10px;
+        }
+
+        p {
+            text-align: center;
+            font-size: 22px;
+        }
+		.datetime-display {
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin: 20px;
+        }
+
+		
+		
+    </style>
+
+
+	<script>
+        // Disable right-click
+        document.addEventListener("contextmenu", function(event) {
+            event.preventDefault();
+            alert("Right-click is disabled on this page.");
+        });
+		
+        function updateClock() {
+            const now = new Date();
+            
+            // Format options for a clean look (e.g., "Friday, July 24, 2026, 3:53 PM")
+            const options = { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric',
+                hour: 'numeric', 
+                minute: 'numeric', 
+                second: 'numeric',
+                hour12: true 
+            };
+            
+            // Convert to a localized human-readable string
+            const formattedDateTime = now.toLocaleString('en-US', options);
+            
+            // Inject the string into our HTML element
+            document.getElementById('live-clock').textContent = formattedDateTime;
+        }
+
+        // Run the clock immediately when the page loads
+        updateClock();
+        
+        // Update the clock every 1000 milliseconds (1 second)
+        setInterval(updateClock, 1000);
+
+    </script> 
+</head>
+
+<body bgcolor="#FFF0F5">
+ 
+		<h1> Inheritence </h1>	
+			<div style="text-align:right;">
+			<a href="JavaProgramming_HomePage.html" target="_blank" style="background-color:blue; color:white;
+          padding:0px 0px;
+          text-decoration:none;
+          border-radius:2px;
+          font-size:15px;">
+   Back To Main Home Page</div>
+</a>
+
+<div style="display:inline-block; width:30%; border:1px solid black;padding:10px;">
+<ol>
+    <li>INHERITANCE
+        <ol type="a">
+	            <li><a href="TestInheritance.html" target="content">Single Inheritance</a><br></li>
+			<li><a href="TestInheritance2.html" target="content">Muilti-Level Inheritance</a><br></li>
+			<li><a href="TestInheritance3.html" target="content">Hierarchical Inhertance</a><br></li>
+			<!-- <li><a href="EvenOdd.html" target="content">Even or Odd</a><br></li>
+			<li><a href="Fact.html" target="content">Factorial</a><br></li>
+		    <li><a href="Fibo.html" target="content">Fibonacci Series</a><br></li>
+			<li><a href="Prime.html" target="content">Prime Number</a><br></li>
+			<li><a href="Reverse.html" target="content">Reverse of a Number</a><br></li>-->
+        </ol>
+    </li>
+
+	<br>
+	    <li>SUPER KEYWORD
+
+        <ol type="a">     
+			<li><a href="Supervariable.html" target="content">Super Keyword - Variable Level</a><br></li>
+			<li><a href="Supermethod.html" target="content">Super Keyword - Method Level</a><br></li>
+			<li><a href="Superconstructor.html" target="content">Super Keyword - Constructor Level</a><br></li>
+        </ol>
+    </li>
+	<br>
+	<br>
+	    <li>FINAL KEYWORD
+
+        <ol type="a">     
+			<li><a href="FinalVariable.html" target="content">Final Keyword - Variable Level</a><br></li>
+			<li><a href="FinalMethod.html" target="content">Final Keyword - Method Level</a><br></li>
+			<li><a href="FinalClass.html" target="content">Final Keyword - Class Level</a><br></li>
+        </ol>
+    </li>
+	<br>
+	
+		<br>
+	    <li>POLYMORPHISM
+
+        <ol type="a">     
+			<li><a href="PolyMethodoverloading.html" target="content">Methoad Overloading</a><br></li>
+			<li><a href="PolyOverriding.html" target="content">Method Overriding</a><br></li>
+			<li><a href="Abstractclass.html" target="content">Abstract Class</a><br></li>
+			<li><a href="AbstractMethod.html" target="content">Abstract Method</a><br></li>
+			<li><a href="ObjcetClass_HashCodeBitcoin.html" target="content">HashCode Method</a><br></li>
+			<li><a href="PackagesExample.html" target="content">PACKAGES</a><br></li>			
+        </ol>
+    </li>
+	<br>
+	
+	<br>
+	    <li>INTERFACES
+
+        <ol type="a">     
+			<li><a href="InterfaceDemo.html" target="content">Interface Demo</a><br></li>
+			<li><a href="InterfaceImplements.html" target="content">Interface Implements</a><br></li>
+				<li><a href="Interfaceinheritance.html" target="content">Interface Inheritance</a><br></li>
+				<li><a href="MultipleInheritance.html" target="content">Multiple Inheritance</a><br></li>
+				<li><a href="ExtendingInterface.html" target="content">Extending Interface</a><br></li>
+        </ol>
+    </li>
+	<br>
+	    <!--<li>Operators
+        <ol type="a">
+           <li><a href="Arithmetic.html" target="content">Arithmetic Operators</a><br></li>
+<li><a href="Relational.html" target="content">Relational Operators</a><br></li>
+<li><a href="Logical.html" target="content">Logical Operators</a><br></li>
+<li><a href="Assignment.html" target="content">Assignment Operators</a><br></li>
+<li><a href="Increment.html" target="content">Increment & Decrement Operators</a><br></li>
+<li><a href="Conditional.html" target="content">Conditional Operators</a><br></li>
+<li><a href="Bitwise.html" target="content">Bitwise Operators</a><br></li>
+        </ol>
+    </li>-->
+	<br>  
+</div>
+<!-- <div style="display:inline-block; width:30%; border:1px solid black;padding:10px;">
+<ol><ol><ol start="4">
+    <li>Control Statements
+        <ol type="a">
+           <li><a href="IfCondition.html" target="content">If Condition</a><br></li>
+<li><a href="IfElseExample.html" target="content">If Else Example</a><br></li>
+<li><a href="IfElseIfExample.html" target="content">If Else-If Example</a><br></li>
+<li><a href="Switch.html" target="content">Switch</a><br></li>
+<li><a href="ForLoop.html" target="content">For Loop</a><br></li>
+<li><a href="ForEach.html" target="content">For Each</a><br></li>
+<li><a href="WhileExample.html" target="content">While Loop</a><br></li>
+<li><a href="DoWhileExample.html" target="content">Do While Loop</a><br></li>
+<li><a href="NestedLoop.html" target="content">Nested Loop</a><br></li>
+<li><a href="BreakLoop.html" target="content">Break Loop</a><br></li>
+<li><a href="Continue.html" target="content">Continue Loop</a><br></li>
+<li><a href="Return.html" target="content">Return Loop</a><br></li>
+        </ol>
+    </li>
+	<br>
+	    <li>Type Casting and Conversion
+        <ol type="a">
+           <li><a href="Typecasting.html" target="content">Type casting</a><br></li>
+		<li><a href="TypeConversion.html" target="content">Type Conversion</a><br></li>
+        </ol>
+    </li>
+	<br>
+	</div>
+	
+	<div style="display:inline-block; width:30%; border:1px solid black;padding:10px;">
+<ol><ol><ol start="6">
+    <li>Methods and Classes
+        <ol type="a">
+<li><a href="MethodInitialization.html" target="content">Method Initialization</a><br></li>
+<li><a href="MethodUserdefined.html" target="content">User-defined Method</a><br></li>
+<li><a href="ObjectRreference2.html" target="content">Object Rreference2</a><br></li>
+<li><a href="MethodWithoutParameters.html" target="content">Method Without Parameters</a><br></li>
+<li><a href="MethodWithParameters.html" target="content">Method With Parameters</a><br></li>
+<li><a href="MethodWithReturnValue.html" target="content">Method With ReturnValue</a><br></li>
+<li><a href="MethodVoid.html" target="content">Method Void</a><br></li>
+<li><a href="MethodStatic.html" target="content">Method Static</a><br></li>
+<li><a href="MethodInstance.html" target="content">Method Instance</a><br></li>
+<li><a href="Methodstudentstatic.html" target="content">Method Student Static</a><br></li>
+<li><a href="Methodstaticmethod.html" target="content">Method Static Method</a><br></li>
+<li><a href="MethodStaticBlock.html" target="content">Method Static Block</a><br></li>
+<li><a href="MethodOverLoading.html" target="content">Method OverLoading</a><br></li>
+<li><a href="MethodOverriding.html" target="content">Method Overriding</a><br></li>
+        </ol>
+    </li>
+ <br>
+</div>
+   <!-- <li>Programming
+        <ol type="a">
+           
+        </ol>
+    </li>-->
+
+</ol>
+
+<!--<div style="display:inline-block; width:30%; border:1px solid black;padding:10px;">
+<ol><ol><ol start="7">
+    <li>Constructors
+        <ol type="a">
+<li><a href="DefaultConstructor.html" target="content">Default Constructor</a><br></li>
+<li><a href="ParameterizedConstructor.html" target="content">Parameterized Constructor</a><br></li>
+<li><a href="ConstructorOverloading.html" target="content">Constructor Overloading</a><br></li>
+<li><a href="DefaultModifier.html" target="content">Default Modifier</a><br></li>
+<li><a href="PrivateModifier.html" target="content">Private Modifier</a><br></li>
+<li><a href="ProctectedModifier.html" target="content">Proctected Modifier</a><br></li>
+<li><a href="PublicModifier.html" target="content">Public Modifier</a><br></li>
+<li><a href="ThisInstancevariables.html" target="content">This Instance Variables</a><br></li>
+<li><a href="ThisCurrentClassMethod.html" target="content">This Current Class Method</a><br></li>
+<li><a href="ThisConstructorChain.html" target="content">This Constructor Chain</a><br></li>
+<li><a href="ThisCurrentobject.html" target="content">This Current Object</a><br></li>
+<li><a href="ThisReturningobject.html" target="content">This Returning Object</a><br></li>
+        </ol>
+    </li>
+ <br>
+</div>
+</ol></ol>
+
+<div style="display:inline-block; width:30%; border:1px solid black;padding:10px;">
+<ol><ol><ol start="8">
+    <li>PARAMETER PASSING METHODS AND INNER CLASSES 
+        <ol type="a">
+<li><a href="CallByValueExample.html" target="content">Call By Value</a><br></li>
+<li><a href="CallByReference.html" target="content">Call By Reference</a><br></li>
+<li><a href="RecursionMethod.html" target="content">Recursion Method in Java</a><br></li>
+<li><a href="TestMemberOuter.html" target="content">Inner Class - MEMBER INNER CLASS</a><br></li>
+<li><a href="TestAnonymousInner.html" target="content">Inner Class - ANONYNOUS INNER CLASS</a><br></li>
+<li><a href="LocalInnerclass.html" target="content">Inner Class - LOCAL INNER CLASS</a><br></li>
+<li><a href="Staticnestedclass.html" target="content">Inner Class - STATIC NESTED CLASS</a><br></li>
+
+        </ol>
+    </li>
+ <br>
+
+</ol>
+</div> -->
+
+
+
+
+<!--<p align="right"> <</p>-->
+
+</body>
+</html>

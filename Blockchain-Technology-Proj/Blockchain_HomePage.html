@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blockchain Technology</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,340;9..144,480;9..144,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --moss:#2f3d2a;
+    --moss-deep:#1c2619;
+    --fern:#5c7a4c;
+    --clay:#c17a4a;
+    --dawn:#f2e9d8;
+    --dawn-dim:#e6d9bf;
+    --bark:#4a3b2e;
+    --mist: rgba(242,233,216,0.14);
+    --radius: 4px;
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0; background:var(--dawn); color:var(--moss-deep);
+    font-family:'Work Sans', sans-serif; -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{ font-family:'Fraunces', serif; font-weight:480; margin:0; letter-spacing:-0.01em; }
+  a{ color:inherit; }
+  ::selection{ background:var(--clay); color:var(--dawn); }
+  :focus-visible{ outline:2px solid var(--clay); outline-offset:3px; }
+  .wrap{ max-width:1160px; margin:0 auto; padding:0 32px; }
+  img{ max-width:100%; display:block; }
+
+  /* reveal-on-scroll */
+  .reveal{ opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease; }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+  @media (prefers-reduced-motion: reduce){ .reveal{ opacity:1; transform:none; transition:none; } }
+
+  /* ---------- Nav ---------- */
+  nav{ position:fixed; top:0; left:0; right:0; z-index:100; padding:22px 0; transition:background .3s ease, padding .3s ease, box-shadow .3s ease; }
+  nav.scrolled{ background:rgba(242,233,216,0.92); backdrop-filter:blur(10px); padding:14px 0; box-shadow:0 1px 0 rgba(28,38,25,0.08); }
+  nav .wrap{ display:flex; align-items:center; justify-content:space-between; }
+  .brand{ display:flex; align-items:center; gap:9px; font-family:'Fraunces', serif; font-size:20px; color:var(--dawn); transition:color .3s ease; }
+  nav.scrolled .brand{ color:var(--moss-deep); }
+  .brand svg{ width:22px; height:22px; }
+  .navlinks{ display:flex; gap:30px; font-size:14px; font-weight:500; color:var(--dawn); transition:color .3s ease; }
+  nav.scrolled .navlinks{ color:var(--moss-deep); }
+  .navlinks a{ text-decoration:none; opacity:.85; }
+  .navlinks a:hover{ opacity:1; }
+  .btn{
+    display:inline-flex; align-items:center; gap:8px; padding:12px 22px; border-radius:var(--radius);
+    font-size:14px; font-weight:600; text-decoration:none; cursor:pointer; border:1.5px solid transparent;
+    transition:transform .15s ease, background .2s ease, border-color .2s ease, color .2s ease;
+  }
+  .btn-primary{ background:var(--clay); color:var(--dawn); }
+  .btn-primary:hover{ background:#a8683d; transform:translateY(-1px); }
+  .btn-outline{ border-color:var(--dawn); color:var(--dawn); }
+  nav.scrolled .btn-outline{ border-color:var(--moss-deep); color:var(--moss-deep); }
+  .btn-outline:hover{ background:var(--mist); }
+
+  /* ---------- Hero ---------- */
+  .hero{ position:relative; height:100svh; min-height:640px; display:flex; align-items:flex-end; overflow:hidden; background:var(--moss-deep); }
+  .hero-sky{ position:absolute; inset:0; background:
+      radial-gradient(120% 90% at 50% -10%, #6b8a56 0%, #3d5233 32%, #223019 62%, #141d10 100%);
+  }
+  .hero-glow{ position:absolute; inset:0; background:radial-gradient(60% 45% at 50% 8%, rgba(217,178,120,0.35), transparent 70%); mix-blend-mode:screen; }
+  .ridge{ position:absolute; left:0; right:0; width:100%; }
+  .ridge.r1{ bottom:-2%; opacity:.55; }
+  .ridge.r2{ bottom:-2%; opacity:.75; }
+  .ridge.r3{ bottom:-2%; opacity:1; }
+  #birds{ position:absolute; top:14%; left:0; width:100%; opacity:.6; }
+  .hero-content{ position:relative; z-index:5; width:100%; padding-bottom:88px; }
+  .hero .wrap{ display:flex; flex-direction:column; align-items:flex-start; }
+  .eyebrow{ font-size:12.5px; letter-spacing:.14em; text-transform:uppercase; color:#d9c9a3; display:flex; align-items:center; gap:10px; margin-bottom:20px; }
+  .eyebrow::before{ content:''; width:26px; height:1px; background:#d9c9a3; }
+  .hero h1{ font-size:clamp(42px, 7vw, 84px); line-height:0.98; color:var(--dawn); max-width:14ch; }
+  .hero h1 em{ font-style:normal; color:#e9c48a; }
+  .hero p.lede{ margin-top:24px; font-size:17.5px; line-height:1.6; color:#d7e0cb; max-width:42ch; }
+  .hero .cta-row{ margin-top:36px; display:flex; gap:14px; }
+  .scroll-cue{ position:absolute; bottom:28px; right:32px; z-index:5; display:flex; flex-direction:column; align-items:center; gap:8px; color:#d7e0cb; font-size:11px; letter-spacing:.1em; text-transform:uppercase; }
+  .scroll-cue .line{ width:1px; height:34px; background:linear-gradient(to bottom, #d7e0cb, transparent); animation:cue 2s ease-in-out infinite; }
+  @keyframes cue{ 0%,100%{ transform:scaleY(1); opacity:.6;} 50%{ transform:scaleY(.6); opacity:1;} }
+  @media (prefers-reduced-motion: reduce){ .scroll-cue .line{ animation:none; } }
+
+  /* ---------- Trust strip ---------- */
+  .strip{ background:var(--dawn-dim); padding:22px 0; }
+  .strip .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:18px; font-size:13px; color:var(--bark); font-weight:500; }
+  .strip .item{ display:flex; align-items:center; gap:8px; }
+  .strip svg{ width:15px; height:15px; color:var(--fern); }
+
+  /* ---------- Section shell ---------- */
+  section{ padding:110px 0; }
+  .section-head{ max-width:600px; margin-bottom:56px; }
+  .kicker{ font-size:12.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--fern); font-weight:600; margin-bottom:14px; }
+  .section-head h2{ font-size:clamp(30px,3.6vw,44px); color:var(--moss-deep); }
+  .section-head p{ margin-top:16px; color:#5a5346; font-size:16px; line-height:1.65; }
+
+  /* ---------- Trail cards (real sequence -> numbered) ---------- */
+  .trail-row{ display:grid; grid-template-columns:repeat(3,1fr); gap:28px; }
+  .trail-card{ background:var(--dawn); border:1px solid rgba(28,38,25,0.1); border-radius:8px; overflow:hidden; }
+  .trail-photo{ height:210px; position:relative; overflow:hidden; }
+  .trail-photo .ph{ position:absolute; inset:0; }
+  .trail-photo .tag{ position:absolute; top:14px; left:14px; background:rgba(28,38,25,0.75); color:var(--dawn); font-size:11px; padding:5px 10px; border-radius:20px; letter-spacing:.04em; }
+  .trail-body{ padding:22px 24px 26px; }
+  .trail-body h3{ font-size:19px; margin-bottom:8px; }
+  .trail-body p{ font-size:14px; color:#5a5346; line-height:1.6; margin:0 0 14px; }
+  .trail-meta{ display:flex; gap:16px; font-size:12.5px; color:var(--bark); font-weight:500; }
+  .trail-meta span{ display:flex; align-items:center; gap:6px; }
+  .trail-meta svg{ width:13px; height:13px; color:var(--fern); }
+
+  /* ---------- Split feature ---------- */
+  .split{ display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; }
+  .split.rev .split-photo{ order:2; }
+  .split-photo{ position:relative; }
+  .organic-frame{ position:relative; aspect-ratio:4/5; border-radius:44% 56% 62% 38% / 48% 42% 58% 52%; overflow:hidden; box-shadow:0 30px 60px -20px rgba(28,38,25,0.35); }
+  .split h2{ font-size:clamp(26px,3vw,36px); margin-bottom:18px; }
+  .split p{ color:#5a5346; font-size:15.5px; line-height:1.7; margin-bottom:14px; }
+  .checklist{ margin-top:24px; display:flex; flex-direction:column; gap:12px; }
+  .checklist .row{ display:flex; align-items:flex-start; gap:10px; font-size:14.5px; color:var(--moss-deep); }
+  .checklist svg{ width:17px; height:17px; color:var(--fern); flex-shrink:0; margin-top:2px; }
+
+  /* ---------- Gallery ---------- */
+  .gallery{ display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:150px; gap:12px; }
+  .gallery .cell{ border-radius:6px; overflow:hidden; position:relative; }
+  .gallery .cell:nth-child(1){ grid-column:span 2; grid-row:span 2; }
+  .gallery .cell:nth-child(4){ grid-row:span 2; }
+  .gallery .cell .ph{ width:100%; height:100%; }
+
+  /* ---------- Quote / seasonal note ---------- */
+  .note{ background:var(--moss-deep); color:var(--dawn); border-radius:10px; padding:56px; display:grid; grid-template-columns:auto 1fr; gap:40px; align-items:center; }
+  .note .mark{ width:52px; height:52px; color:#e9c48a; flex-shrink:0; }
+  .note blockquote{ margin:0; font-family:'Fraunces',serif; font-size:23px; line-height:1.5; font-weight:340; }
+  .note cite{ display:block; margin-top:16px; font-style:normal; font-size:13px; color:#c7d0ba; }
+
+  /* ---------- Stay / booking teaser ---------- */
+  .stay-row{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+  .stay-card{ border-radius:8px; overflow:hidden; background:var(--dawn); border:1px solid rgba(28,38,25,0.1); }
+  .stay-photo{ height:180px; }
+  .stay-info{ padding:20px 22px 24px; }
+  .stay-info h3{ font-size:17px; margin-bottom:6px; }
+  .stay-info .price{ font-size:13px; color:var(--bark); margin-bottom:12px; }
+  .stay-info .price b{ color:var(--moss-deep); font-size:15px; }
+
+  /* ---------- Final CTA ---------- */
+  .cta-final{ text-align:center; }
+  .cta-final h2{ font-size:clamp(32px,4.4vw,50px); max-width:16ch; margin:0 auto; }
+  .cta-final p{ margin:18px auto 34px; color:#5a5346; max-width:44ch; }
+  .cta-final .cta-row{ display:flex; gap:14px; justify-content:center; }
+
+  /* ---------- Footer ---------- */
+  footer{ background:var(--moss-deep); color:#c7d0ba; padding:56px 0 28px; }
+  footer .fgrid{ display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; margin-bottom:40px; }
+  footer h4{ font-family:'Fraunces',serif; font-size:15px; color:var(--dawn); margin-bottom:16px; font-weight:480; }
+  footer .flist{ display:flex; flex-direction:column; gap:10px; font-size:13.5px; }
+  footer .flist a{ text-decoration:none; color:#c7d0ba; }
+  footer .flist a:hover{ color:var(--dawn); }
+  footer .fbottom{ border-top:1px solid rgba(242,233,216,0.14); padding-top:22px; display:flex; justify-content:space-between; font-size:12.5px; flex-wrap:wrap; gap:10px; }
+
+  /* --- Nature "photo" placeholders, CSS-only so the template ships self-contained ---
+     Replace any element with class starting "ph--" by swapping in a real <img> or
+     background-image: url('your-photo.jpg') — these are drop-in slots. */
+  .ph--canopy{ background:
+      radial-gradient(120% 100% at 30% 0%, #7d9a5f 0%, #4c6a3c 45%, #2a3b1f 100%);
+  }
+  .ph--canopy::after{ content:''; position:absolute; inset:0; background:
+      repeating-conic-gradient(from 0deg at 20% 30%, rgba(0,0,0,0.05) 0 8deg, transparent 8deg 16deg); }
+  .ph--river{ background: linear-gradient(180deg, #cfe0d2 0%, #8fae8a 40%, #3f5a3a 100%); }
+  .ph--river::before{ content:''; position:absolute; left:0; right:0; top:38%; height:22%; background:linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent); filter:blur(6px); }
+  .ph--peak{ background: linear-gradient(200deg, #e9c48a 0%, #b98a54 30%, #4a3b2e 75%, #241d16 100%); }
+  .ph--fern{ background: radial-gradient(80% 80% at 70% 20%, #6c8a54 0%, #3a5230 55%, #1f2b18 100%); }
+  .ph--dawn{ background: linear-gradient(160deg, #f2c98f 0%, #d98f5c 35%, #5c4636 75%, #2a2118 100%); }
+  .ph--lake{ background: linear-gradient(200deg, #a9c4b0 0%, #587a5e 50%, #2c3f29 100%); }
+  .ph--cabin1{ background: linear-gradient(200deg, #c9a876 0%, #7a5c3e 55%, #3a2c1e 100%); }
+  .ph--cabin2{ background: linear-gradient(200deg, #9db084 0%, #556e46 55%, #263420 100%); }
+  .ph--cabin3{ background: linear-gradient(200deg, #d6c39a 0%, #8a7250 55%, #40331f 100%); }
+  [class^="ph--"]{ position:relative; }
+
+  @media (max-width: 900px){
+    .navlinks{ display:none; }
+    .split, .split.rev .split-photo{ grid-template-columns:1fr; order:0; }
+    .split{ display:flex; flex-direction:column; }
+    .trail-row, .stay-row{ grid-template-columns:1fr; }
+    .gallery{ grid-template-columns:repeat(2,1fr); grid-auto-rows:130px; }
+    .gallery .cell:nth-child(1){ grid-column:span 2; grid-row:span 1; }
+    .gallery .cell:nth-child(4){ grid-row:span 1; }
+    .note{ grid-template-columns:1fr; text-align:center; padding:40px 26px; }
+    .note .mark{ margin:0 auto; }
+    footer .fgrid{ grid-template-columns:1fr 1fr; }
+	
+	
+	
+	
+	</style>
+	
+	
+	<style>
+	button {
+    background-color: blue;
+	} 
+	.spinner {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            border: 2px solid white;
+            border-top-color: transparent;
+            border-radius: 50%;
+            margin-right: 8px;
+            vertical-align: middle;
+			
+
+            animation: spin 0.7s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+				
+            }
+			
+			</style>
+			
+			<style>
+
+.visitor-card {
+    width: 400px;
+    margin: 50px auto;       /* Center the card */
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.visitor-card h1 {
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: auto;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 15px;
+    text-align: center;      /* Center table content */
+}
+
+th {
+    background-color: #667eea;
+    color: white;
+}
+
+td {
+    background-color: #f5f5f5;
+}
+
+.value {
+    font-weight: bold;
+}
+
+</style>
+
+<style>
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+}
+
+/* HEADER */
+
+.header {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+.header h1 {
+    margin: 0;
+}
+
+
+/* CONTAINER */
+
+.container {
+    width: 95%;
+    max-width: 1000px;
+    margin: 30px auto;
+}
+
+
+/* YEAR SELECT */
+
+.year-box {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+select {
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+
+/* NEXT HOLIDAY */
+
+.next {
+    background: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.1);
+}
+
+.next h2 {
+    color: #667eea;
+}
+
+#nextHoliday {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#countdown {
+    color: #e11d48;
+    margin-top: 10px;
+}
+
+
+/* TABLE */
+
+.table-box {
+    overflow-x: auto;
+    background: white;
+    border-radius: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: #667eea;
+    color: white;
+    padding: 15px;
+}
+
+td {
+    padding: 13px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+tr:hover {
+    background: #f1f3ff;
+}
+
+.date {
+    color: #667eea;
+    font-weight: bold;
+}
+
+.general {
+    color: green;
+    font-weight: bold;
+}
+
+.optional {
+    color: orange;
+    font-weight: bold;
+}
+
+.provisional {
+    color: red;
+    font-size: 12px;
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px) {
+
+    .header h1 {
+        font-size: 24px;
+    }
+
+    th,
+    td {
+        padding: 9px;
+        font-size: 13px;
+    }
+
+}
+
+</style>
+
+</head>
+<body>
+
+<nav id="siteNav">
+  <div class="wrap">
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="8" height="8" rx="1" stroke="#5c9484" stroke-width="1.5"/><rect x="14" y="2" width="8" height="8" rx="1" stroke="#5c9484" stroke-width="1.5"/><rect x="8" y="14" width="8" height="8" rx="1" stroke="#c9954a" stroke-width="1.5"/><path d="M10 6h4M6 10v4M18 10v4" stroke="#8b93a0" stroke-width="1.2"/></svg>
+      Blockchain Technology
+    </div>
+    <div class="btn btn-primary">
+     <a href="#trails">Digital Notes</a>
+      <a href="#stay">Important Questions</a>
+      <a href="#about">Question Papers</a>
+      <a href="#gallery">Blockchain Programs</a>
+    </div>
+	 <div>
+	       <a href="../anveshkumaraavula.html" class="btn btn-outline">Back To Main Page</a>
+  </div>
+</nav>
+
+<header class="hero">
+<div class="hero-sky"></div>
+  <div class="hero-glow"></div>
+  <svg id="birds" viewBox="0 0 400 60" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M40 20 q6 -8 12 0 q6 -8 12 0" stroke="#d7e0cb" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+    <path d="M120 34 q5 -7 10 0 q5 -7 10 0" stroke="#d7e0cb" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+    <path d="M300 14 q6 -8 12 0 q6 -8 12 0" stroke="#d7e0cb" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+  </svg>
+  <svg class="ridge r1" viewBox="0 0 1440 260" preserveAspectRatio="none" aria-hidden="true"><path d="M0 180L120 140 260 190 420 110 600 170 760 90 940 160 1120 120 1300 175 1440 130V260H0Z" fill="#33452a"/></svg>
+  <svg class="ridge r2" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true"><path d="M0 160L160 110 340 170 520 100 700 150 880 95 1060 155 1240 105 1440 150V220H0Z" fill="#24331c"/></svg>
+  <svg class="ridge r3" viewBox="0 0 1440 180" preserveAspectRatio="none" aria-hidden="true"><path d="M0 130L200 90 380 140 560 80 760 130 960 75 1160 135 1360 90 1440 110V180H0Z" fill="#182312"/></svg>
+</a>
+  <div class="hero-content">
+    <div class="wrap">
+	
+      <div class="eyebrow">Decentralization · Consensus Algorithms · Smart Contracts  .HyperLedger</div>
+      <h1>Security is a <em>Process</em> not product.</h1>
+      <p class="lede">Blockchain technology provides a shared, tamper-resistant digital ledger that improves security, trust, and efficiency across digital operations.</p>
+     <!-- <div class="cta-row">
+        <a href="#trails" class="btn btn-primary">Browse the trails →</a>
+        <a href="#stay" class="btn btn-outline">Find a cabin</a>
+      </div>-->
+    </div>
+  </div>
+  <div class="scroll-cue"><span>Scroll</span><span class="line"></span></div>
+</header>
+
+<div class="strip">
+  <div class="wrap">
+    <div class="item"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Cryptography</div>
+    <div class="item"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Crypto-currency - Ethereum, Litecoin</div>
+    <div class="item"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Block Structure</div>
+    <div class="item"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Hyperledge and Smartcontracts</div>
+  </div>
+</div>
+
+<!-- HEADER -->
+
+<div class="header">
+
+    <h1>🇮🇳 Telangana Holiday Calendar</h1>
+
+    <p>Year-Wise Upcoming Holidays</p>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- YEAR SELECTOR -->
+
+<div class="year-box">
+
+    <label>
+        <b>Select Year:</b>
+    </label>
+
+    <select id="year"
+            onchange="showHolidays()">
+
+        <option value="2026">2026</option>
+        <option value="2027">2027</option>
+        <option value="2028">2028</option>
+        <option value="2029">2029</option>
+        <option value="2030">2030</option>
+
+    </select>
+
+</div>
+
+
+<!-- NEXT HOLIDAY -->
+
+<div class="next">
+
+    <h2>🎉 Next Holiday</h2>
+
+    <div id="nextHoliday">
+        Loading...
+    </div>
+
+    <div id="countdown">
+        Loading...
+    </div>
+
+</div>
+
+
+<!-- HOLIDAY TABLE -->
+
+<div class="table-box">
+
+<table>
+
+<thead>
+
+<tr>
+
+    <th>#</th>
+
+    <th>Date</th>
+
+    <th>Day</th>
+
+    <th>Holiday</th>
+
+    <th>Type</th>
+
+</tr>
+
+</thead>
+
+<tbody id="holidayTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+
+<section id="trails">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">Unit Wise Notes</div>
+      <h3>BLOCKCHAIN TECHNOLOGY</h3>
+      <p>A blockchain is a constantly growing ledger which keeps a permanent record of all the transactions that have taken place in a secure, chronological, and immutable way.</p>
+    </div>
+    <div class="trail-row">
+      <div class="trail-card reveal">
+     <!--   <div class="trail-photo"><div class="ph ph--canopy">
+		</div><span class="tag">Easy</span></div> -->
+        <div class="trail-body">
+			<a href="UNIT_1.pdf" class="btn btn-primary">Unit - 1 Notes</a>
+          <h3>Introduction to Blockchain Technology</h3>
+          <p>Blockchain is a buzzword in today’s technology and this technology is described as the most disruptive technology of the decade. </p>
+          <div class="trail-meta">
+          <!--  <span><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>1.5 hr</span>
+            <span><svg viewBox="0 0 24 24" fill="none"><path d="M4 20l6-16 4 10 3-6 3 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>3.0 mi</span> -->
+          </div>
+        </div>
+      </div>
+      <div class="trail-card reveal">
+        <!-- <div class="trail-photo"><div class="ph ph--river"></div><span class="tag">Moderate</span></div> -->
+        <div class="trail-body">
+		<a href="UNIT_2.pdf" class="btn btn-primary">Unit - 2 Notes</a>
+          <h3>Cryptography in Blockchain</h3>
+          <p>Crypto meaning “hidden” and Graphy meaning “writing”. Therefore, cryptography is a method of converting plaintext into unreadable coded text.</p>
+          <div class="trail-meta">
+            <!-- <span><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>3 hr</span>
+            <span><svg viewBox="0 0 24 24" fill="none"><path d="M4 20l6-16 4 10 3-6 3 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>7.2 mi</span>-->
+          </div>
+        </div>
+      </div>
+      <div class="trail-card reveal">
+        <!-- <div class="trail-photo"><div class="ph ph--peak"></div><span class="tag">Strenuous</span></div> -->
+        <div class="trail-body">
+		<a href="UNIT_3.pdf" class="btn btn-primary">Unit - 3 Notes</a>
+          <h3>Introduction To Bitcoin</h3>
+          <p>Bitcoin launched in January 2009 with an initial value of $0.<br>
+		  Blockchain allows cryptocurrencies like Bitcoin to function and enhances security</p>
+          <div class="trail-meta">
+            <!--<span><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>5.5 hr</span>
+            <span><svg viewBox="0 0 24 24" fill="none"><path d="M4 20l6-16 4 10 3-6 3 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>9.8 mi</span> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" style="background:var(--dawn-dim);">
+  <div class="wrap">
+    <div class="split reveal">
+      <div class="split-photo"><div class="organic-frame ph--fern"></div></div>
+      <div>
+        <div class="kicker">Question Papers</div>
+        <h2> Will be Updated Shortly..!!!</h2>   <div class="row">
+    <button class="btn btn-primary btn-md" disabled>
+        <span class="spinner"></span>
+        Processing…
+    </button>
+       <p>We've are trying to map Model Papers, Unit-Wise Important Questions as End Semester Examinations and Scheduled to Conduct Pre-Final Exam in the Month of October 2026.</p>
+        <div class="checklist">
+          <div class="row"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>BCT_EXTERNAL_UNIT_WISE_QB</div>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>BCT_Model Paper_1 2 & 3</div>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>ET_BLOCKCHAIN TECHNOLOGY_PREFINAL_MODEL PAPER - 1 2 3 & 4</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">Blockchain Programs</div>
+<button class="btn btn-primary btn-md" disabled>
+        <span class="spinner"></span>
+        Under Construction…
+    </button>
+      <h3>Creation of Block..  Blockchain in Merkle Trees., Creating ERC20 token., Crypto-currency Wallet.., Block chain Implementation Programming code.., Implementation of Mining using Blockchain etc..,</h3>
+    </div>
+    <div class="gallery reveal">
+      <div class="cell"><div class="ph ph--dawn">Creation of Block.. </div></div>
+      <div class="cell"><div class="ph ph--lake">Blockchain in Merkle Trees.,</div></div>
+      <div class="cell"><div class="ph ph--river"> Creating ERC20 token.,</div></div>
+      <div class="cell"><div class="ph ph--canopy">Crypto-currency Wallet..</div></div>
+      <div class="cell"><div class="ph ph--fern"></div>Blockchain Implementation.</div>
+      <div class="cell"><div class="ph ph--peak">Implementation of Mining using block chain</div></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="note reveal">
+      <svg class="mark" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 14.4 7.2 16.9l.9-5.4L4.2 7.7l5.4-.8L12 2z" fill="currentColor"/></svg>
+      <div>
+        <blockquote>"Andhra Pradesh was the first Indian state to adopt blockchain technology for governance."In 2016, 
+		the state launched the "Fintech Valley Vizag" initiative, and by 2018 it had begun piloting blockchain in two departments —
+		land records and transport, to address cybersecurity issues and prevent tampering. "</blockquote>
+        <cite>—  Then Chief Minister N. Chandrababu Naidu announced the initiative, and IT Minister Nara Lokesh pushed the implementation, noting the technology was needed to prevent tampering of digitized land records..</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="stay" style="background:var(--dawn-dim);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">Important Questions</div>
+      <h2>Unit Wise Important Questions</h2>
+     <!-- <p>No two are alike — pick by how far from the main lodge you'd like to be.</p> -->
+    </div>
+	    <div class="trail-row">
+      <div class="trail-card reveal">
+     <!--   <div class="trail-photo"><div class="ph ph--canopy">
+		</div><span class="tag">Easy</span></div> -->
+        <div class="trail-body">
+			<a href="UNIT-1_IMPQ'S.pdf" class="btn btn-primary">IMPORTANT QUESTIONS</a>
+          <h3>Unit - 1 <br> Introduction to Blockchain Technology</h3>
+          <p>Blockchain is a buzzword in today’s technology and this technology is described as the most disruptive technology of the decade. </p>
+          <div class="trail-meta">
+          <!--  <span><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>1.5 hr</span>
+            <span><svg viewBox="0 0 24 24" fill="none"><path d="M4 20l6-16 4 10 3-6 3 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>3.0 mi</span> -->
+          </div>
+        </div>
+      </div>
+      <div class="trail-card reveal">
+        <!-- <div class="trail-photo"><div class="ph ph--river"></div><span class="tag">Moderate</span></div> -->
+        <div class="trail-body">
+		<a href="UNIT-2_IMPQ'S.pdf" class="btn btn-primary">IMPORTANT QUESTIONS</a>
+          <h3>Unit - 2 <br> Cryptography in Blockchain</h3>
+          <p>Crypto meaning “hidden” and Graphy meaning “writing”. Therefore, cryptography is a method of converting plaintext into unreadable coded text.</p>
+          <div class="trail-meta">
+            <!-- <span><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>3 hr</span>
+            <span><svg viewBox="0 0 24 24" fill="none"><path d="M4 20l6-16 4 10 3-6 3 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>7.2 mi</span>-->
+          </div>
+        </div>
+      </div>
+      <div class="trail-card reveal">
+        <!-- <div class="trail-photo"><div class="ph ph--peak"></div><span class="tag">Strenuous</span></div> -->
+        <div class="trail-body">
+		<a href="UNIT-3_IMPQ'S.pdf" class="btn btn-primary">IMPORTANT QUESTIONS</a>
+          <h3>Unit - 3 <br> Introduction To Bitcoin</h3>
+          <p>Bitcoin launched in January 2009 with an initial value of $0.<br>
+		  Blockchain allows cryptocurrencies like Bitcoin to function and enhances security</p>
+          <div class="trail-meta">
+            <!--<span><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>5.5 hr</span>
+            <span><svg viewBox="0 0 24 24" fill="none"><path d="M4 20l6-16 4 10 3-6 3 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>9.8 mi</span> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+	
+
+</section>
+
+<section class="cta-final reveal">
+<div class="visitor-card">
+
+    <h1>🌐 Website Statistics</h1>
+	<br>
+	<br>
+
+    <table>
+
+        <tr>
+            <th>Information</th>
+            <th>Details</th>
+        </tr>
+
+        <tr>
+            <td>🌐 Your IP Address</td>
+            <td>
+                <div class="value" id="ip">
+                    Loading...
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>👁️ Your Visits</td>
+            <td>
+                <div class="value" id="visits">
+                    0
+                </div>
+            </td>
+        </tr>
+
+    </table>
+
+</div>
+  <!-- <div class="wrap">
+    <h2>The trail's open. Are you?</h2>
+    <p>Cabins book up fast in leaf season — check availability before you plan around it.</p>
+    <div class="cta-row">
+      <a href="webstatistics.html" class="btn btn-primary"></a>
+      <a href="#" class="btn btn-outline">Download trail map</a>
+    </div> -->
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <div class="brand" style="margin-bottom:14px;">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l4 7h-3l3.5 6H7.5L11 10H8l4-7z" fill="#e9c48a"/></svg>
+         Blockchain Technology
+        </div>
+        <p style="font-size:13.5px; max-width:32ch; color:#c7d0ba;">R25 - B.TECH IV YR - I SEM.</p>
+      </div>
+      <div>
+       <!-- <h4>Explore</h4> -->
+        <div class="flist"><a href="#trails">Unit Wise Notes</a><a href="#gallery">Blockchain Programs</a><a href="#about">Question Papers</a></div>
+      </div>
+      <div>
+        <!-- <h4>Stay</h4>-->
+        <div class="flist"><a href="#stay">Unit Wise Important Questions</a><a href="#">Home</a><a href="#">Security</a></div>
+      </div>
+      <div>
+        <!--<h4>Contact</h4>-->
+        <div class="flist"><a href="#">node@blockchain.trail</a><a href="#">Location</a></div>
+      </div>
+    </div>
+    <div class="fbottom">
+      <span>© 2026 Copyright</span>
+      <span>Built to leave no trace</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('siteNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive:true });
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+
+   // Number of visits
+let count = localStorage.getItem("visits");
+
+if (count == null) {
+    count = 0;
+}
+
+count++;
+
+localStorage.setItem("visits", count);
+
+document.getElementById("visits").innerHTML = count;
+
+
+// Get IP Address
+fetch("https://api.ipify.org?format=json")
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById("ip").innerHTML = data.ip;
+    });
+	
+
+        // Disable right-click
+       document.addEventListener("contextmenu", function(event) {
+         event.preventDefault();
+          alert("Right-click is disabled on this page.");
+       });
+		
+		document.addEventListener("contextmenu", e => e.preventDefault());
+
+		document.addEventListener("copy", e => {
+		e.preventDefault();
+		alert("Copying is disabled.");
+});
+
+document.addEventListener("keydown", e => {
+    if (
+        (e.ctrlKey && ["c", "u", "a", "x"].includes(e.key.toLowerCase())) ||
+        e.key === "F12"
+    ) {
+        e.preventDefault();
+    }
+});
+		
+
+
+  
+/* =========================================
+   HOLIDAY DATA
+========================================= */
+
+const holidays = [
+
+/* =========================================
+   2026
+========================================= */
+
+{date:"2026-09-04",name:"Sri Krishnashtami",type:"General"},
+{date:"2026-09-14",name:"Vinayaka Chavithi",type:"General"},
+{date:"2026-10-02",name:"Mahatma Gandhi Jayanthi",type:"General"},
+{date:"2026-10-18",name:"Saddula Bathukamma",type:"General"},
+{date:"2026-10-19",name:"Maharnavami",type:"General"},
+{date:"2026-10-20",name:"Vijaya Dasami",type:"General"},
+{date:"2026-10-21",name:"Following Day of Vijaya Dasami",type:"General"},
+{date:"2026-11-08",name:"Deepavali",type:"General"},
+{date:"2026-11-24",name:"Karthika Pournami",type:"Optional"},
+{date:"2026-12-24",name:"Christmas Eve",type:"Optional"},
+{date:"2026-12-25",name:"Christmas",type:"General"},
+{date:"2026-12-26",name:"Boxing Day",type:"Optional"},
+
+
+/* =========================================
+   2027
+========================================= */
+
+{date:"2027-01-14",name:"Bhogi",type:"Provisional"},
+{date:"2027-01-15",name:"Sankranti",type:"Provisional"},
+{date:"2027-01-16",name:"Kanumu",type:"Provisional"},
+{date:"2027-01-26",name:"Republic Day",type:"Provisional"},
+{date:"2027-03-10",name:"Eid-ul-Fitr",type:"Provisional"},
+{date:"2027-03-22",name:"Holi",type:"Provisional"},
+{date:"2027-04-14",name:"Ambedkar Jayanti",type:"Provisional"},
+{date:"2027-04-15",name:"Sri Rama Navami",type:"Provisional"},
+{date:"2027-08-15",name:"Independence Day",type:"Provisional"},
+{date:"2027-08-25",name:"Sri Krishnashtami",type:"Provisional"},
+{date:"2027-09-04",name:"Vinayaka Chavithi",type:"Provisional"},
+{date:"2027-10-02",name:"Gandhi Jayanti",type:"Provisional"},
+{date:"2027-10-09",name:"Vijaya Dasami",type:"Provisional"},
+{date:"2027-10-29",name:"Deepavali",type:"Provisional"},
+{date:"2027-12-25",name:"Christmas",type:"Provisional"},
+
+
+/* =========================================
+   2028
+========================================= */
+
+{date:"2028-01-14",name:"Bhogi",type:"Provisional"},
+{date:"2028-01-15",name:"Sankranti",type:"Provisional"},
+{date:"2028-01-16",name:"Kanumu",type:"Provisional"},
+{date:"2028-01-26",name:"Republic Day",type:"Provisional"},
+{date:"2028-03-11",name:"Holi",type:"Provisional"},
+{date:"2028-03-27",name:"Ugadi",type:"Provisional"},
+{date:"2028-04-03",name:"Sri Rama Navami",type:"Provisional"},
+{date:"2028-08-15",name:"Independence Day",type:"Provisional"},
+{date:"2028-08-23",name:"Vinayaka Chavithi",type:"Provisional"},
+{date:"2028-09-27",name:"Vijaya Dasami",type:"Provisional"},
+{date:"2028-10-02",name:"Gandhi Jayanti",type:"Provisional"},
+{date:"2028-10-17",name:"Deepavali",type:"Provisional"},
+{date:"2028-12-25",name:"Christmas",type:"Provisional"},
+
+
+/* =========================================
+   2029
+========================================= */
+
+{date:"2029-01-14",name:"Bhogi",type:"Provisional"},
+{date:"2029-01-15",name:"Sankranti",type:"Provisional"},
+{date:"2029-01-16",name:"Kanumu",type:"Provisional"},
+{date:"2029-01-26",name:"Republic Day",type:"Provisional"},
+{date:"2029-03-01",name:"Holi",type:"Provisional"},
+{date:"2029-04-14",name:"Ambedkar Jayanti",type:"Provisional"},
+{date:"2029-04-22",name:"Sri Rama Navami",type:"Provisional"},
+{date:"2029-08-15",name:"Independence Day",type:"Provisional"},
+{date:"2029-09-11",name:"Vinayaka Chavithi",type:"Provisional"},
+{date:"2029-10-02",name:"Gandhi Jayanti",type:"Provisional"},
+{date:"2029-10-16",name:"Vijaya Dasami",type:"Provisional"},
+{date:"2029-11-05",name:"Deepavali",type:"Provisional"},
+{date:"2029-12-25",name:"Christmas",type:"Provisional"},
+
+
+/* =========================================
+   2030
+========================================= */
+
+{date:"2030-01-14",name:"Bhogi",type:"Provisional"},
+{date:"2030-01-15",name:"Sankranti",type:"Provisional"},
+{date:"2030-01-16",name:"Kanumu",type:"Provisional"},
+{date:"2030-01-26",name:"Republic Day",type:"Provisional"},
+{date:"2030-03-20",name:"Holi",type:"Provisional"},
+{date:"2030-04-03",name:"Ugadi",type:"Provisional"},
+{date:"2030-04-12",name:"Sri Rama Navami",type:"Provisional"},
+{date:"2030-04-14",name:"Ambedkar Jayanti",type:"Provisional"},
+{date:"2030-08-15",name:"Independence Day",type:"Provisional"},
+{date:"2030-08-21",name:"Sri Krishnashtami",type:"Provisional"},
+{date:"2030-09-01",name:"Vinayaka Chavithi",type:"Provisional"},
+{date:"2030-10-02",name:"Gandhi Jayanti",type:"Provisional"},
+{date:"2030-10-06",name:"Vijaya Dasami",type:"Provisional"},
+{date:"2030-10-26",name:"Deepavali",type:"Provisional"},
+{date:"2030-12-25",name:"Christmas",type:"Provisional"}
+
+];
+
+
+/* =========================================
+   TODAY
+========================================= */
+
+function getToday() {
+
+    const d = new Date();
+
+    d.setHours(0,0,0,0);
+
+    return d;
+
+}
+
+
+/* =========================================
+   DISPLAY HOLIDAYS
+========================================= */
+
+function showHolidays() {
+
+    const selectedYear =
+        document.getElementById("year").value;
+
+    const table =
+        document.getElementById("holidayTable");
+
+    table.innerHTML = "";
+
+
+    const today = getToday();
+
+
+    let list = holidays.filter(h => {
+
+        const date =
+            new Date(h.date + "T00:00:00");
+
+        return date.getFullYear()
+                .toString() === selectedYear;
+
+    });
+
+
+    /*
+       Hide past holidays only for
+       the current year.
+    */
+
+    if (selectedYear ==
+        today.getFullYear().toString()) {
+
+        list = list.filter(h => {
+
+            return new Date(
+                h.date + "T00:00:00"
+            ) >= today;
+
+        });
+
+    }
+
+
+    list.sort((a,b) => {
+
+        return new Date(a.date) -
+               new Date(b.date);
+
+    });
+
+
+    /* NO HOLIDAYS */
+
+    if (list.length === 0) {
+
+        table.innerHTML = `
+        <tr>
+            <td colspan="5">
+                No upcoming holidays.
+            </td>
+        </tr>
+        `;
+
+        document.getElementById(
+            "nextHoliday"
+        ).innerHTML =
+        "No upcoming holidays.";
+
+        document.getElementById(
+            "countdown"
+        ).innerHTML = "";
+
+        return;
+
+    }
+
+
+    /* DISPLAY TABLE */
+
+    list.forEach((holiday,index) => {
+
+        const date =
+            new Date(
+                holiday.date + "T00:00:00"
+            );
+
+
+        const formattedDate =
+            date.toLocaleDateString(
+                "en-IN",
+                {
+                    day:"2-digit",
+                    month:"long",
+                    year:"numeric"
+                }
+            );
+
+
+        const day =
+            date.toLocaleDateString(
+                "en-IN",
+                {
+                    weekday:"long"
+                }
+            );
+
+
+        let typeClass = "";
+
+        if (holiday.type === "General") {
+            typeClass = "general";
+        }
+
+        if (holiday.type === "Optional") {
+            typeClass = "optional";
+        }
+
+        if (holiday.type === "Provisional") {
+            typeClass = "provisional";
+        }
+
+
+        table.innerHTML += `
+
+        <tr>
+
+            <td>
+                ${index + 1}
+            </td>
+
+            <td class="date">
+                ${formattedDate}
+            </td>
+
+            <td>
+                ${day}
+            </td>
+
+            <td class="holiday">
+                🇮🇳 ${holiday.name}
+            </td>
+
+            <td class="${typeClass}">
+                ${holiday.type}
+            </td>
+
+        </tr>
+
+        `;
+
+    });
+
+
+    /* NEXT HOLIDAY */
+
+    const next = list[0];
+
+    const nextDate =
+        new Date(
+            next.date + "T00:00:00"
+        );
+
+
+    document.getElementById(
+        "nextHoliday"
+    ).innerHTML =
+
+    `🇮🇳 ${next.name}
+     <br>
+     <small>
+     ${nextDate.toLocaleDateString(
+        "en-IN",
+        {
+            day:"2-digit",
+            month:"long",
+            year:"numeric"
+        }
+     )}
+     </small>`;
+
+
+    updateCountdown(nextDate);
+
+}
+
+
+/* =========================================
+   COUNTDOWN
+========================================= */
+
+function updateCountdown(nextDate) {
+
+    const now = new Date();
+
+    const difference =
+        nextDate - now;
+
+
+    const days = Math.ceil(
+        difference /
+        (1000 * 60 * 60 * 24)
+    );
+
+
+    if (days <= 0) {
+
+        document.getElementById(
+            "countdown"
+        ).innerHTML =
+        "🎉 Holiday is today!";
+
+    }
+
+    else {
+
+        document.getElementById(
+            "countdown"
+        ).innerHTML =
+        `⏳ ${days} day(s) remaining`;
+
+    }
+
+}
+
+
+/* =========================================
+   INITIAL DISPLAY
+========================================= */
+
+showHolidays();
+  
+  
+  
+  
+  
+  
+  
+/* =================================================
+   START
+   ================================================= */
+
+displayHolidays();
+
+showNextHoliday();
+
+updateCountdown();
+
+
+// Update countdown every minute
+setInterval(updateCountdown, 60000);
+
+   
+</script>
+
+</body>
+</html>

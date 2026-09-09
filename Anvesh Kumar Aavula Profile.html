@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anvesh Kumar Aavula</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #FAF8F3;
+    --ink: #1F2421;
+    --accent: #5B6B4F;
+    --muted: #8A8578;
+    --line: #D9D4C7;
+    --max-w: 700px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'IBM Plex Sans', sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); transition: border-color 0.15s, color 0.15s; }
+  a:hover, a:focus-visible { color: var(--accent); border-color: var(--accent); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 1px; }
+
+  .wrap {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 5rem 1.5rem 6rem;
+  }
+
+  header.hero {
+    margin-bottom: 4rem;
+  }
+
+  .name {
+    font-family: 'Newsreader', serif;
+    font-weight: 500;
+    font-size: clamp(2.2rem, 5vw, 3rem);
+    margin: 0 0 0.4rem;
+    letter-spacing: -0.01em;
+  }
+
+  .tagline {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.15rem;
+    color: var(--muted);
+    margin: 0 0 2rem;
+  }
+
+  nav {
+    display: flex;
+    gap: 1.75rem;
+    flex-wrap: wrap;
+    font-size: 0.92rem;
+  }
+
+  nav a {
+    border-bottom: none;
+    padding-bottom: 2px;
+    border-bottom: 1px solid transparent;
+  }
+  nav a:hover, nav a:focus-visible { border-bottom-color: var(--accent); }
+
+  section {
+    margin-bottom: 3.75rem;
+    scroll-margin-top: 2rem;
+  }
+
+  h2 {
+    font-family: 'Newsreader', serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin: 0 0 1.25rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .bio p {
+    max-width: 62ch;
+    font-size: 1.02rem;
+  }
+
+  .bio p + p { margin-top: 1.1rem; }
+
+  /* Research / project list styled as an index with dot leaders */
+  .index-list { list-style: none; margin: 0; padding: 0; }
+
+  .index-item {
+    padding: 1.1rem 0;
+    border-bottom: 1px dashed var(--line);
+  }
+  .index-item:last-child { border-bottom: none; }
+
+  .index-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+
+  .index-title {
+    font-family: 'Newsreader', serif;
+    font-size: 1.12rem;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .leader {
+    flex: 1;
+    border-bottom: 1px dotted var(--line);
+    margin-bottom: 0.32rem;
+  }
+
+  .index-year {
+    font-size: 0.9rem;
+    color: var(--muted);
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .index-desc {
+    margin: 0.4rem 0 0;
+    font-size: 0.95rem;
+    color: #4B5049;
+    max-width: 58ch;
+  }
+
+  .index-links {
+    margin-top: 0.5rem;
+    font-size: 0.88rem;
+    display: flex;
+    gap: 1.1rem;
+  }
+
+  /* CV / experience timeline */
+  .cv-list { list-style: none; margin: 0; padding: 0; }
+
+  .cv-item {
+    display: grid;
+    grid-template-columns: 6.5rem 1fr;
+    gap: 1.2rem;
+    padding: 1rem 0;
+    border-bottom: 1px dashed var(--line);
+  }
+  .cv-item:last-child { border-bottom: none; }
+
+  .cv-date {
+    font-size: 0.85rem;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+    padding-top: 0.15rem;
+  }
+
+  .cv-role { font-weight: 600; font-size: 1rem; }
+  .cv-org { color: var(--muted); font-size: 0.92rem; margin-top: 0.1rem; }
+  .cv-desc { margin: 0.4rem 0 0; font-size: 0.92rem; max-width: 52ch; }
+
+  /* Contact */
+  .contact-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    font-size: 1rem;
+  }
+
+  .contact-list span {
+    display: inline-block;
+    width: 5.5rem;
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+
+  footer {
+    margin-top: 5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line);
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+
+  @media (max-width: 480px) {
+    .wrap { padding: 3.5rem 1.25rem 4rem; }
+    .cv-item { grid-template-columns: 1fr; gap: 0.2rem; }
+    .index-row { flex-wrap: wrap; }
+    .leader { display: none; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    a { transition: none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <h1 class="name">Anvesh Kumar Aavula</h1>
+    <p class="tagline">Assistant Professor — Cyber Security</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#roles">Responsibilities</a>
+      <a href="#cv">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About</h2>
+    <div class="bio">
+      <p>
+        I'm an Assistant Professor with over 15 years of teaching experience in Computer Science,
+        currently based at ACE Engineering College, Ghatkesar. My academic
+        focus is Cyber Security — I'm currently pursuing a Ph.D. in Cyber Security at KL University,
+        Vijayawada, having completed my coursework in October 2025.
+      </p>
+      <p>
+        Over my career, I've taught subjects spanning cyber security and systems — including Cyber Crime
+        Investigation &amp; Digital Forensics, Network Security, Blockchain Technologies, and Python
+        Programming — while working on research in machine learning and applied software systems.
+      </p>
+      <p>
+        Alongside teaching, I've taken on coordination and leadership roles, including Placements
+        Coordinator for the Cyber Security, Data Science &amp; IoT department, and Coordinator for the
+        Google Developer Group, organizing Capture-the-Flag events at the college level. I hold an
+        M.Tech in Software Engineering from Kakatiya Institute of Technology &amp; Science and a B.Tech
+        in Information Technology from Balaji Institute of Technology &amp; Science, JNTU Hyderabad.
+      </p>
+    </div>
+  </section>
+
+  <section id="research">
+    <h2>Research &amp; Projects</h2>
+    <ul class="index-list">
+
+      <li class="index-item">
+        <div class="index-row">
+          <span class="index-title">DevOps Implementation for Cloud-Native Monitoring Application</span>
+          <span class="leader"></span>
+          <span class="index-year">2024</span>
+        </div>
+        <p class="index-desc">International Journal of Information Technology and Computer Engineering, ISSN 2347–3657, Vol. 12, Issue 1.</p>
+      </li>
+
+      <li class="index-item">
+        <div class="index-row">
+          <span class="index-title">QR-Code Based Student Bus Pass System</span>
+          <span class="leader"></span>
+          <span class="index-year">2024</span>
+        </div>
+        <p class="index-desc">International Journal of Information Technology and Computer Engineering, ISSN 2347–3657, Vol. 12, Issue 1.</p>
+      </li>
+
+      <li class="index-item">
+        <div class="index-row">
+          <span class="index-title">Using Machine Learning Approaches to Precisely Predict Rainfall</span>
+          <span class="leader"></span>
+          <span class="index-year">2023</span>
+        </div>
+        <p class="index-desc">Turkish Journal of Computer and Mathematics Education, Vol. 14, No. 3, pp. 636–641.</p>
+      </li>
+
+      <li class="index-item">
+        <div class="index-row">
+          <span class="index-title">MERN Stack AI Image Generation Application</span>
+          <span class="leader"></span>
+          <span class="index-year">2023</span>
+        </div>
+        <p class="index-desc">International Journal of Electronics and Communication Engineering, ISSN 2321–2152, Vol. 11, Issue 4.</p>
+      </li>
+
+    </ul>
+  </section>
+
+  <section id="roles">
+    <h2>Responsibilities</h2>
+    <div class="bio">
+      <p>
+        Beyond the classroom, I've taken on a range of administrative and student-facing
+        responsibilities over the years, including:
+      </p>
+    </div>
+    <ul class="index-list">
+      <li class="index-item">
+        <p class="index-desc" style="max-width:60ch;">Department Placement Co-Ordinator &amp; Coordinator for Campus Recruitment Trainings (CRT)</p>
+      </li>
+      <li class="index-item">
+        <p class="index-desc" style="max-width:60ch;">Single Point of Contact (SPOC), Infosys Campus Connect (A.Y 2016–17)</p>
+      </li>
+      <li class="index-item">
+        <p class="index-desc" style="max-width:60ch;">Class Teacher, A.Y 2016–17 through 2020–21</p>
+      </li>
+      <li class="index-item">
+        <p class="index-desc" style="max-width:60ch;">In-charge, Department Discipline Committee (2015–2019)</p>
+      </li>
+      <li class="index-item">
+        <p class="index-desc" style="max-width:60ch;">Member, Department Women Grievance Cell (A.Y 2019–20)</p>
+      </li>
+      <li class="index-item">
+        <p class="index-desc" style="max-width:60ch;">Coordinator, Student Counseling Committee (2015, 2016, 2018)</p>
+      </li>
+      <li class="index-item">
+        <p class="index-desc" style="max-width:60ch;">Time Table In-charge (A.Y 2016–17) &amp; Coordinator, Class Review Committee</p>
+      </li>
+      <li class="index-item">
+        <p class="index-desc" style="max-width:60ch;">Library Coordinator &amp; Lab In-charge</p>
+      </li>
+      <li class="index-item">
+        <p class="index-desc" style="max-width:60ch;">In-charge, Incubation Center</p>
+      </li>
+      <li class="index-item">
+        <p class="index-desc" style="max-width:60ch;">Organized college-level bootcamps and student/faculty workshops</p>
+      </li>
+    </ul>
+  </section>
+
+  <section id="cv">
+    <h2>Experience</h2>
+    <ul class="cv-list">
+
+      <li class="cv-item">
+        <div class="cv-date">2026 — Present</div>
+        <div>
+          <div class="cv-role">Assistant Professor</div>
+          <div class="cv-org">ACE Engineering College, Ghatkesar</div>
+          <p class="cv-desc">Continuing focus on Cyber Security teaching and research.</p>
+        </div>
+      </li>
+
+      <li class="cv-item">
+        <div class="cv-date">2023 — 2026</div>
+        <div>
+          <div class="cv-role">Assistant Professor</div>
+          <div class="cv-org">Malla Reddy College of Engineering &amp; Technology, Kompally</div>
+          <p class="cv-desc">Taught Cyber Security, Digital Forensics, and Network Security; Placements Coordinator for Cyber Security, Data Science &amp; IoT.</p>
+        </div>
+      </li>
+
+      <li class="cv-item">
+        <div class="cv-date">2024 — Present</div>
+        <div>
+          <div class="cv-role">Ph.D. in Cyber Security</div>
+          <div class="cv-org">KL University, Vijayawada</div>
+          <p class="cv-desc">Joined December 2, 2024. Coursework completed October 10, 2025.</p>
+        </div>
+      </li>
+
+      <li class="cv-item">
+        <div class="cv-date">2012 — 2023</div>
+        <div>
+          <div class="cv-role">Assistant Professor</div>
+          <div class="cv-org">Jyothishmathi Institute of Technological Sciences, Karimnagar</div>
+          <p class="cv-desc">11 years teaching Computer Science &amp; Engineering subjects; coordinated multiple faculty development programs and student initiatives.</p>
+        </div>
+      </li>
+
+      <li class="cv-item">
+        <div class="cv-date">2011 — 2012</div>
+        <div>
+          <div class="cv-role">Assistant Professor</div>
+          <div class="cv-org">Ganapathy Engineering College, Warangal</div>
+          
+        </div>
+      </li>
+
+      <li class="cv-item">
+        <div class="cv-date">2010 — 2011</div>
+        <div>
+          <div class="cv-role">Assistant Professor</div>
+          <div class="cv-org">Kamala Institute of Technology and Science, Karimnagar</div>
+          
+        </div>
+      </li>
+
+      <li class="cv-item">
+        <div class="cv-date">2010</div>
+        <div>
+          <div class="cv-role">M.Tech in Software Engineering</div>
+          <div class="cv-org">Kakatiya Institute of Technology &amp; Science, Warangal</div>
+          <p class="cv-desc">Graduated with 75%.</p>
+        </div>
+      </li>
+
+      <li class="cv-item">
+        <div class="cv-date">2008</div>
+        <div>
+          <div class="cv-role">B.Tech in Information Technology</div>
+          <div class="cv-org">Balaji Institute of Technology &amp; Science, JNTU Hyderabad</div>
+          <p class="cv-desc">Graduated with 61.5%.</p>
+        </div>
+      </li>
+
+      <li class="cv-item">
+        <div class="cv-date">2004</div>
+        <div>
+          <div class="cv-role">Intermediate Public Examination</div>
+          <div class="cv-org">S.N Jr. College, Hanamkonda, Warangal</div>
+          <p class="cv-desc">Board of Intermediate Education, Andhra Pradesh — 73.1%.</p>
+        </div>
+      </li>
+
+      <li class="cv-item">
+        <div class="cv-date">2002</div>
+        <div>
+          <div class="cv-role">SSC</div>
+          <div class="cv-org">All Saint's High School</div>
+          <p class="cv-desc">School of Secondary Education, Andhra Pradesh — 76%.</p>
+        </div>
+      </li>
+
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <ul class="contact-list">
+      <li><span>Email</span><a href="mailto:anveshkumaraavula1987@gmail.com">anveshkumaraavula1987@gmail.com</a></li>
+      <li><span>Phone</span><a href="tel:+918121957441">+91 81219 57441</a></li>
+      <li><span>Location</span><span style="color:var(--ink); width:auto;">Hanamkonda, Warangal, Telangana</span></li>
+    </ul>
+  </section>
+
+  <footer>
+    &copy; 2026 Anvesh Kumar Aavula
+  </footer>
+
+</div>
+</body>
+</html>

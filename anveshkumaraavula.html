@@ -1,0 +1,1738 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Anvesh Kumar Aavula</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Craftivo
+  * Template URL: https://bootstrapmade.com/craftivo-bootstrap-portfolio-template/
+  * Updated: Oct 04 2025 with Bootstrap v5.3.8
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  <style>
+  :root {
+    --bg: #0f1117;
+    --card: #171a23;
+    --row-hover: #1f2330;
+    --border: #262b3a;
+    --text: #eef0f5;
+    --muted: #9aa1b4;
+    --accent1: #6c8cff;
+    --accent2: #c792ea;
+    --accent3: #4dd4ac;
+    --accent4: #ffd166;
+  }
+  * { box-sizing: border-box; }
+
+
+  .table-wrap {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0,0,0,.25);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  thead th {
+    text-align: left;
+    font-size: .72rem;
+    text-transform: uppercase;
+    letter-spacing: .6px;
+    color: var(--muted);
+    font-weight: 700;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(255,255,255,.02);
+  }
+  thead th.col-year { text-align: center; width: 90px; }
+  tbody td {
+    padding: 18px 20px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    font-size: .9rem;
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr { transition: background .15s ease; }
+  tbody tr:hover { background: var(--row-hover); }
+
+  .title {
+    font-weight: 700;
+    font-size: .96rem;
+    color: var(--text);
+    line-height: 1.4;
+  }
+  .venue {
+    margin-top: 6px;
+    color: var(--muted);
+    font-size: .82rem;
+    line-height: 1.5;
+  }
+  .issn {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: .68rem;
+    color: var(--accent1);
+    background: rgba(108,140,255,.12);
+    padding: 2px 8px;
+    border-radius: 999px;
+    letter-spacing: .3px;
+  }
+  .year-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 54px;
+    padding: 5px 0;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: .82rem;
+  }
+  .year-2024 { background: rgba(77,212,172,.15); color: var(--accent3); }
+  .year-2023 { background: rgba(255,209,102,.15); color: var(--accent4); }
+
+  .idx {
+    color: var(--muted);
+    font-size: .78rem;
+    font-weight: 600;
+  }
+
+  @media (max-width: 700px) {
+    thead { display: none; }
+    table, tbody, tr, td { display: block; width: 100%; }
+    tbody tr {
+      border-bottom: 1px solid var(--border);
+      padding: 16px 20px;
+    }
+    tbody td { border: none; padding: 4px 0; }
+    .idx { display: none; }
+    .year-pill { margin-top: 8px; }
+  }
+</style>
+	<style>
+.btn {
+    display: inline-flex;
+	justify-content: center;
+    align-items: center;
+	background-color: #4a5568;
+    gap: 10px;
+    padding: 12px 28px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: not-allowed;
+  }
+
+  .btn-primary {
+    background-color: #4a5568;
+    color: #fff;
+  }
+
+  .spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
+  .calendar-embed-wrap {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 45px -20px rgba(0,0,0,0.35);
+    border: 1px solid rgba(0,0,0,0.08);
+  }
+  .calendar-embed-frame {
+    display: block;
+    width: 100%;
+    height: 85vh;
+    min-height: 640px;
+    border: 0;
+  }
+  .calendar-embed-note {
+    text-align: center;
+    margin-top: 14px;
+    font-size: 0.9rem;
+  }
+  .calendar-embed-note a {
+    text-decoration: none;
+    font-weight: 600;
+  }
+			
+			</style>
+			
+			
+  
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="anveshkumaraavula.html" class="logo d-flex align-items-center me-auto">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.webp" alt=""> -->
+        <h1 class="sitename">@28.Leo</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#resume">Resume</a></li>
+      
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li class="dropdown"><a href="#"><span>Subjects</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="Blockchain-Technology-Proj/Blockchain_HomePage.html">Blockchain Technology</a></li>
+             
+              <li><a href="Java-Programming-Proj/JavaProgramming_HomePage.html">Java Programming</a></li>
+			  <!-- <li class="dropdown"><a href="#"><span>Java Programming</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                 <ul>
+                  <li><a href="#">Deep Dropdown 1</a></li>
+                  <li><a href="#">Deep Dropdown 2</a></li>
+                  <li><a href="#">Deep Dropdown 3</a></li>
+                  <li><a href="#">Deep Dropdown 4</a></li>
+                  <li><a href="#">Deep Dropdown 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Dropdown 3</a></li>
+              <li><a href="#">Dropdown 4</a></li>-->
+            </ul>
+          </li>
+		      <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+		  <!--<li><a href="#calendar-check">Calendar</a></li> -->
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="#calendar-check">Holidays Calendar</a>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+
+      <img src="assets/img/profile/profile-bg-5.jpeg" alt="" data-aos="fade-in">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+            <h3>Hi, I'm Anvesh Kumar aavula</h3>
+            <p>I'm a <span class="typed" data-typed-items="Educator, Developer, Traveller, Photographer"></span><span class="typed-cursor" aria-hidden="true"></span></p>
+            <div class="social-links">
+              <a href="#"><i class="bi bi-twitter-x"></i></a>
+              <a href="#"><i class="bi bi-facebook"></i></a>
+              <a href="#"><i class="bi bi-instagram"></i></a>
+              <a href="#"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Hero Section -->
+	
+	
+		    <!-- Calendar Section -->
+    <section id="calendar-check" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <span class="subtitle">Telangana Holidays</span>
+        <!--<h2>Calendar</h2>-->
+       <!-- <p> Telangana Holidays...!!!</p> -->
+	  </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="calendar-embed-wrap">
+          <iframe
+            src="telangana-holidays-2026-2050.html"
+            title="Telangana Holidays Calendar"
+            class="calendar-embed-frame"
+            loading="lazy">
+          </iframe>
+        </div>
+        <p class="calendar-embed-note">
+          <a href="telangana-holidays-2026-2050.html" target="_blank" rel="noopener">Open full calendar in a new tab &rarr;</a>
+        </p>
+      </div>
+
+    </section><!-- /Contact Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <span class="subtitle">About Me</span>
+        <!--<h2>About Me</h2>-->
+       <p>
+        I'm an Assistant Professor with over 15 years of teaching experience in Computer Science,
+        currently based at ACE Engineering College, Ghatkesar. My academic
+        focus is Cyber Security — I'm currently pursuing a Ph.D. in Cyber Security at KL University,
+        Vijayawada, having completed my coursework in October 2025.
+      </p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-5">
+          <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="150">
+            <div class="profile-card">
+              <div class="profile-header">
+                <div class="profile-avatar">
+                  <img src="assets/img/profile/profile-square-3.jpg" class="img-fluid" alt="">
+                  <div class="status-indicator"></div>
+                </div>
+                <h3>Anvesh Kumar Aavula</h3>
+                <span class="role">Assistant Professor</span>
+                <div class="rating">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-half"></i>
+                  <span>4.8</span>
+                </div>
+              </div>
+
+              <div class="profile-stats">
+                <div class="stat-item">
+                  <h4>56</h4>
+                  <p>Projects</p>
+                </div>
+                <div class="stat-item">
+                  <h4>02</h4>
+                  <p>CTF - Capture The Flag</p>
+                </div>
+                <div class="stat-item">
+                  <h4>03</h4>
+                  <p>Bootcamp Pilot Projects</p>
+                </div>
+              </div>
+
+
+              <div class="profile-actions">
+                <a href="#" class="btn-primary"><i class="bi bi-download"></i> Download CV</a>
+                <a href="#" class="btn-secondary"><i class="bi bi-envelope"></i> Contact</a>
+              </div>
+
+              <div class="social-connect">
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+                <a href="#"><i class="bi bi-github"></i></a>
+                <a href="#"><i class="bi bi-twitter"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-8" data-aos="fade-left" data-aos-delay="200">
+            <div class="content-wrapper">
+              <div class="bio-section">
+                <div class="section-tag">About Me</div>
+                <h2>Transforming Ideas into Digital Reality</h2>
+                <p>
+        Over my career, I've taught subjects spanning cyber security and systems — including Cyber Crime
+        Investigation &amp; Digital Forensics, Network Security, Blockchain Technologies, and Python
+        Programming — while working on research in machine learning and applied software systems.
+      </p>
+      <p>
+        Alongside teaching, I've taken on coordination and leadership roles, including Placements
+        Coordinator for the Cyber Security, Data Science &amp; IoT department, and Coordinator for the
+        Google Developer Group, organizing Capture-the-Flag events at the college level. I hold an
+        M.Tech in Software Engineering from Kakatiya Institute of Technology &amp; Science and a B.Tech
+        in Information Technology from Balaji Institute of Technology &amp; Science, JNTU Hyderabad.
+      </p>
+              </div>
+
+              <div class="details-grid">
+                <div class="detail-item" data-aos="fade-up" data-aos-delay="250">
+                  <i class="bi bi-briefcase"></i>
+                  <div class="detail-content">
+                    <span>Experience</span>
+                    <strong>15+ Years</strong>
+                  </div>
+                </div>
+
+                <div class="detail-item" data-aos="fade-up" data-aos-delay="300">
+                  <i class="bi bi-mortarboard"></i>
+                  <div class="detail-content">
+                    <span>Degree</span>
+                    <strong>Master of Technology</strong>
+                  </div>
+                </div>
+
+                <div class="detail-item" data-aos="fade-up" data-aos-delay="350">
+                  <i class="bi bi-geo-alt"></i>
+                  <div class="detail-content">
+                    <span>Based In</span>
+                    <strong>Warangal, Telangana</strong>
+                  </div>
+                </div>
+
+                <div class="detail-item" data-aos="fade-up" data-aos-delay="100">
+                  <i class="bi bi-envelope"></i>
+                  <div class="detail-content">
+                    <span>Email</span>
+                    <strong>anveshkumaraavula1987@gmail.com</strong>
+                  </div>
+                </div>
+
+                <div class="detail-item" data-aos="fade-up" data-aos-delay="150">
+                  <i class="bi bi-phone"></i>
+                  <div class="detail-content">
+                    <span>Phone</span>
+                    <strong>+91 8121 957 441</strong>
+                  </div>
+                </div>
+
+                <div class="detail-item" data-aos="fade-up" data-aos-delay="200">
+                  <i class="bi bi-calendar-check"></i>
+                  <div class="detail-content">
+                    <span>Availability</span>
+                    <strong>Open to Work</strong>
+                  </div>
+                </div>
+              </div>
+
+              <div class="skills-showcase" data-aos="fade-up" data-aos-delay="250">
+                <div class="section-tag">Core Skills</div>
+                <h3>Technical Proficiency</h3>
+
+                <div class="skills-list skills-animation">
+                  <div class="skill-item">
+                    <div class="skill-info">
+                      <span class="skill-name">Blockchain Technology</span>
+                      <span class="skill-percent">95%</span>
+                    </div>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+
+                  <div class="skill-item">
+                    <div class="skill-info">
+                      <span class="skill-name">Cyber Crime Investigation and Digital Forensics</span>
+                      <span class="skill-percent">90%</span>
+                    </div>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+
+                  <div class="skill-item">
+                    <div class="skill-info">
+                      <span class="skill-name">Cryptography and Network Security</span>
+                      <span class="skill-percent">88%</span>
+                    </div>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+
+                  <div class="skill-item">
+                    <div class="skill-info">
+                      <span class="skill-name">Cyber Security Essential and Cyber Laws</span>
+                      <span class="skill-percent">85%</span>
+                    </div>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+
+                  <div class="skill-item">
+                    <div class="skill-info">
+                      <span class="skill-name">Java Programming</span>
+                      <span class="skill-percent">80%</span>
+                    </div>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <span class="subtitle">Resume</span>
+        <!--<h2>Resume</h2>-->
+        <p>Intend to build a career in the current rapidly growing technological environment which makes me realize my potential and gives a chance to utilize my caliber for better productivity and accelerated growth of the Organisation.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-5">
+          <div class="col-lg-6">
+            <div class="experience-section">
+              <div class="section-header" data-aos="fade-right" data-aos-delay="200">
+                <div class="header-content">
+                  <span class="section-badge">Experience</span>
+                  <h2>Professional Journey</h2>
+                  <p>My teaching career spans over 15 years across five institutions in Telangana.<br> 
+				  I began as an Assistant Professor at Kamala Institute of Technology and Science, Karimnagar (2010–2011),<br> 
+				  before moving to Ganapathy Engineering College, Warangal (2011–2012).<br> 
+				  I then spent over a decade — from 2012 to 2023 — at Jyothishmathi Institute of Technological Sciences, Karimnagar, building my foundation in Computer Science and Cyber Security education.<br> 
+				  From March 2023, I joined Malla Reddy College of Engineering & Technology, Kompally, where I taught until June 2026 and took on roles including Placements Coordinator.<br> 
+				  I'm currently an Assistant Professor at ACE Engineering College, Ghatkesar, continuing my focus on Cyber Security teaching and research alongside my ongoing Ph.D..</p>
+                </div>
+              </div>
+
+              <div class="experience-cards">
+                <div class="exp-card featured" data-aos="zoom-in" data-aos-delay="300">
+                  <div class="card-header">
+                    <div class="company-logo">
+                      <i class="bi bi-buildings"></i>
+                    </div>
+                    <div class="period-badge">Current</div>
+                  </div>
+                  <div class="card-body">
+                    <h3>Assistant Professor</h3>
+                    <span class="duration">2026 - Present</span>
+                    <p class="description">Handling the Subjects Java Programming and CSPT.</p>
+                    <!-- <p class="description">Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute.</p>-->
+                    <div class="skills-tags">
+                      <span class="skill-tag">Leadership</span>
+                      <span class="skill-tag">Strategy</span>
+                      <span class="skill-tag">Innovation</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="exp-card" data-aos="zoom-in" data-aos-delay="350">
+                  <div class="card-header">
+                    <div class="company-logo">
+                      <i class="bi bi-laptop"></i>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h3>Resposibilities</h3>
+                    <p class="company-name">Jyothishmathi Institute OF Technological &amp; Sciences</p>
+                    <span class="duration">2012 - 2023</span>
+                    <p class="description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam.</p>
+					
+					 <p> Beyond the classroom, I've taken on a range of administrative and student-facing
+        responsibilities over the years, including:
+      </p>
+    
+        <p>Department Placement Co-Ordinator &amp; Coordinator for Campus Recruitment Trainings (CRT)</p>
+     
+        <p>Single Point of Contact (SPOC), Infosys Campus Connect (A.Y 2016–17)</p>
+      
+        <p>Class Teacher, A.Y 2016–17 through 2020–21</p>
+      
+        <p>In-charge, Department Discipline Committee (2015–2019)</p>
+     
+        <p>Member, Department Women Grievance Cell (A.Y 2019–20)</p>
+      
+        <p>Coordinator, Student Counseling Committee (2015, 2016, 2018)</p>
+     
+        <p>Time Table In-charge (A.Y 2016–17) &amp; Coordinator, Class Review Committee</p>
+      
+        <p>Library Coordinator &amp; Lab In-charge</p>
+      
+        <p>In-charge, Incubation Center</p>
+      
+        <p>Organized college-level bootcamps and student/faculty workshops</p>
+      				
+					
+                  </div>
+                </div>
+
+                           <div class="exp-card aos-init aos-animate" data-aos="zoom-in" data-aos-delay="400">
+                  <div class="card-header">
+                    <div class="company-logo">
+                      <i class="bi bi-palette"></i>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h3>GDG Faculty Co-odinator</h3>
+                    <p class="company-name">Google Developer Groups</p>
+                    <span class="duration">2024 - 2026</span>
+                    <p class="description">Faculty Coordinator for Google Developer Group and Organized Various “Capture The Flag” Events.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="education-section">
+              <div class="section-header" data-aos="fade-left" data-aos-delay="200">
+                <div class="header-content">
+                  <span class="section-badge">Education</span>
+                  <h2>Academic Background</h2>
+                  <p>My academic path began at All Saint's High School, where I completed my SSC in 2002 with 76%.<br> 
+				  I then completed my Intermediate Public Examination at S.N Jr. College, Hanamkonda, Warangal in 2004, scoring 73.1%.<br>
+				  I went on to earn my B.Tech in Information Technology from Balaji Institute of Technology & Science (affiliated to JNTU Hyderabad), Narsampet, Warangal, in 2008 with 61.5%. <br>
+				  I followed this with an M.Tech in Software Engineering from Kakatiya Institute of Technology & Science, Warangal, in 2010, graduating with 75%.<br>
+				  I'm currently pursuing a Ph.D. in Cyber Security at KL University, Vijayawada — I joined the program on December 2, 2024, and completed my coursework on October 10, 2025.</p>
+                </div>
+              </div>
+
+              <div class="education-timeline" data-aos="fade-left" data-aos-delay="300">
+                <div class="timeline-track">
+                  <div class="timeline-item">
+                    <div class="timeline-marker">
+                      <i class="bi bi-mortarboard-fill"></i>
+                    </div>
+                    <div class="timeline-content">
+                      <div class="education-meta">
+                        <span class="year-range">2008 - 2010</span>
+                        <span class="degree-level">Masters</span>
+                      </div>
+                      <h4>Master of Technology</h4>
+                      <p class="institution">Software Engineering</p>
+                      <p class="description">Pursued Software Engineering Degree, M.tech in Kits Warangal during 2008 - 2010  </p>
+                      <!--<p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore.</p>>-->
+                      <div class="achievement">
+                        <i class="bi bi-award"></i>
+                        <span>Full-Time</span>
+                      </div
+                    </div>
+                  </div>
+
+                  <div class="timeline-item">
+                    <div class="timeline-marker">
+                      <i class="bi bi-book"></i>
+                    </div>
+                    <div class="timeline-content">
+                      <div class="education-meta">
+                        <span class="year-range">2026 - 2029</span>
+                        <span class="degree-level">Bachelor</span>
+                      </div>
+                       <h4> 2026 Trasformation in to Other Direction... </h4>
+                      <p class="institution">Not Yet Decided..</p>
+                      <p class="description">Still Under Process...</p>
+                    </div>
+                  </div>
+
+                  <div class="timeline-item">
+                    <div class="timeline-marker">
+                      <i class="bi bi-patch-check-fill"></i>
+                    </div>
+                    <div class="timeline-content">
+                      <div class="education-meta">
+                        <span class="year-range">2016 - 2023</span>
+                        <span class="degree-level">Certificates</span>
+                      </div>
+                      <h4>Professional Certifications</h4>
+                      <div class="certifications-list">
+					   <div class="cert-item">
+                          <span class="cert-name">Emerging Trends and Challenges in Cyber Security </span>
+                          <span class="cert-year">2025</span>
+                        </div>
+					
+					   <div class="cert-item">
+                          <span class="cert-name">Emerging Research Trends in Blockchain &amp; Gata Science </span>
+                          <span class="cert-year">2023</span>
+                        </div>
+						
+						  <div class="cert-item">
+                          <span class="cert-name"> Emerging Technologies in Data-Driven Artificial Intelligence </span>
+                          <span class="cert-year">2023</span>
+                        </div>
+						
+                        <div class="cert-item">
+                          <span class="cert-name">Problem Solving and Decision Making</span>
+                          <span class="cert-year">2019</span>
+                        </div>
+                        <div class="cert-item">
+                          <span class="cert-name">Database Programming with PL/SQL</span>
+                          <span class="cert-year">2018</span>
+                        </div>
+                        <div class="cert-item">
+                          <span class="cert-name">Android Developer Fundamentals</span>
+                          <span class="cert-year">2018</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Resume Section -->
+
+   <!-- Services Section -->
+    <section id="services" class="services section">
+
+      <!-- Section Title -->
+      <div class="container section-title aos-init aos-animate" data-aos="fade-up">
+        <span class="subtitle">Services</span>
+        <!--<h2>Services</h2>-->
+      </div><!-- End Section Title -->
+			<center> <button class="btn btn-primary btn-md" disabled="">
+			<span class="spinner"></span>
+			Under Construction…
+			</button></center><br>
+      <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+          <div class="col-lg-3 col-md-6 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
+            <div class="service-item">
+              <div class="icon-wrapper">
+                <i class="bi bi-palette"></i>
+              </div>
+              <!--  <h4>Brand Identity</h4>
+            <p>Curabitur non nulla sit amet nisl tempus convallis quis ac lectus vivamus magna.</p>
+              <a href="service-details.html" class="read-more">
+                <span>Explore</span>
+                <i class="bi bi-arrow-right"></i>
+              </a>-->
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="200">
+            <div class="service-item featured">
+              <div class="featured-tag">Featured</div>
+              <div class="icon-wrapper">
+                <i class="bi bi-layout-text-window-reverse"></i>
+              </div>
+              <!-- <h4>UI/UX Design</h4>
+              <p>Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui donec rutrum.</p>
+              <a href="service-details.html" class="read-more">
+                <span>Explore</span>
+                <i class="bi bi-arrow-right"></i>
+              </a>-->
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="300">
+            <div class="service-item">
+              <div class="icon-wrapper">
+                <i class="bi bi-code-slash"></i>
+              </div>
+             <!-- <h4>Development</h4>
+              <p>Praesent sapien massa convallis a pellentesque nec egestas non nisi cras ornare arcu.</p>
+              <a href="service-details.html" class="read-more">
+                <span>Explore</span>
+                <i class="bi bi-arrow-right"></i>
+              </a> -->
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="400">
+            <div class="service-item">
+              <div class="icon-wrapper">
+                <i class="bi bi-phone"></i>
+              </div>
+             <!-- <h4>Mobile Apps</h4>
+              <p>Vivamus suscipit tortor eget felis porttitor volutpat quisque velit nisi pretium ut lacinia.</p>
+              <a href="service-details.html" class="read-more">
+                <span>Explore</span>
+                <i class="bi bi-arrow-right"></i>
+              </a> -->
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
+            <div class="service-item">
+              <div class="icon-wrapper">
+                <i class="bi bi-megaphone"></i>
+              </div>
+             <!-- <h4>Digital Marketing</h4>
+              <p>Nulla porttitor accumsan tincidunt curabitur aliquet quam id dui posuere blandit mauris.</p>
+              <a href="service-details.html" class="read-more">
+                <span>Explore</span>
+                <i class="bi bi-arrow-right"></i>
+              </a> -->
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="200">
+            <div class="service-item">
+              <div class="icon-wrapper">
+                <i class="bi bi-search"></i>
+              </div>
+              <!-- <h4>SEO Services</h4>
+              <p>Pellentesque in ipsum id orci porta dapibus donec sollicitudin molestie malesuada proin.</p>
+              <a href="service-details.html" class="read-more">
+                <span>Explore</span>
+                <i class="bi bi-arrow-right"></i>
+              </a> -->
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="300">
+            <div class="service-item">
+              <div class="icon-wrapper">
+                <i class="bi bi-graph-up-arrow"></i>
+              </div>
+            <!--  <h4>Analytics</h4>
+              <p>Sed porttitor lectus nibh curabitur arcu erat accumsan id imperdiet et porttitor at sem.</p>
+              <a href="service-details.html" class="read-more">
+                <span>Explore</span>
+                <i class="bi bi-arrow-right"></i>
+              </a> -->
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="400">
+            <div class="service-item">
+              <div class="icon-wrapper">
+                <i class="bi bi-shield-check"></i>
+              </div>
+              <!-- <h4>Security</h4>
+              <p>Vivamus magna justo lacinia eget consectetur sed convallis at tellus mauris blandit aliquet.</p>
+              <a href="service-details.html" class="read-more">
+                <span>Explore</span>
+                <i class="bi bi-arrow-right"></i>
+              </a> -->
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row mt-5">
+          <div class="col-12" data-aos="fade-up" data-aos-delay="200">
+            <div class="cta-box">
+              <div class="row align-items-center">
+                <div class="col-lg-8">
+                  <h3>Transform Your Vision Into Reality</h3>
+                  <p>Partner with us to bring your ideas to life with innovative solutions tailored to your needs</p>
+                </div>
+                <div class="col-lg-4 text-lg-end text-center">
+                  <a href="service-details.html" class="cta-btn">Start Your Project</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <span class="subtitle">Portfolio</span>
+     <!--   <h2>Portfolio</h2> -->
+       <!-- <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam</p>-->
+	   
+	    <section id="research">
+  <h4>Research &amp; Projects</h4>
+  <p class="subtitle">Published papers &amp; project work</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th style="width:40px;">#</th>
+          <th>Title &amp; Publication</th>
+          <th class="col-year">Year</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="idx">01</td>
+          <td>
+            <div class="title">DevOps Implementation for Cloud-Native Monitoring Application</div>
+            <div class="venue">International Journal of Information Technology and Computer Engineering, Vol. 12, Issue 1.</div>
+            <span class="issn">ISSN 2347–3657</span>
+          </td>
+          <td class="col-year"><span class="year-pill year-2024">2024</span></td>
+        </tr>
+        <tr>
+          <td class="idx">02</td>
+          <td>
+            <div class="title">QR-Code Based Student Bus Pass System</div>
+            <div class="venue">International Journal of Information Technology and Computer Engineering, Vol. 12, Issue 1.</div>
+            <span class="issn">ISSN 2347–3657</span>
+          </td>
+          <td class="col-year"><span class="year-pill year-2024">2024</span></td>
+        </tr>
+        <tr>
+          <td class="idx">03</td>
+          <td>
+            <div class="title">Using Machine Learning Approaches to Precisely Predict Rainfall</div>
+            <div class="venue">Turkish Journal of Computer and Mathematics Education, Vol. 14, No. 3, pp. 636–641.</div>
+          </td>
+          <td class="col-year"><span class="year-pill year-2023">2023</span></td>
+        </tr>
+        <tr>
+          <td class="idx">04</td>
+          <td>
+            <div class="title">MERN Stack AI Image Generation Application</div>
+            <div class="venue">International Journal of Electronics and Communication Engineering, Vol. 11, Issue 4.</div>
+            <span class="issn">ISSN 2321–2152</span>
+          </td>
+          <td class="col-year"><span class="year-pill year-2023">2023</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+	   
+	   
+      </div><!-- End Section Title -->
+	  
+	  
+	  
+	 
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="200">
+            <li data-filter="*" class="filter-active">All Work</li>
+            <li data-filter=".filter-creative">Creative</li>
+            <li data-filter=".filter-digital">Digital</li>
+            <li data-filter=".filter-strategy">Strategy</li>
+            <li data-filter=".filter-development">Development</li>
+          </ul>
+
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="300">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-creative">
+              <div class="portfolio-card">
+                <div class="portfolio-image-container">
+                  <img src="assets/img/portfolio/portfolio-1.webp" alt="Creative Project" class="img-fluid" loading="lazy">
+                  <div class="portfolio-overlay">
+                    <div class="portfolio-info">
+                      <span class="project-category">Creative Design</span>
+                      <h4>Visual Identity System</h4>
+                    </div>
+                    <div class="portfolio-actions">
+                      <a href="assets/img/portfolio/portfolio-1.webp" class="glightbox portfolio-link">
+                        <i class="bi bi-plus-lg"></i>
+                      </a>
+                      <a href="#" class="portfolio-details">
+                        <i class="bi bi-arrow-right"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="portfolio-meta">
+                  <div class="project-tags">
+                    <span class="tag">Branding</span>
+                    <span class="tag">Identity</span>
+                  </div>
+                  <div class="project-year">2024</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-digital">
+              <div class="portfolio-card">
+                <div class="portfolio-image-container">
+                  <img src="assets/img/portfolio/portfolio-2.webp" alt="Digital Project" class="img-fluid" loading="lazy">
+                  <div class="portfolio-overlay">
+                    <div class="portfolio-info">
+                      <span class="project-category">Digital Experience</span>
+                      <h4>Interactive Web Platform</h4>
+                    </div>
+                    <div class="portfolio-actions">
+                      <a href="assets/img/portfolio/portfolio-2.webp" class="glightbox portfolio-link">
+                        <i class="bi bi-plus-lg"></i>
+                      </a>
+                      <a href="#" class="portfolio-details">
+                        <i class="bi bi-arrow-right"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="portfolio-meta">
+                  <div class="project-tags">
+                    <span class="tag">Web Design</span>
+                    <span class="tag">Development</span>
+                  </div>
+                  <div class="project-year">2024</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-strategy">
+              <div class="portfolio-card">
+                <div class="portfolio-image-container">
+                  <img src="assets/img/portfolio/portfolio-3.webp" alt="Strategy Project" class="img-fluid" loading="lazy">
+                  <div class="portfolio-overlay">
+                    <div class="portfolio-info">
+                      <span class="project-category">Brand Strategy</span>
+                      <h4>Market Positioning</h4>
+                    </div>
+                    <div class="portfolio-actions">
+                      <a href="assets/img/portfolio/portfolio-3.webp" class="glightbox portfolio-link">
+                        <i class="bi bi-plus-lg"></i>
+                      </a>
+                      <a href="#" class="portfolio-details">
+                        <i class="bi bi-arrow-right"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="portfolio-meta">
+                  <div class="project-tags">
+                    <span class="tag">Strategy</span>
+                    <span class="tag">Consulting</span>
+                  </div>
+                  <div class="project-year">2023</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-development">
+              <div class="portfolio-card">
+                <div class="portfolio-image-container">
+                  <img src="assets/img/portfolio/portfolio-4.webp" alt="Development Project" class="img-fluid" loading="lazy">
+                  <div class="portfolio-overlay">
+                    <div class="portfolio-info">
+                      <span class="project-category">Full Stack</span>
+                      <h4>Custom Application</h4>
+                    </div>
+                    <div class="portfolio-actions">
+                      <a href="assets/img/portfolio/portfolio-4.webp" class="glightbox portfolio-link">
+                        <i class="bi bi-plus-lg"></i>
+                      </a>
+                      <a href="#" class="portfolio-details">
+                        <i class="bi bi-arrow-right"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="portfolio-meta">
+                  <div class="project-tags">
+                    <span class="tag">React</span>
+                    <span class="tag">Node.js</span>
+                  </div>
+                  <div class="project-year">2024</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-creative">
+              <div class="portfolio-card">
+                <div class="portfolio-image-container">
+                  <img src="assets/img/portfolio/portfolio-5.webp" alt="Creative Project" class="img-fluid" loading="lazy">
+                  <div class="portfolio-overlay">
+                    <div class="portfolio-info">
+                      <span class="project-category">Art Direction</span>
+                      <h4>Campaign Design</h4>
+                    </div>
+                    <div class="portfolio-actions">
+                      <a href="assets/img/portfolio/portfolio-5.webp" class="glightbox portfolio-link">
+                        <i class="bi bi-plus-lg"></i>
+                      </a>
+                      <a href="#" class="portfolio-details">
+                        <i class="bi bi-arrow-right"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="portfolio-meta">
+                  <div class="project-tags">
+                    <span class="tag">Creative</span>
+                    <span class="tag">Campaign</span>
+                  </div>
+                  <div class="project-year">2024</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-digital">
+              <div class="portfolio-card">
+                <div class="portfolio-image-container">
+                  <img src="assets/img/portfolio/portfolio-6.webp" alt="Digital Project" class="img-fluid" loading="lazy">
+                  <div class="portfolio-overlay">
+                    <div class="portfolio-info">
+                      <span class="project-category">Digital Product</span>
+                      <h4>Mobile Experience</h4>
+                    </div>
+                    <div class="portfolio-actions">
+                      <a href="assets/img/portfolio/portfolio-6.webp" class="glightbox portfolio-link">
+                        <i class="bi bi-plus-lg"></i>
+                      </a>
+                      <a href="#" class="portfolio-details">
+                        <i class="bi bi-arrow-right"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="portfolio-meta">
+                  <div class="project-tags">
+                    <span class="tag">Mobile</span>
+                    <span class="tag">UI/UX</span>
+                  </div>
+                  <div class="project-year">2023</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="portfolio-bottom" data-aos="fade-up" data-aos-delay="400">
+          <div class="row align-items-center">
+            <div class="col-lg-8">
+              <h3>Like what you see?</h3>
+              <p>Donec rutrum congue leo eget malesuada. Vivamus suscipit tortor eget felis porttitor volutpat.</p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+              <a href="#contact" class="btn btn-accent">Let's Work Together</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Portfolio Section -->
+	
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <span class="subtitle">Contact</span>
+        <!--<h2>Contact</h2>-->
+        <p> Coonnecting Near and Far.., You can reach me Out at Any Time..</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4">
+            <div class="info-item">
+              <div class="icon-wrapper">
+                <i class="bi bi-geo-alt"></i>
+              </div>
+              <div>
+                <h3>Address</h3>
+                <p>LB Nagar, Hyderabad, Telanagana</p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="icon-wrapper">
+                <i class="bi bi-telephone"></i>
+              </div>
+              <div>
+                <h3>Call Me</h3>
+                <p>+91 8121 957 441</p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="icon-wrapper">
+                <i class="bi bi-envelope"></i>
+              </div>
+              <div>
+                <h3>Email Me</h3>
+                <p>anveshkumaraavula1987@gmail.com</p>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-8">
+            <form action="forms/contact.php" method="post" class="php-email-form">
+              <div class="row gy-4">
+
+                <div class="col-md-6">
+                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                </div>
+
+                <div class="col-md-6">
+                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                </div>
+
+                <div class="col-md-12">
+                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                </div>
+
+                <div class="col-md-12">
+                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                </div>
+
+                <div class="col-md-12 text-center">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                  <button type="submit">Send Message</button>
+                </div>
+
+              </div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+	
+	
+	
+
+
+  </main>
+
+  <footer id="footer" class="footer">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-about">
+          <a href="#hero" class="logo d-flex align-items-center">
+            <span class="sitename">@.28.Leo</span>
+          </a>
+          <p>  17.348745 ° N, , 78.536249 ° E</p>
+		
+          <div class="social-links d-flex mt-4">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Terms of service</a></li>
+            <li><a href="#contact">Privacy policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="#portfolio">Web Design</a></li>
+            <li><a href="#portfolio">Web Development</a></li>
+            <li><a href="#portfolio">Product Management</a></li>
+            <li><a href="#portfolio">Marketing</a></li>
+            <li><a href="#portfolio">Graphic Design</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contact Us</h4>
+          <p>Anvesh Kumar aavula</p>
+          <p>Hyderabad, Telanagana</p>
+          <p>India</p>
+          <p class="mt-4"><strong>Phone:</strong> <span>+91 8121 957 441</span></p>
+          <p><strong>Email:</strong> <span>anveshkumaraavula1987@gmail.com</span></p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">@.28.Leo</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> | <a href="https://bootstrapmade.com/tools/">DevTools</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script>
+/* ============ FIXED 2026 OFFICIAL DATA (G.O.Rt.No.1715) ============ */
+const holidays2026 = [
+  { date: "2026-01-14", name: "Bhogi", type: "festival" },
+  { date: "2026-01-15", name: "Sankranti / Pongal", type: "festival" },
+  { date: "2026-01-26", name: "Republic Day", type: "national" },
+  { date: "2026-02-15", name: "Maha Shivaratri", type: "regional" },
+  { date: "2026-03-03", name: "Holi", type: "regional" },
+  { date: "2026-03-19", name: "Ugadi (Telugu New Year)", type: "festival" },
+  { date: "2026-03-21", name: "Eid-ul-Fitr (Ramzan)*", type: "regional" },
+  { date: "2026-03-22", name: "Following Day of Ramzan", type: "regional" },
+  { date: "2026-03-27", name: "Sri Rama Navami", type: "regional" },
+  { date: "2026-04-03", name: "Good Friday", type: "regional" },
+  { date: "2026-04-05", name: "Babu Jagjivan Ram's Birthday", type: "regional" },
+  { date: "2026-04-14", name: "Dr. B.R. Ambedkar's Birthday", type: "regional" },
+  { date: "2026-05-27", name: "Eid-ul-Azha (Bakrid)*", type: "regional" },
+  { date: "2026-06-26", name: "Shahadat Imam Hussain (10th Moharam)*", type: "regional" },
+  { date: "2026-08-10", name: "Bonalu", type: "state-festival" },
+  { date: "2026-08-15", name: "Independence Day", type: "national" },
+  { date: "2026-08-26", name: "Eid Milad-un-Nabi*", type: "regional" },
+  { date: "2026-09-04", name: "Sri Krishna Ashtami", type: "festival" },
+  { date: "2026-09-14", name: "Vinayaka Chavithi", type: "festival" },
+  { date: "2026-10-02", name: "Mahatma Gandhi Jayanti", type: "national" },
+  { date: "2026-10-18", name: "Saddula Bathukamma", type: "state-festival" },
+  { date: "2026-10-20", name: "Vijaya Dasami (Dussehra)", type: "festival" },
+  { date: "2026-10-21", name: "Following Day of Vijaya Dasami", type: "festival" },
+  { date: "2026-11-08", name: "Deepavali", type: "festival" },
+  { date: "2026-11-24", name: "Kartika Purnima / Guru Nanak Jayanti", type: "regional" },
+  { date: "2026-12-25", name: "Christmas", type: "regional" },
+  { date: "2026-12-26", name: "Boxing Day", type: "regional" },
+];
+
+const typeLabels = {
+  national: "National", festival: "Festival", "state-festival": "State Festival",
+  regional: "Regional", sunday: "Sunday", "second-saturday": "2nd Saturday"
+};
+
+/* Short "what is this holiday" blurbs shown in the detail popup. */
+const holidayInfo = {
+  "Republic Day": "Marks the day India's Constitution came into effect in 1950, replacing the Government of India Act as the country's governing document.",
+  "Dr. B.R. Ambedkar's Birthday": "Commemorates the birth anniversary of Dr. B.R. Ambedkar, chief architect of the Indian Constitution and a leading social reformer.",
+  "Good Friday": "A Christian observance commemorating the crucifixion of Jesus Christ, observed two days before Easter Sunday.",
+  "Independence Day": "Celebrates India's independence from British rule on 15 August 1947.",
+  "Mahatma Gandhi Jayanti": "Marks the birth anniversary of Mahatma Gandhi, leader of India's non-violent independence movement, also observed globally as the International Day of Non-Violence.",
+  "Christmas": "Christian festival celebrating the birth of Jesus Christ, widely observed as a public holiday.",
+  "Boxing Day": "Traditionally a day for giving gifts to service workers and the needy, observed the day after Christmas.",
+  "Bhogi": "The first day of the Sankranti festival, marked by bonfires (Bhogi Mantalu) symbolising the discarding of old belongings and welcoming the new harvest season.",
+  "Sankranti / Pongal": "Telangana and Andhra's major harvest festival, honouring the Sun God and the season's new crop; known as Pongal in Tamil Nadu.",
+  "Maha Shivaratri": "A major Hindu festival dedicated to Lord Shiva, observed with night-long vigils, fasting and prayer.",
+  "Holi": "The Hindu festival of colours, marking the arrival of spring and the triumph of good over evil.",
+  "Ugadi (Telugu New Year)": "The Telugu and Kannada New Year, marking the first day of the lunisolar calendar's new year, celebrated with Ugadi Pachadi (a mix of six tastes).",
+  "Eid-ul-Fitr (Ramzan)*": "Marks the end of the Islamic holy month of Ramadan, celebrated with prayers, feasting and charity. Date depends on moon sighting.",
+  "Following Day of Ramzan": "An additional gazetted holiday following Eid-ul-Fitr celebrations.",
+  "Sri Rama Navami": "Celebrates the birth of Lord Rama, observed with recitations of the Ramayana and temple festivities.",
+  "Babu Jagjivan Ram's Birthday": "Commemorates the birth anniversary of Babu Jagjivan Ram, a prominent freedom fighter and social justice leader, marked as a Telangana state holiday.",
+  "Eid-ul-Azha (Bakrid)*": "The Islamic 'Festival of Sacrifice', commemorating Ibrahim's willingness to sacrifice his son in obedience to God. Date depends on moon sighting.",
+  "Shahadat Imam Hussain (10th Moharam)*": "Observed by Muslims to mourn the martyrdom of Imam Hussain at the Battle of Karbala. Date depends on moon sighting.",
+  "Bonalu": "A Telangana state festival honouring Goddess Mahakali, celebrated with processions and offerings mainly in Hyderabad and Secunderabad.",
+  "Eid Milad-un-Nabi*": "Marks the birth anniversary of Prophet Muhammad. Date depends on moon sighting.",
+  "Sri Krishna Ashtami": "Celebrates the birth of Lord Krishna, observed with fasting, devotional singing and midnight prayers (also called Janmashtami).",
+  "Vinayaka Chavithi": "Celebrates the birth of Lord Ganesha with elaborate idol installations and processions, also known as Ganesh Chaturthi.",
+  "Saddula Bathukamma": "The concluding and grandest day of the nine-day Bathukamma festival, a flower-stacking tradition unique to Telangana celebrating womanhood and nature.",
+  "Vijaya Dasami (Dussehra)": "Marks the triumph of good over evil, commemorating Lord Rama's victory over Ravana, the culmination of Navratri celebrations.",
+  "Following Day of Vijaya Dasami": "An additional gazetted holiday following Dussehra celebrations.",
+  "Deepavali": "The festival of lights, symbolising the victory of light over darkness, celebrated with lamps, fireworks and family gatherings.",
+  "Kartika Purnima / Guru Nanak Jayanti": "Kartika Purnima is a sacred full-moon day for Hindu worship; the same date marks Guru Nanak Jayanti, the birth anniversary of Sikhism's founder.",
+  "Sunday": "Weekly day off observed across government offices, schools and most businesses.",
+  "2nd Saturday": "The second Saturday of the month is a standard non-working day for banks, government offices and many private establishments in India."
+};
+function getHolidayInfo(name) {
+  return holidayInfo[name] || "Official holiday observed in Telangana. Exact customs and observance may vary by region and community.";
+}
+
+/* ============ DATE HELPERS ============ */
+function fmt(d) { return d.toISOString().slice(0,10); }
+function pad(n) { return n < 10 ? "0"+n : ""+n; }
+function dstr(y,m,d) { return `${y}-${pad(m)}-${pad(d)}`; }
+
+function allSundays(year) {
+  const arr = [];
+  const d = new Date(Date.UTC(year,0,1));
+  while (d.getUTCFullYear() === year) {
+    if (d.getUTCDay() === 0) arr.push(fmt(d));
+    d.setUTCDate(d.getUTCDate() + 1);
+  }
+  return arr;
+}
+function secondSaturdays(year) {
+  const arr = [];
+  for (let m = 0; m < 12; m++) {
+    let count = 0;
+    const d = new Date(Date.UTC(year, m, 1));
+    while (d.getUTCMonth() === m) {
+      if (d.getUTCDay() === 6) {
+        count++;
+        if (count === 2) { arr.push(fmt(d)); break; }
+      }
+      d.setUTCDate(d.getUTCDate() + 1);
+    }
+  }
+  return arr;
+}
+// Western Easter (Anonymous Gregorian algorithm) -> Good Friday = Easter - 2 days
+function goodFriday(year) {
+  const a = year % 19, b = Math.floor(year/100), c = year % 100;
+  const d = Math.floor(b/4), e = b % 4, f = Math.floor((b+8)/25);
+  const g = Math.floor((b-f+1)/3), h = (19*a + b - d - g + 15) % 30;
+  const i = Math.floor(c/4), k = c % 4;
+  const l = (32 + 2*e + 2*i - h - k) % 7;
+  const m = Math.floor((a + 11*h + 22*l)/451);
+  const month = Math.floor((h + l - 7*m + 114)/31);
+  const day = ((h + l - 7*m + 114) % 31) + 1;
+  const easter = new Date(Date.UTC(year, month-1, day));
+  easter.setUTCDate(easter.getUTCDate() - 2);
+  return fmt(easter);
+}
+
+/* Fixed-date holidays, valid & accurate for every year in range */
+function fixedHolidays(year) {
+  const list = [
+    { date: dstr(year,1,26), name: "Republic Day", type: "national" },
+    { date: dstr(year,4,14), name: "Dr. B.R. Ambedkar's Birthday", type: "regional" },
+    { date: goodFriday(year), name: "Good Friday", type: "regional" },
+    { date: dstr(year,8,15), name: "Independence Day", type: "national" },
+    { date: dstr(year,10,2), name: "Mahatma Gandhi Jayanti", type: "national" },
+    { date: dstr(year,12,25), name: "Christmas", type: "regional" },
+  ];
+  // Makar Sankranti is solar and falls Jan 14-15 every year in this range
+  list.push({ date: dstr(year,1,14), name: "Bhogi", type: "festival" });
+  list.push({ date: dstr(year,1,15), name: "Sankranti / Pongal", type: "festival" });
+  return list;
+}
+
+/* ============ TODAY / UPCOMING CUTOFF ============ */
+// Auto-computed from the visitor's actual device date — no manual editing needed.
+// This means past holidays drop off the list by themselves as time passes.
+function getTodayStr() {
+  const d = new Date();
+  return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+}
+let TODAY = getTodayStr(); // dates before this are excluded everywhere
+
+/* ============ BUILD DATA FOR A GIVEN YEAR ============ */
+function buildYearData(year) {
+  const unifiedMap = {};
+  function addEntry(date, name, type) {
+    if (date < TODAY) return; // skip past dates — upcoming only
+    if (!unifiedMap[date]) unifiedMap[date] = { date, names: [], types: [] };
+    unifiedMap[date].names.push(name);
+    unifiedMap[date].types.push(type);
+  }
+
+  const baseHolidays = (year === 2026) ? holidays2026 : fixedHolidays(year);
+  baseHolidays.forEach(h => addEntry(h.date, h.name, h.type));
+  allSundays(year).forEach(d => addEntry(d, "Sunday", "sunday"));
+  secondSaturdays(year).forEach(d => addEntry(d, "2nd Saturday", "second-saturday"));
+
+  const allDates = Object.keys(unifiedMap).sort();
+
+  // streaks
+  function oneDayLater(dateStr) {
+    const d = new Date(dateStr + "T00:00:00Z");
+    d.setUTCDate(d.getUTCDate() + 1);
+    return fmt(d);
+  }
+  const streaks = [];
+  let current = [];
+  for (let i = 0; i < allDates.length; i++) {
+    if (current.length === 0) current.push(allDates[i]);
+    else {
+      const prev = current[current.length - 1];
+      if (oneDayLater(prev) === allDates[i]) current.push(allDates[i]);
+      else { if (current.length >= 2) streaks.push([...current]); current = [allDates[i]]; }
+    }
+  }
+  if (current.length >= 2) streaks.push([...current]);
+
+  return { unifiedMap, allDates, streaks, baseHolidays };
+}
+
+/* ============ RENDER HELPERS ============ */
+const weekdayNames = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+const monthNames = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+function niceDate(dateStr) { const d = new Date(dateStr+"T00:00:00Z"); return `${d.getUTCDate()} ${monthNames[d.getUTCMonth()]}`; }
+function weekday(dateStr) { const d = new Date(dateStr+"T00:00:00Z"); return weekdayNames[d.getUTCDay()]; }
+
+function cardHTML(entry) {
+  const isSunday = entry.types.includes("sunday");
+  const displayNames = entry.names.filter(n => n !== "Sunday" && n !== "2nd Saturday");
+  const nameStr = displayNames.length ? displayNames.join(" + ") : entry.names[0];
+  const badges = [...new Set(entry.types)].map(t => `<span class="badge ${t}">${typeLabels[t]}</span>`).join(" ");
+  return `
+    <div class="card ${isSunday ? 'sunday-mark' : ''}" data-date="${entry.date}">
+      <div class="date">${niceDate(entry.date)}</div>
+      <div class="weekday">${weekday(entry.date)} &middot; ${entry.date.slice(0,4)}</div>
+      <div class="name">${nameStr}</div>
+      ${badges}
+    </div>`;
+}
+function streakHTML(streak, unifiedMap) {
+  const start = niceDate(streak[0]), end = niceDate(streak[streak.length-1]);
+  const items = streak.map(d => {
+    const e = unifiedMap[d];
+    return `<li data-date="${d}" class="streak-item">${niceDate(d)} (${weekday(d)}) &mdash; <span class="dname">${e.names.join(" + ")}</span></li>`;
+  }).join("");
+  return `
+    <div class="streak">
+      <span class="len">${streak.length} days off</span>
+      <div class="range">${start} &ndash; ${end}</div>
+      <ul>${items}</ul>
+    </div>`;
+}
+
+/* ============ STATE ============ */
+let currentYear = 2026;
+let yearData = buildYearData(currentYear);
+
+function renderStats() {
+  const entries = Object.values(yearData.unifiedMap);
+  const sundays = entries.filter(e => e.types.includes("sunday")).length;
+  const festivals = entries.filter(e => e.types.includes("festival") || e.types.includes("state-festival")).length;
+  const national = entries.filter(e => e.types.includes("national")).length;
+  const regional = entries.filter(e => e.types.includes("regional")).length;
+  const longStreaks = yearData.streaks.filter(s => s.length >= 3).length;
+  document.getElementById("statsRow").innerHTML = `
+    <div class="stat"><div class="num">${sundays}</div><div class="lbl">Sundays</div></div>
+    <div class="stat"><div class="num">${festivals}</div><div class="lbl">Festivals</div></div>
+    <div class="stat"><div class="num">${national}</div><div class="lbl">National</div></div>
+    <div class="stat"><div class="num">${regional}</div><div class="lbl">Regional</div></div>
+    <div class="stat"><div class="num">${longStreaks}</div><div class="lbl">3+ Day Breaks</div></div>
+  `;
+}
+
+function renderNotice() {
+  const box = document.getElementById("noticeBox");
+  if (currentYear === 2026) {
+    box.innerHTML = `<b>${currentYear} (from ${niceDate(TODAY)} onward):</b> Full official list from Telangana Govt. Notification G.O.Rt.No.1715 (dated 06-12-2025), including festival &amp; Islamic dates — past dates already excluded. Islamic dates (*) are provisional, subject to moon sighting.`;
+  } else {
+    box.innerHTML = `<b>${currentYear}:</b> Showing calendar-computed dates only — Sundays, 2nd Saturdays, Republic Day, Independence Day, Gandhi Jayanti, Ambedkar Jayanti, Christmas, Good Friday, and solar Sankranti (Jan 14–15). Lunar Hindu festivals (Ugadi, Holi, Vinayaka Chavithi, Bathukamma, Dussehra, Diwali, Maha Shivaratri, etc.) and Islamic holidays (Ramzan, Bakrid, Muharram, Eid Milad) are notified by the Telangana Government one year at a time and aren't available this far ahead — check the official gazette closer to ${currentYear}.`;
+  }
+}
+
+function render(filter) {
+  const content = document.getElementById("content");
+  const { unifiedMap, allDates, streaks } = yearData;
+
+  if (filter === "continuous") {
+    if (streaks.length === 0) {
+      content.innerHTML = `<div class="empty">No upcoming continuous holiday stretches found for ${currentYear}.</div>`;
+      return;
+    }
+    const monthColors = ["#ff6b6b","#ffd166","#4dd4ac","#6c8cff","#c792ea","#ff9770",
+                          "#70d6ff","#ff70a6","#a1de93","#ffb347","#9a8cff","#5ad1c9"];
+    // group streaks by the month of their first date
+    const byMonth = {};
+    streaks.forEach(s => {
+      const m = parseInt(s[0].slice(5,7), 10) - 1;
+      if (!byMonth[m]) byMonth[m] = [];
+      byMonth[m].push(s);
+    });
+    content.innerHTML = Object.keys(byMonth).sort((a,b)=>a-b).map(m => `
+      <div class="section-title"><span class="dot" style="background:${monthColors[m]}"></span>${monthNames[m]} ${currentYear}</div>
+      ${byMonth[m].map(s => streakHTML(s, unifiedMap)).join("")}
+    `).join("");
+    return;
+  }
+
+  let dates = allDates;
+  if (filter !== "all") dates = allDates.filter(d => unifiedMap[d].types.includes(filter));
+
+  if (dates.length === 0) {
+    content.innerHTML = `<div class="empty">No upcoming entries to show here for ${currentYear}.</div>`;
+    return;
+  }
+
+  // group by month
+  const byMonth = {};
+  dates.forEach(d => {
+    const m = parseInt(d.slice(5,7), 10) - 1;
+    if (!byMonth[m]) byMonth[m] = [];
+    byMonth[m].push(d);
+  });
+
+  const monthColors = ["#ff6b6b","#ffd166","#4dd4ac","#6c8cff","#c792ea","#ff9770",
+                        "#70d6ff","#ff70a6","#a1de93","#ffb347","#9a8cff","#5ad1c9"];
+
+  content.innerHTML = Object.keys(byMonth).sort((a,b)=>a-b).map(m => {
+    const monthDates = byMonth[m];
+    return `
+      <div class="section-title"><span class="dot" style="background:${monthColors[m]}"></span>${monthNames[m]} ${currentYear} <span style="color:var(--muted); font-weight:400; font-size:.8rem;">&middot; ${monthDates.length} ${monthDates.length===1?'entry':'entries'}</span></div>
+      <div class="grid">${monthDates.map(d => cardHTML(unifiedMap[d])).join("")}</div>
+    `;
+  }).join("");
+}
+
+function refreshAll() {
+  yearData = buildYearData(currentYear);
+  renderStats();
+  renderNotice();
+  const activeTab = document.querySelector(".tab.active");
+  render(activeTab ? activeTab.dataset.filter : "all");
+}
+
+/* ============ INIT ============ */
+const yearSelect = document.getElementById("yearSelect");
+for (let y = 2026; y <= 2050; y++) {
+  const opt = document.createElement("option");
+  opt.value = y; opt.textContent = y;
+  yearSelect.appendChild(opt);
+}
+yearSelect.value = currentYear;
+
+yearSelect.addEventListener("change", () => {
+  currentYear = parseInt(yearSelect.value, 10);
+  refreshAll();
+});
+document.getElementById("prevYear").addEventListener("click", () => {
+  if (currentYear > 2026) { currentYear--; yearSelect.value = currentYear; refreshAll(); }
+});
+document.getElementById("nextYear").addEventListener("click", () => {
+  if (currentYear < 2050) { currentYear++; yearSelect.value = currentYear; refreshAll(); }
+});
+
+document.getElementById("tabs").addEventListener("click", (e) => {
+  const tab = e.target.closest(".tab");
+  if (!tab) return;
+  document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+  tab.classList.add("active");
+  render(tab.dataset.filter);
+});
+
+/* ============ DETAIL MODAL ============ */
+const modalOverlay = document.getElementById("modalOverlay");
+const modalContent = document.getElementById("modalContent");
+
+function daysUntil(dateStr) {
+  const today = new Date(getTodayStr() + "T00:00:00Z");
+  const target = new Date(dateStr + "T00:00:00Z");
+  return Math.round((target - today) / (1000*60*60*24));
+}
+
+function openHolidayModal(dateStr) {
+  const entry = yearData.unifiedMap[dateStr];
+  if (!entry) return;
+  const displayNames = entry.names.filter(n => n !== "Sunday" && n !== "2nd Saturday");
+  const primaryName = displayNames[0] || entry.names[0];
+  const otherNames = displayNames.slice(1);
+  const badges = [...new Set(entry.types)].map(t => `<span class="badge ${t}">${typeLabels[t]}</span>`).join(" ");
+  const n = daysUntil(dateStr);
+  const countdownText = n === 0 ? "Today" : n === 1 ? "Tomorrow" : n > 1 ? `In ${n} days` : `${Math.abs(n)} day(s) ago`;
+
+  let descHTML = `<div class="m-desc">${getHolidayInfo(primaryName)}</div>`;
+  otherNames.forEach(nm => {
+    descHTML += `<div class="m-desc"><b>${nm}:</b> ${getHolidayInfo(nm)}</div>`;
+  });
+
+  modalContent.innerHTML = `
+    <div class="m-date">${niceDate(dateStr)}</div>
+    <div class="m-sub">${weekday(dateStr)} &middot; ${dateStr}</div>
+    <div class="m-name">${entry.names.join(" + ")}</div>
+    <div class="m-badges">${badges}</div>
+    ${descHTML}
+    <div class="m-countdown">${countdownText}</div>
+  `;
+  modalOverlay.classList.add("open");
+}
+
+function closeHolidayModal() { modalOverlay.classList.remove("open"); }
+
+document.getElementById("content").addEventListener("click", (e) => {
+  const card = e.target.closest(".card[data-date]");
+  const streakItem = e.target.closest(".streak-item[data-date]");
+  const target = card || streakItem;
+  if (!target) return;
+  openHolidayModal(target.dataset.date);
+});
+
+document.getElementById("modalClose").addEventListener("click", closeHolidayModal);
+modalOverlay.addEventListener("click", (e) => { if (e.target === modalOverlay) closeHolidayModal(); });
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeHolidayModal(); });
+
+/* ============ AUTO-UPDATE ============ */
+// Recompute "today" and re-render so already-passed holidays disappear
+// on their own. Runs immediately on load, then:
+//   - every hour, in case the tab is left open across midnight
+//   - re-checks whenever the tab regains focus/visibility (covers laptops
+//     that were asleep, phones backgrounded, etc.)
+function autoRefreshTick() {
+  const newToday = getTodayStr();
+  if (newToday !== TODAY) {
+    TODAY = newToday;
+    refreshAll();
+  }
+}
+setInterval(autoRefreshTick, 60 * 60 * 1000); // hourly check
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "visible") autoRefreshTick();
+});
+
+// Full data rebuild every 30 days, even if the date-change checks above
+// are somehow missed (e.g. a tab kept open indefinitely).
+setInterval(() => {
+  TODAY = getTodayStr();
+  refreshAll();
+}, 30 * 24 * 60 * 60 * 1000);
+
+refreshAll();
+</script>
+  <style data-typed-js-cursor-css="true">
+        .typed-cursor{
+          opacity: 1;
+        }
+        .typed-cursor.typed-cursor--blink{
+          animation: typedjsBlink 0.7s infinite;
+          -webkit-animation: typedjsBlink 0.7s infinite;
+                  animation: typedjsBlink 0.7s infinite;
+        }
+        @keyframes typedjsBlink{
+          50% { opacity: 0.0; }
+        }
+        @-webkit-keyframes typedjsBlink{
+          0% { opacity: 1; }
+          50% { opacity: 0.0; }
+          100% { opacity: 1; }
+        }
+      </style>
+
+</body>
+
+</html>

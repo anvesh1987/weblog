@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Telangana Holidays 2026–2050</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --card: #171a23;
+    --card-hover: #1f2330;
+    --border: #2a2f3e;
+    --text: #eef0f5;
+    --muted: #9aa1b4;
+    --accent1: #ff6b6b;
+    --accent2: #ffd166;
+    --accent3: #4dd4ac;
+    --accent4: #6c8cff;
+    --accent5: #c792ea;
+    --radius: 16px;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: radial-gradient(circle at 20% 0%, #1b1f2e 0%, var(--bg) 45%);
+    color: var(--text);
+    min-height: 100vh;
+    padding-bottom: 60px;
+  }
+  header {
+    padding: 44px 24px 22px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: "";
+    position: absolute;
+    top: -120px; left: 50%;
+    transform: translateX(-50%);
+    width: 600px; height: 300px;
+    background: radial-gradient(ellipse, rgba(108,140,255,0.25), transparent 70%);
+    pointer-events: none;
+  }
+  header h1 {
+    font-size: 2rem;
+    margin: 0 0 6px;
+    background: linear-gradient(90deg, var(--accent4), var(--accent5), var(--accent1));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: .5px;
+  }
+  header p { color: var(--muted); margin: 0; font-size: .92rem; }
+
+  .year-picker {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 26px auto 0;
+    flex-wrap: wrap;
+  }
+  .year-picker select {
+    background: var(--card);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 10px 18px;
+    font-size: .95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: border-color .2s ease, background .2s ease;
+    appearance: none;
+    -webkit-appearance: none;
+    text-align: center;
+    min-width: 90px;
+  }
+  .year-picker select:hover, .year-picker select:focus { border-color: var(--accent4); outline: none; }
+  .year-picker button {
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--text);
+    border-radius: 50%;
+    width: 38px; height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: border-color .2s ease, background .2s ease, transform .15s ease;
+  }
+  .year-picker button:hover { border-color: var(--accent4); background: var(--card-hover); transform: translateY(-1px); }
+  .year-picker button:active { transform: translateY(0) scale(.94); }
+  .year-picker button:disabled { opacity: .35; cursor: not-allowed; transform: none; }
+
+  .stats {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin: 24px auto 0;
+    max-width: 900px;
+    padding: 0 16px;
+  }
+  .stat {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 18px;
+    min-width: 100px;
+    text-align: center;
+  }
+  .stat .num { font-size: 1.4rem; font-weight: 700; }
+  .stat .lbl { font-size: .68rem; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; margin-top: 2px;}
+
+  .notice {
+    max-width: 900px;
+    margin: 26px auto 0;
+    padding: 14px 18px;
+    border-radius: 12px;
+    background: rgba(255,209,102,.08);
+    border: 1px solid rgba(255,209,102,.3);
+    color: #ffd166;
+    font-size: .82rem;
+    line-height: 1.5;
+  }
+
+  .tabs {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin: 28px auto 10px;
+    padding: 6px;
+    max-width: 1000px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    width: fit-content;
+  }
+  .tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: transparent;
+    border: 1px solid transparent;
+    color: var(--muted);
+    padding: 9px 18px;
+    border-radius: 999px;
+    font-size: .85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color .25s ease, background .25s ease, transform .15s ease, box-shadow .25s ease;
+    user-select: none;
+    white-space: nowrap;
+    position: relative;
+  }
+  .tab .ico { font-size: .9em; line-height: 1; opacity: .85; }
+  .tab:hover {
+    color: var(--text);
+    background: rgba(255,255,255,0.05);
+    transform: translateY(-1px);
+  }
+  .tab:active { transform: translateY(0) scale(.97); }
+  .tab.active {
+    background: linear-gradient(90deg, var(--accent4), var(--accent5));
+    color: #0f1117;
+    font-weight: 700;
+    box-shadow: 0 4px 16px -4px rgba(108,140,255,.5);
+  }
+  .tab.active .ico { opacity: 1; }
+  @media (max-width: 640px) {
+    .tabs { border-radius: 20px; width: 100%; justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; }
+    .tabs::-webkit-scrollbar { display: none; }
+    .tab { flex: 0 0 auto; }
+  }
+
+  main { max-width: 1000px; margin: 0 auto; padding: 20px 16px 0; }
+
+  .section-title {
+    font-size: 1.05rem;
+    margin: 30px 4px 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text);
+  }
+  .section-title .dot { width: 10px; height: 10px; border-radius: 50%; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 14px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+    transition: transform .15s ease, background .15s ease, box-shadow .15s ease, border-color .15s ease;
+    position: relative;
+    cursor: pointer;
+  }
+  .card:hover { transform: translateY(-3px); background: var(--card-hover); border-color: var(--accent4); box-shadow: 0 10px 24px -12px rgba(0,0,0,.5); }
+  .card:active { transform: translateY(-1px) scale(.99); }
+  .card .date { font-size: 1.15rem; font-weight: 700; }
+  .card .weekday { color: var(--muted); font-size: .78rem; margin-top: 2px; }
+  .card .name { margin-top: 10px; font-size: .95rem; font-weight: 600; }
+  .badge {
+    display: inline-block;
+    margin-top: 10px;
+    margin-right: 4px;
+    font-size: .66rem;
+    padding: 3px 9px;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: .4px;
+    font-weight: 700;
+  }
+  .badge.national { background: rgba(255,107,107,.15); color: var(--accent1); }
+  .badge.festival { background: rgba(255,209,102,.15); color: var(--accent2); }
+  .badge.state-festival { background: rgba(77,212,172,.15); color: var(--accent3); }
+  .badge.regional { background: rgba(108,140,255,.15); color: var(--accent4); }
+  .badge.sunday { background: rgba(199,146,234,.15); color: var(--accent5); }
+  .badge.second-saturday { background: rgba(154,161,180,.18); color: var(--muted); }
+
+  .card.sunday-mark::after {
+    content: "SUN";
+    position: absolute;
+    top: 12px; right: 14px;
+    font-size: .65rem;
+    color: var(--accent5);
+    font-weight: 700;
+    opacity: .8;
+  }
+
+  .streak {
+    background: linear-gradient(135deg, rgba(77,212,172,.08), rgba(108,140,255,.08));
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    margin-bottom: 14px;
+  }
+  .streak .range { font-weight: 700; font-size: 1rem; color: var(--accent3); }
+  .streak .len {
+    float: right;
+    font-size: .75rem;
+    color: var(--muted);
+    background: var(--card);
+    padding: 3px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+  }
+  .streak ul { margin: 10px 0 0; padding-left: 18px; color: var(--muted); font-size: .85rem; line-height: 1.6; }
+  .streak ul li span.dname { color: var(--text); }
+  .streak-item { cursor: pointer; transition: color .15s ease; }
+  .streak-item:hover { color: var(--accent4); }
+
+  .empty { color: var(--muted); text-align: center; padding: 40px 0; font-size: .9rem; }
+
+  /* ===== Detail Modal ===== */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(6,7,12,.65);
+    backdrop-filter: blur(3px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .2s ease;
+  }
+  .modal-overlay.open { opacity: 1; pointer-events: auto; }
+  .modal {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    max-width: 440px;
+    width: 100%;
+    padding: 28px 26px 24px;
+    position: relative;
+    transform: translateY(14px) scale(.97);
+    transition: transform .22s ease;
+    box-shadow: 0 24px 60px -20px rgba(0,0,0,.6);
+  }
+  .modal-overlay.open .modal { transform: translateY(0) scale(1); }
+  .modal-close {
+    position: absolute;
+    top: 14px; right: 14px;
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.05);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    font-size: .9rem;
+    transition: color .2s ease, background .2s ease;
+  }
+  .modal-close:hover { color: var(--text); background: rgba(255,255,255,.1); }
+  .modal .m-date {
+    font-size: 1.7rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, var(--accent4), var(--accent5));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .modal .m-sub { color: var(--muted); font-size: .85rem; margin-top: 2px; }
+  .modal .m-name { font-size: 1.2rem; font-weight: 700; margin-top: 16px; }
+  .modal .m-badges { margin-top: 10px; }
+  .modal .m-badges .badge { margin-top: 0; }
+  .modal .m-desc { color: var(--text); opacity: .85; font-size: .88rem; line-height: 1.65; margin-top: 16px; }
+  .modal .m-countdown {
+    margin-top: 18px;
+    padding: 10px 14px;
+    border-radius: 12px;
+    background: rgba(108,140,255,.08);
+    border: 1px solid rgba(108,140,255,.25);
+    color: var(--accent4);
+    font-size: .82rem;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: .74rem;
+    margin-top: 50px;
+    padding: 0 20px;
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Upcoming Telangana Holidays</h1>
+  <p>From today onward &middot; Sundays &middot; Festivals &middot; National &amp; Regional Holidays &middot; Continuous Holiday Stretches</p>
+
+  <div class="year-picker">
+    <button id="prevYear">&larr;</button>
+    <select id="yearSelect"></select>
+    <button id="nextYear">&rarr;</button>
+  </div>
+
+  <div class="stats" id="statsRow"></div>
+</header>
+
+<main>
+  <div class="notice" id="noticeBox"></div>
+
+  <div class="tabs" id="tabs">
+    <div class="tab active" data-filter="all"><span class="ico">✦</span>All</div>
+    <div class="tab" data-filter="sunday"><span class="ico">☀</span>Sundays</div>
+    <div class="tab" data-filter="festival"><span class="ico">🎉</span>Festivals</div>
+    <div class="tab" data-filter="national"><span class="ico">🇮🇳</span>National</div>
+    <div class="tab" data-filter="regional"><span class="ico">📍</span>Regional</div>
+    <div class="tab" data-filter="continuous"><span class="ico">🔥</span>Continuous Holidays</div>
+  </div>
+
+  <div id="content"></div>
+</main>
+
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" id="modalBox">
+    <div class="modal-close" id="modalClose">✕</div>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<footer>
+  Fixed-date holidays (Republic Day, Independence Day, Gandhi Jayanti, Ambedkar Jayanti, Christmas), Good Friday, Sundays and 2nd&nbsp;Saturdays are calendar-computed and accurate for every year shown.<br>
+  2026 festival &amp; Islamic holiday dates are from Telangana Govt. Notification G.O.Rt.No.1715 (dated 06-12-2025). For 2027 onward, lunar/Islamic festival dates are not yet officially notified — check closer to the year.
+</footer>
+
+<script>
+/* ============ FIXED 2026 OFFICIAL DATA (G.O.Rt.No.1715) ============ */
+const holidays2026 = [
+  { date: "2026-01-14", name: "Bhogi", type: "festival" },
+  { date: "2026-01-15", name: "Sankranti / Pongal", type: "festival" },
+  { date: "2026-01-26", name: "Republic Day", type: "national" },
+  { date: "2026-02-15", name: "Maha Shivaratri", type: "regional" },
+  { date: "2026-03-03", name: "Holi", type: "regional" },
+  { date: "2026-03-19", name: "Ugadi (Telugu New Year)", type: "festival" },
+  { date: "2026-03-21", name: "Eid-ul-Fitr (Ramzan)*", type: "regional" },
+  { date: "2026-03-22", name: "Following Day of Ramzan", type: "regional" },
+  { date: "2026-03-27", name: "Sri Rama Navami", type: "regional" },
+  { date: "2026-04-03", name: "Good Friday", type: "regional" },
+  { date: "2026-04-05", name: "Babu Jagjivan Ram's Birthday", type: "regional" },
+  { date: "2026-04-14", name: "Dr. B.R. Ambedkar's Birthday", type: "regional" },
+  { date: "2026-05-27", name: "Eid-ul-Azha (Bakrid)*", type: "regional" },
+  { date: "2026-06-26", name: "Shahadat Imam Hussain (10th Moharam)*", type: "regional" },
+  { date: "2026-08-10", name: "Bonalu", type: "state-festival" },
+  { date: "2026-08-15", name: "Independence Day", type: "national" },
+  { date: "2026-08-26", name: "Eid Milad-un-Nabi*", type: "regional" },
+  { date: "2026-09-04", name: "Sri Krishna Ashtami", type: "festival" },
+  { date: "2026-09-14", name: "Vinayaka Chavithi", type: "festival" },
+  { date: "2026-10-02", name: "Mahatma Gandhi Jayanti", type: "national" },
+  { date: "2026-10-18", name: "Saddula Bathukamma", type: "state-festival" },
+  { date: "2026-10-20", name: "Vijaya Dasami (Dussehra)", type: "festival" },
+  { date: "2026-10-21", name: "Following Day of Vijaya Dasami", type: "festival" },
+  { date: "2026-11-08", name: "Deepavali", type: "festival" },
+  { date: "2026-11-24", name: "Kartika Purnima / Guru Nanak Jayanti", type: "regional" },
+  { date: "2026-12-25", name: "Christmas", type: "regional" },
+  { date: "2026-12-26", name: "Boxing Day", type: "regional" },
+];
+
+const typeLabels = {
+  national: "National", festival: "Festival", "state-festival": "State Festival",
+  regional: "Regional", sunday: "Sunday", "second-saturday": "2nd Saturday"
+};
+
+/* Short "what is this holiday" blurbs shown in the detail popup. */
+const holidayInfo = {
+  "Republic Day": "Marks the day India's Constitution came into effect in 1950, replacing the Government of India Act as the country's governing document.",
+  "Dr. B.R. Ambedkar's Birthday": "Commemorates the birth anniversary of Dr. B.R. Ambedkar, chief architect of the Indian Constitution and a leading social reformer.",
+  "Good Friday": "A Christian observance commemorating the crucifixion of Jesus Christ, observed two days before Easter Sunday.",
+  "Independence Day": "Celebrates India's independence from British rule on 15 August 1947.",
+  "Mahatma Gandhi Jayanti": "Marks the birth anniversary of Mahatma Gandhi, leader of India's non-violent independence movement, also observed globally as the International Day of Non-Violence.",
+  "Christmas": "Christian festival celebrating the birth of Jesus Christ, widely observed as a public holiday.",
+  "Boxing Day": "Traditionally a day for giving gifts to service workers and the needy, observed the day after Christmas.",
+  "Bhogi": "The first day of the Sankranti festival, marked by bonfires (Bhogi Mantalu) symbolising the discarding of old belongings and welcoming the new harvest season.",
+  "Sankranti / Pongal": "Telangana and Andhra's major harvest festival, honouring the Sun God and the season's new crop; known as Pongal in Tamil Nadu.",
+  "Maha Shivaratri": "A major Hindu festival dedicated to Lord Shiva, observed with night-long vigils, fasting and prayer.",
+  "Holi": "The Hindu festival of colours, marking the arrival of spring and the triumph of good over evil.",
+  "Ugadi (Telugu New Year)": "The Telugu and Kannada New Year, marking the first day of the lunisolar calendar's new year, celebrated with Ugadi Pachadi (a mix of six tastes).",
+  "Eid-ul-Fitr (Ramzan)*": "Marks the end of the Islamic holy month of Ramadan, celebrated with prayers, feasting and charity. Date depends on moon sighting.",
+  "Following Day of Ramzan": "An additional gazetted holiday following Eid-ul-Fitr celebrations.",
+  "Sri Rama Navami": "Celebrates the birth of Lord Rama, observed with recitations of the Ramayana and temple festivities.",
+  "Babu Jagjivan Ram's Birthday": "Commemorates the birth anniversary of Babu Jagjivan Ram, a prominent freedom fighter and social justice leader, marked as a Telangana state holiday.",
+  "Eid-ul-Azha (Bakrid)*": "The Islamic 'Festival of Sacrifice', commemorating Ibrahim's willingness to sacrifice his son in obedience to God. Date depends on moon sighting.",
+  "Shahadat Imam Hussain (10th Moharam)*": "Observed by Muslims to mourn the martyrdom of Imam Hussain at the Battle of Karbala. Date depends on moon sighting.",
+  "Bonalu": "A Telangana state festival honouring Goddess Mahakali, celebrated with processions and offerings mainly in Hyderabad and Secunderabad.",
+  "Eid Milad-un-Nabi*": "Marks the birth anniversary of Prophet Muhammad. Date depends on moon sighting.",
+  "Sri Krishna Ashtami": "Celebrates the birth of Lord Krishna, observed with fasting, devotional singing and midnight prayers (also called Janmashtami).",
+  "Vinayaka Chavithi": "Celebrates the birth of Lord Ganesha with elaborate idol installations and processions, also known as Ganesh Chaturthi.",
+  "Saddula Bathukamma": "The concluding and grandest day of the nine-day Bathukamma festival, a flower-stacking tradition unique to Telangana celebrating womanhood and nature.",
+  "Vijaya Dasami (Dussehra)": "Marks the triumph of good over evil, commemorating Lord Rama's victory over Ravana, the culmination of Navratri celebrations.",
+  "Following Day of Vijaya Dasami": "An additional gazetted holiday following Dussehra celebrations.",
+  "Deepavali": "The festival of lights, symbolising the victory of light over darkness, celebrated with lamps, fireworks and family gatherings.",
+  "Kartika Purnima / Guru Nanak Jayanti": "Kartika Purnima is a sacred full-moon day for Hindu worship; the same date marks Guru Nanak Jayanti, the birth anniversary of Sikhism's founder.",
+  "Sunday": "Weekly day off observed across government offices, schools and most businesses.",
+  "2nd Saturday": "The second Saturday of the month is a standard non-working day for banks, government offices and many private establishments in India."
+};
+function getHolidayInfo(name) {
+  return holidayInfo[name] || "Official holiday observed in Telangana. Exact customs and observance may vary by region and community.";
+}
+
+/* ============ DATE HELPERS ============ */
+function fmt(d) { return d.toISOString().slice(0,10); }
+function pad(n) { return n < 10 ? "0"+n : ""+n; }
+function dstr(y,m,d) { return `${y}-${pad(m)}-${pad(d)}`; }
+
+function allSundays(year) {
+  const arr = [];
+  const d = new Date(Date.UTC(year,0,1));
+  while (d.getUTCFullYear() === year) {
+    if (d.getUTCDay() === 0) arr.push(fmt(d));
+    d.setUTCDate(d.getUTCDate() + 1);
+  }
+  return arr;
+}
+function secondSaturdays(year) {
+  const arr = [];
+  for (let m = 0; m < 12; m++) {
+    let count = 0;
+    const d = new Date(Date.UTC(year, m, 1));
+    while (d.getUTCMonth() === m) {
+      if (d.getUTCDay() === 6) {
+        count++;
+        if (count === 2) { arr.push(fmt(d)); break; }
+      }
+      d.setUTCDate(d.getUTCDate() + 1);
+    }
+  }
+  return arr;
+}
+// Western Easter (Anonymous Gregorian algorithm) -> Good Friday = Easter - 2 days
+function goodFriday(year) {
+  const a = year % 19, b = Math.floor(year/100), c = year % 100;
+  const d = Math.floor(b/4), e = b % 4, f = Math.floor((b+8)/25);
+  const g = Math.floor((b-f+1)/3), h = (19*a + b - d - g + 15) % 30;
+  const i = Math.floor(c/4), k = c % 4;
+  const l = (32 + 2*e + 2*i - h - k) % 7;
+  const m = Math.floor((a + 11*h + 22*l)/451);
+  const month = Math.floor((h + l - 7*m + 114)/31);
+  const day = ((h + l - 7*m + 114) % 31) + 1;
+  const easter = new Date(Date.UTC(year, month-1, day));
+  easter.setUTCDate(easter.getUTCDate() - 2);
+  return fmt(easter);
+}
+
+/* Fixed-date holidays, valid & accurate for every year in range */
+function fixedHolidays(year) {
+  const list = [
+    { date: dstr(year,1,26), name: "Republic Day", type: "national" },
+    { date: dstr(year,4,14), name: "Dr. B.R. Ambedkar's Birthday", type: "regional" },
+    { date: goodFriday(year), name: "Good Friday", type: "regional" },
+    { date: dstr(year,8,15), name: "Independence Day", type: "national" },
+    { date: dstr(year,10,2), name: "Mahatma Gandhi Jayanti", type: "national" },
+    { date: dstr(year,12,25), name: "Christmas", type: "regional" },
+  ];
+  // Makar Sankranti is solar and falls Jan 14-15 every year in this range
+  list.push({ date: dstr(year,1,14), name: "Bhogi", type: "festival" });
+  list.push({ date: dstr(year,1,15), name: "Sankranti / Pongal", type: "festival" });
+  return list;
+}
+
+/* ============ TODAY / UPCOMING CUTOFF ============ */
+// Auto-computed from the visitor's actual device date — no manual editing needed.
+// This means past holidays drop off the list by themselves as time passes.
+function getTodayStr() {
+  const d = new Date();
+  return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+}
+let TODAY = getTodayStr(); // dates before this are excluded everywhere
+
+/* ============ BUILD DATA FOR A GIVEN YEAR ============ */
+function buildYearData(year) {
+  const unifiedMap = {};
+  function addEntry(date, name, type) {
+    if (date < TODAY) return; // skip past dates — upcoming only
+    if (!unifiedMap[date]) unifiedMap[date] = { date, names: [], types: [] };
+    unifiedMap[date].names.push(name);
+    unifiedMap[date].types.push(type);
+  }
+
+  const baseHolidays = (year === 2026) ? holidays2026 : fixedHolidays(year);
+  baseHolidays.forEach(h => addEntry(h.date, h.name, h.type));
+  allSundays(year).forEach(d => addEntry(d, "Sunday", "sunday"));
+  secondSaturdays(year).forEach(d => addEntry(d, "2nd Saturday", "second-saturday"));
+
+  const allDates = Object.keys(unifiedMap).sort();
+
+  // streaks
+  function oneDayLater(dateStr) {
+    const d = new Date(dateStr + "T00:00:00Z");
+    d.setUTCDate(d.getUTCDate() + 1);
+    return fmt(d);
+  }
+  const streaks = [];
+  let current = [];
+  for (let i = 0; i < allDates.length; i++) {
+    if (current.length === 0) current.push(allDates[i]);
+    else {
+      const prev = current[current.length - 1];
+      if (oneDayLater(prev) === allDates[i]) current.push(allDates[i]);
+      else { if (current.length >= 2) streaks.push([...current]); current = [allDates[i]]; }
+    }
+  }
+  if (current.length >= 2) streaks.push([...current]);
+
+  return { unifiedMap, allDates, streaks, baseHolidays };
+}
+
+/* ============ RENDER HELPERS ============ */
+const weekdayNames = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+const monthNames = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+function niceDate(dateStr) { const d = new Date(dateStr+"T00:00:00Z"); return `${d.getUTCDate()} ${monthNames[d.getUTCMonth()]}`; }
+function weekday(dateStr) { const d = new Date(dateStr+"T00:00:00Z"); return weekdayNames[d.getUTCDay()]; }
+
+function cardHTML(entry) {
+  const isSunday = entry.types.includes("sunday");
+  const displayNames = entry.names.filter(n => n !== "Sunday" && n !== "2nd Saturday");
+  const nameStr = displayNames.length ? displayNames.join(" + ") : entry.names[0];
+  const badges = [...new Set(entry.types)].map(t => `<span class="badge ${t}">${typeLabels[t]}</span>`).join(" ");
+  return `
+    <div class="card ${isSunday ? 'sunday-mark' : ''}" data-date="${entry.date}">
+      <div class="date">${niceDate(entry.date)}</div>
+      <div class="weekday">${weekday(entry.date)} &middot; ${entry.date.slice(0,4)}</div>
+      <div class="name">${nameStr}</div>
+      ${badges}
+    </div>`;
+}
+function streakHTML(streak, unifiedMap) {
+  const start = niceDate(streak[0]), end = niceDate(streak[streak.length-1]);
+  const items = streak.map(d => {
+    const e = unifiedMap[d];
+    return `<li data-date="${d}" class="streak-item">${niceDate(d)} (${weekday(d)}) &mdash; <span class="dname">${e.names.join(" + ")}</span></li>`;
+  }).join("");
+  return `
+    <div class="streak">
+      <span class="len">${streak.length} days off</span>
+      <div class="range">${start} &ndash; ${end}</div>
+      <ul>${items}</ul>
+    </div>`;
+}
+
+/* ============ STATE ============ */
+let currentYear = 2026;
+let yearData = buildYearData(currentYear);
+
+function renderStats() {
+  const entries = Object.values(yearData.unifiedMap);
+  const sundays = entries.filter(e => e.types.includes("sunday")).length;
+  const festivals = entries.filter(e => e.types.includes("festival") || e.types.includes("state-festival")).length;
+  const national = entries.filter(e => e.types.includes("national")).length;
+  const regional = entries.filter(e => e.types.includes("regional")).length;
+  const longStreaks = yearData.streaks.filter(s => s.length >= 3).length;
+  document.getElementById("statsRow").innerHTML = `
+    <div class="stat"><div class="num">${sundays}</div><div class="lbl">Sundays</div></div>
+    <div class="stat"><div class="num">${festivals}</div><div class="lbl">Festivals</div></div>
+    <div class="stat"><div class="num">${national}</div><div class="lbl">National</div></div>
+    <div class="stat"><div class="num">${regional}</div><div class="lbl">Regional</div></div>
+    <div class="stat"><div class="num">${longStreaks}</div><div class="lbl">3+ Day Breaks</div></div>
+  `;
+}
+
+function renderNotice() {
+  const box = document.getElementById("noticeBox");
+  if (currentYear === 2026) {
+    box.innerHTML = `<b>${currentYear} (from ${niceDate(TODAY)} onward):</b> Full official list from Telangana Govt. Notification G.O.Rt.No.1715 (dated 06-12-2025), including festival &amp; Islamic dates — past dates already excluded. Islamic dates (*) are provisional, subject to moon sighting.`;
+  } else {
+    box.innerHTML = `<b>${currentYear}:</b> Showing calendar-computed dates only — Sundays, 2nd Saturdays, Republic Day, Independence Day, Gandhi Jayanti, Ambedkar Jayanti, Christmas, Good Friday, and solar Sankranti (Jan 14–15). Lunar Hindu festivals (Ugadi, Holi, Vinayaka Chavithi, Bathukamma, Dussehra, Diwali, Maha Shivaratri, etc.) and Islamic holidays (Ramzan, Bakrid, Muharram, Eid Milad) are notified by the Telangana Government one year at a time and aren't available this far ahead — check the official gazette closer to ${currentYear}.`;
+  }
+}
+
+function render(filter) {
+  const content = document.getElementById("content");
+  const { unifiedMap, allDates, streaks } = yearData;
+
+  if (filter === "continuous") {
+    if (streaks.length === 0) {
+      content.innerHTML = `<div class="empty">No upcoming continuous holiday stretches found for ${currentYear}.</div>`;
+      return;
+    }
+    const monthColors = ["#ff6b6b","#ffd166","#4dd4ac","#6c8cff","#c792ea","#ff9770",
+                          "#70d6ff","#ff70a6","#a1de93","#ffb347","#9a8cff","#5ad1c9"];
+    // group streaks by the month of their first date
+    const byMonth = {};
+    streaks.forEach(s => {
+      const m = parseInt(s[0].slice(5,7), 10) - 1;
+      if (!byMonth[m]) byMonth[m] = [];
+      byMonth[m].push(s);
+    });
+    content.innerHTML = Object.keys(byMonth).sort((a,b)=>a-b).map(m => `
+      <div class="section-title"><span class="dot" style="background:${monthColors[m]}"></span>${monthNames[m]} ${currentYear}</div>
+      ${byMonth[m].map(s => streakHTML(s, unifiedMap)).join("")}
+    `).join("");
+    return;
+  }
+
+  let dates = allDates;
+  if (filter !== "all") dates = allDates.filter(d => unifiedMap[d].types.includes(filter));
+
+  if (dates.length === 0) {
+    content.innerHTML = `<div class="empty">No upcoming entries to show here for ${currentYear}.</div>`;
+    return;
+  }
+
+  // group by month
+  const byMonth = {};
+  dates.forEach(d => {
+    const m = parseInt(d.slice(5,7), 10) - 1;
+    if (!byMonth[m]) byMonth[m] = [];
+    byMonth[m].push(d);
+  });
+
+  const monthColors = ["#ff6b6b","#ffd166","#4dd4ac","#6c8cff","#c792ea","#ff9770",
+                        "#70d6ff","#ff70a6","#a1de93","#ffb347","#9a8cff","#5ad1c9"];
+
+  content.innerHTML = Object.keys(byMonth).sort((a,b)=>a-b).map(m => {
+    const monthDates = byMonth[m];
+    return `
+      <div class="section-title"><span class="dot" style="background:${monthColors[m]}"></span>${monthNames[m]} ${currentYear} <span style="color:var(--muted); font-weight:400; font-size:.8rem;">&middot; ${monthDates.length} ${monthDates.length===1?'entry':'entries'}</span></div>
+      <div class="grid">${monthDates.map(d => cardHTML(unifiedMap[d])).join("")}</div>
+    `;
+  }).join("");
+}
+
+function refreshAll() {
+  yearData = buildYearData(currentYear);
+  renderStats();
+  renderNotice();
+  const activeTab = document.querySelector(".tab.active");
+  render(activeTab ? activeTab.dataset.filter : "all");
+}
+
+/* ============ INIT ============ */
+const yearSelect = document.getElementById("yearSelect");
+for (let y = 2026; y <= 2050; y++) {
+  const opt = document.createElement("option");
+  opt.value = y; opt.textContent = y;
+  yearSelect.appendChild(opt);
+}
+yearSelect.value = currentYear;
+
+yearSelect.addEventListener("change", () => {
+  currentYear = parseInt(yearSelect.value, 10);
+  refreshAll();
+});
+document.getElementById("prevYear").addEventListener("click", () => {
+  if (currentYear > 2026) { currentYear--; yearSelect.value = currentYear; refreshAll(); }
+});
+document.getElementById("nextYear").addEventListener("click", () => {
+  if (currentYear < 2050) { currentYear++; yearSelect.value = currentYear; refreshAll(); }
+});
+
+document.getElementById("tabs").addEventListener("click", (e) => {
+  const tab = e.target.closest(".tab");
+  if (!tab) return;
+  document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+  tab.classList.add("active");
+  render(tab.dataset.filter);
+});
+
+/* ============ DETAIL MODAL ============ */
+const modalOverlay = document.getElementById("modalOverlay");
+const modalContent = document.getElementById("modalContent");
+
+function daysUntil(dateStr) {
+  const today = new Date(getTodayStr() + "T00:00:00Z");
+  const target = new Date(dateStr + "T00:00:00Z");
+  return Math.round((target - today) / (1000*60*60*24));
+}
+
+function openHolidayModal(dateStr) {
+  const entry = yearData.unifiedMap[dateStr];
+  if (!entry) return;
+  const displayNames = entry.names.filter(n => n !== "Sunday" && n !== "2nd Saturday");
+  const primaryName = displayNames[0] || entry.names[0];
+  const otherNames = displayNames.slice(1);
+  const badges = [...new Set(entry.types)].map(t => `<span class="badge ${t}">${typeLabels[t]}</span>`).join(" ");
+  const n = daysUntil(dateStr);
+  const countdownText = n === 0 ? "Today" : n === 1 ? "Tomorrow" : n > 1 ? `In ${n} days` : `${Math.abs(n)} day(s) ago`;
+
+  let descHTML = `<div class="m-desc">${getHolidayInfo(primaryName)}</div>`;
+  otherNames.forEach(nm => {
+    descHTML += `<div class="m-desc"><b>${nm}:</b> ${getHolidayInfo(nm)}</div>`;
+  });
+
+  modalContent.innerHTML = `
+    <div class="m-date">${niceDate(dateStr)}</div>
+    <div class="m-sub">${weekday(dateStr)} &middot; ${dateStr}</div>
+    <div class="m-name">${entry.names.join(" + ")}</div>
+    <div class="m-badges">${badges}</div>
+    ${descHTML}
+    <div class="m-countdown">${countdownText}</div>
+  `;
+  modalOverlay.classList.add("open");
+}
+
+function closeHolidayModal() { modalOverlay.classList.remove("open"); }
+
+document.getElementById("content").addEventListener("click", (e) => {
+  const card = e.target.closest(".card[data-date]");
+  const streakItem = e.target.closest(".streak-item[data-date]");
+  const target = card || streakItem;
+  if (!target) return;
+  openHolidayModal(target.dataset.date);
+});
+
+document.getElementById("modalClose").addEventListener("click", closeHolidayModal);
+modalOverlay.addEventListener("click", (e) => { if (e.target === modalOverlay) closeHolidayModal(); });
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeHolidayModal(); });
+
+/* ============ AUTO-UPDATE ============ */
+// Recompute "today" and re-render so already-passed holidays disappear
+// on their own. Runs immediately on load, then:
+//   - every hour, in case the tab is left open across midnight
+//   - re-checks whenever the tab regains focus/visibility (covers laptops
+//     that were asleep, phones backgrounded, etc.)
+function autoRefreshTick() {
+  const newToday = getTodayStr();
+  if (newToday !== TODAY) {
+    TODAY = newToday;
+    refreshAll();
+  }
+}
+setInterval(autoRefreshTick, 60 * 60 * 1000); // hourly check
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "visible") autoRefreshTick();
+});
+
+// Full data rebuild every 30 days, even if the date-change checks above
+// are somehow missed (e.g. a tab kept open indefinitely).
+setInterval(() => {
+  TODAY = getTodayStr();
+  refreshAll();
+}, 30 * 24 * 60 * 60 * 1000);
+
+refreshAll();
+</script>
+
+</body>
+</html>

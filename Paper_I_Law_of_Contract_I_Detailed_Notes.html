@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Paper I: Law of Contract &ndash; I &ndash; Detailed Notes | Anvesh Kumar Aavula</title>
+  <meta name="description" content="Detailed, unit-wise and topic-wise notes for Paper I: Law of Contract - I, LLB Semester I, Palamuru University, with definitions, essentials and leading case law.">
+  <meta name="keywords" content="LLB, Law of Contract, Palamuru University, Semester I, Contract Act 1872, Notes">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+  :root {
+    --bg: #0f1117;
+    --card: #171a23;
+    --row-hover: #1f2330;
+    --border: #262b3a;
+    --text: #eef0f5;
+    --muted: #9aa1b4;
+    --accent1: #6c8cff;
+    --accent2: #c792ea;
+    --accent3: #4dd4ac;
+    --accent4: #ffd166;
+  }
+  * { box-sizing: border-box; }
+
+  .llb-page {
+    background: var(--bg);
+    color: var(--text);
+    padding: 140px 0 80px;
+    min-height: 100vh;
+  }
+  .llb-header { text-align: center; margin-bottom: 10px; }
+  .llb-header h2 { color: var(--text); font-weight: 800; font-size: 2rem; }
+  .llb-header p { color: var(--muted); font-size: .95rem; font-style: italic; margin-top: 8px; }
+
+  .paper-meta {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: .82rem;
+    color: var(--muted);
+  }
+  .paper-meta span {
+    display: inline-block;
+    padding: 5px 14px;
+    border-radius: 999px;
+    background: rgba(199,146,234,.12);
+    border: 1px solid rgba(199,146,234,.25);
+    color: var(--accent2);
+    font-weight: 700;
+    margin: 0 4px;
+  }
+
+  /* Unit-level jump legend */
+  .unit-legend {
+    display: flex; flex-wrap: wrap; gap: 10px;
+    justify-content: center; margin-bottom: 40px;
+  }
+  .unit-legend a {
+    text-decoration: none; padding: 7px 16px; border-radius: 999px;
+    font-size: .8rem; font-weight: 700; color: var(--accent1);
+    background: rgba(108,140,255,.12); border: 1px solid rgba(108,140,255,.25);
+    transition: background .15s ease;
+  }
+  .unit-legend a:hover { background: rgba(108,140,255,.22); }
+
+  .unit-block { margin-bottom: 48px; scroll-margin-top: 110px; }
+  .unit-title {
+    color: var(--accent1); font-weight: 800; font-size: 1.25rem;
+    margin-bottom: 16px; padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* Topic-level jump pills within a unit */
+  .topic-legend {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    margin-bottom: 20px;
+  }
+  .topic-legend a {
+    text-decoration: none; padding: 5px 12px; border-radius: 8px;
+    font-size: .74rem; font-weight: 600; color: var(--muted);
+    background: var(--card); border: 1px solid var(--border);
+    transition: all .15s ease;
+  }
+  .topic-legend a:hover { color: var(--accent3); border-color: rgba(77,212,172,.35); }
+
+  details.topic-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    scroll-margin-top: 110px;
+    box-shadow: 0 6px 20px rgba(0,0,0,.18);
+  }
+  details.topic-card > summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 14px 20px;
+    font-weight: 700;
+    font-size: .95rem;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: background .15s ease;
+  }
+  details.topic-card > summary::-webkit-details-marker { display: none; }
+  details.topic-card > summary:hover { background: var(--row-hover); }
+  .t-num {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-width: 26px; height: 26px; border-radius: 50%;
+    background: rgba(255,209,102,.15); color: var(--accent4);
+    font-size: .78rem; font-weight: 800; flex-shrink: 0;
+  }
+  details.topic-card[open] > summary {
+    border-bottom: 1px solid var(--border);
+    background: rgba(255,255,255,.02);
+  }
+
+  .topic-body { padding: 4px 22px 20px 58px; font-size: .87rem; line-height: 1.75; }
+  .topic-body p { margin: 0 0 12px; }
+  .topic-body p:last-child { margin-bottom: 0; }
+  .topic-body ul, .topic-body ol { margin: 0 0 12px 20px; padding: 0; }
+  .topic-body li { margin-bottom: 8px; }
+  .topic-body strong { color: var(--accent4); }
+  .topic-body em { color: var(--accent3); font-style: italic; }
+  .topic-body hr { display: none; }
+
+  .readings-block {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 26px;
+    margin-top: 20px;
+  }
+  .readings-block h3 {
+    font-size: .8rem; text-transform: uppercase; letter-spacing: .6px;
+    color: var(--muted); font-weight: 700; margin: 0 0 14px;
+  }
+  .readings-block ol { margin: 0; padding-left: 20px; }
+  .readings-block li { font-size: .85rem; line-height: 1.7; color: var(--text); margin-bottom: 6px; }
+  .readings-block em { color: var(--muted); }
+
+  @media (max-width: 700px) {
+    .llb-page { padding: 110px 0 60px; }
+    .llb-header h2 { font-size: 1.4rem; }
+    .topic-body { padding: 4px 16px 18px 16px; }
+    details.topic-card > summary { padding: 12px 14px; font-size: .88rem; }
+  }
+  </style>
+
+</head>
+
+<body class="index-page">
+
+   <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+	  <img src="assets/img/Anvesh Kumar Aavula.PNG" alt=""> 
+        <h1 class="sitename">@Anvesh</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html#hero">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+		 <li><a href="index.html#services">LLB - Bachelor of Legislative Law</a></li>
+		   <li class="dropdown"><a href="#"><span>LLB Notes</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+		  <ul>
+		   <li><a href="index.html#services2">First Year - Semester I</a></li>
+		   </ul>
+		   </li>
+		  		  
+				<!--  <li class="dropdown"><a href="#"><span>LLB - Bachelor of Legislative Law</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+               <li><a href="LLB_Syllabus_Semesterwise.html">LLB - Syllabus Semester Wise</a></li>
+             
+              <li><a href="LLB_Syllabus_Subjectwise_Table_Readings.html">LLB - Subject Wise Suggested Case Laws</a></li>
+			  <li><a href="LLB_Sem1_TimeTable.html">LLB - Semester I Time Table</a></li>
+			  <!--  <li><a href="LLB_Syllabus_Semesterwise.html">LLB - Bachelor of Legislative Law</a></li> -->
+			  <!-- <li class="dropdown"><a href="#"><span>Java Programming</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                 <ul>
+                  <li><a href="#">Deep Dropdown 1</a></li>
+                  <li><a href="#">Deep Dropdown 2</a></li>
+                  <li><a href="#">Deep Dropdown 3</a></li>
+                  <li><a href="#">Deep Dropdown 4</a></li>
+                  <li><a href="#">Deep Dropdown 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Dropdown 3</a></li>
+              <li><a href="#">Dropdown 4</a></li>
+            </ul>
+          </li> -->
+          <li><a href="index.html#resume">Resume</a></li>
+          <li><a href="index.html#portfolio">Portfolio</a></li>
+		  
+          <li class="dropdown"><a href="#"><span>B.Tech Subjects</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="Blockchain-Technology-Proj/Blockchain_HomePage.html">Blockchain Technology</a></li>
+              <li><a href="Java-Programming-Proj/JavaProgramming_HomePage.html">Java Programming</a></li>
+              <!--<li><a href="LLB_Syllabus_Semesterwise.html">LLB - Bachelor of Legislative Law</a></li>
+              <li><a href="LLB_Syllabus_Subjectwise_Table_Readings.html">LLB - Readings &amp; Case Laws</a></li> -->
+            </ul>
+          </li>
+		 
+        <!--   <li><a href="index.html#services">Services</a></li> -->
+          <li><a href="index.html#contact">Contact</a></li>
+ <!-- <li><a href="#calendar-check">Calendar</a></li> -->
+         <!-- <<li><a href="LLB_Syllabus_Subjectwise_Table_Readings.html" class="active">LLB - Readings &amp; Case Laws</a></li> -->
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="index.html#calendar-check">Holidays Calendar</a>
+
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="llb-page">
+      <div class="container">
+
+        <div class="llb-header" data-aos="fade-up">
+          <h2>Paper I: Law of Contract &ndash; I</h2>
+          <p>Detailed Topic-Wise Notes &middot; LL.B. Semester I<br>
+             University College of Law, Palamuru University, Mahabubnagar</p>
+        </div>
+
+        <div class="paper-meta" data-aos="fade-up" data-aos-delay="60">
+          <span>5 Units</span><span>56 Topics</span><span>Indian Contract Act, 1872</span>
+        </div>
+
+        <div class="unit-legend" data-aos="fade-up" data-aos-delay="100">
+          <a href="#unit-I">Unit I</a>
+          <a href="#unit-II">Unit II</a>
+          <a href="#unit-III">Unit III</a>
+          <a href="#unit-IV">Unit IV</a>
+          <a href="#unit-V">Unit V</a>
+          <a href="#readings">Suggested Readings</a>
+        </div>
+
+        <div data-aos="fade-up" data-aos-delay="150">
+
+        <div class="unit-block" id="unit-I">
+          <h3 class="unit-title">Unit-I: Formation of a Valid Contract</h3>
+          <div class="topic-legend">
+              <a href="#unit-I-t1">1. Definition and Essentials of a Valid Contract</a>
+              <a href="#unit-I-t2">2. Definition and Essentials of a Valid Offer (Proposal)</a>
+              <a href="#unit-I-t3">3. Definition and Essentials of a Valid Acceptance</a>
+              <a href="#unit-I-t4">4. Communication of Offer and Acceptance</a>
+              <a href="#unit-I-t5">5. Revocation of Offer and Acceptance (Including Electronic Medium)</a>
+              <a href="#unit-I-t6">6. Consideration — Salient Features</a>
+              <a href="#unit-I-t7">7. Exceptions to Consideration (“Nudum Pactum” Exceptions)</a>
+              <a href="#unit-I-t8">8. Doctrine of Privity of Contract</a>
+              <a href="#unit-I-t9">9. Exceptions to the Doctrine of Privity of Contract</a>
+              <a href="#unit-I-t10">10. Standard Form of Contract</a>
+          </div>
+        <details class="topic-card" id="unit-I-t1">
+          <summary><span class="t-num">1</span>Definition and Essentials of a Valid Contract</summary>
+          <div class="topic-body">
+<p><strong>Definition</strong>: Section 2(h) of the Indian Contract Act, 1872 defines a contract as <strong>“an agreement enforceable by law.”</strong> This definition combines two elements: an <strong>agreement</strong> (Sec. 2(e) — “every promise and every set of promises forming consideration for each other”) and its <strong>enforceability by law</strong>.</p>
+<p><strong>Formula</strong>: Contract = Agreement + Enforceability by Law</p>
+<p><strong>Essentials of a Valid Contract</strong> (derived mainly from Sec. 10):</p>
+<ol type="1">
+<li><strong>Offer and Acceptance</strong>: There must be a lawful offer by one party and lawful acceptance of that offer by the other, resulting in an agreement.</li>
+<li><strong>Intention to Create Legal Relations</strong>: Social/domestic agreements (e.g., a promise to attend dinner) are usually not intended to have legal consequences and hence are not contracts — <em>Balfour v. Balfour</em> (1919) established that agreements between husband and wife regarding household arrangements are ordinarily not contracts due to lack of intention to create legal relations.</li>
+<li><strong>Lawful Consideration</strong>: Every contract must be supported by consideration, unless it falls under an exception (Sec. 25).</li>
+<li><strong>Capacity of Parties</strong>: Parties must be competent to contract as per Sec. 11 (age of majority, sound mind, not disqualified by law).</li>
+<li><strong>Free Consent</strong>: Consent must be free from coercion, undue influence, fraud, misrepresentation, and mistake (Sec. 13, 14).</li>
+<li><strong>Lawful Object</strong>: The object of the agreement must not be illegal, immoral, or opposed to public policy (Sec. 23).</li>
+<li><strong>Not Expressly Declared Void</strong>: The agreement must not fall under agreements expressly declared void by the Act (e.g., wagering agreements, agreements in restraint of trade/marriage).</li>
+<li><strong>Certainty of Terms</strong>: The terms of the agreement must be certain, or capable of being made certain (Sec. 29).</li>
+<li><strong>Possibility of Performance</strong>: An agreement to do an impossible act is void (Sec. 56).</li>
+<li><strong>Legal Formalities</strong> (where required): Some contracts require writing, registration, or attestation (e.g., a contract of gift of immovable property, or a contract for sale of land requiring registration under the Registration Act) — though as a general rule, Indian contract law does not require writing for a contract to be valid unless a specific statute demands it.</li>
+</ol>
+<p><strong>Distinction — Agreement vs. Contract</strong>: All contracts are agreements, but all agreements are not contracts. An agreement becomes a contract only when it is enforceable by law. E.g., a promise to attend a friend’s birthday party is an agreement but not a contract.</p>
+<hr/>
+          </div>
+        </details>
+        <details class="topic-card" id="unit-I-t2">
+          <summary><span class="t-num">2</span>Definition and Essentials of a Valid Offer (Proposal)</summary>
+          <div class="topic-body">
+<p><strong>Definition</strong>: Sec. 2(a) — “When one person signifies to another his willingness to do or to abstain from doing anything, with a view to obtaining the assent of that other to such act or abstinence, he is said to make a proposal.”</p>
+<p><strong>Essentials of a Valid Offer</strong>:</p>
+<ol type="1">
+<li><strong>It must be an expression of willingness to do or abstain from doing something.</strong></li>
+<li><strong>It must be made with a view to obtaining the assent of the other party</strong> — a mere statement of intention is not an offer.</li>
+<li><strong>It must be communicated to the offeree</strong> — an offer is effective only when communicated; a person cannot accept an offer of which they have no knowledge (<em>Lalman Shukla v. Gauri Dutt</em> (1913) — a servant who found a missing boy without knowledge of a reward offer could not later claim the reward, since acceptance without knowledge of the offer is not valid acceptance).</li>
+<li><strong>It must be certain, definite, and not vague</strong> — Sec. 29 renders agreements void for uncertainty.</li>
+<li><strong>It may be express or implied</strong> — an offer made by words (spoken/written) is express; an offer made by conduct is implied.</li>
+<li><strong>It may be specific or general</strong>: A specific offer is made to a particular person/group and can be accepted only by them; a general offer is made to the public at large and can be accepted by anyone who performs the conditions — <em>Carlill v. Carbolic Smoke Ball Co.</em> (1893) established that a general offer (advertisement promising £100 to anyone who used a smoke ball and still caught influenza) can result in a binding contract with anyone who performs the stipulated conditions, since performance itself amounts to acceptance and communication of acceptance is not required in such cases.</li>
+<li><strong>An offer must be distinguished from an “invitation to offer” (invitation to treat)</strong>: Display of goods in a shop window, price lists, advertisements for tender, and menus are generally invitations to treat, not offers — <em>Harvey v. Facey</em> (1893) held that supplying information (the lowest price of a property) in response to a query is not an offer; <em>Pharmaceutical Society of Great Britain v. Boots Cash Chemists</em> held that display of goods on shelves in a self-service shop is an invitation to treat, and the offer is made by the customer at the counter.</li>
+<li><strong>A statement of price during negotiations is not an offer.</strong></li>
+<li><strong>An offer must not contain a term the non-compliance of which would amount to acceptance</strong> — an offeror cannot impose silence as a mode of acceptance to bind the offeree (<em>Felthouse v. Bindley</em> (1862) — an uncle’s letter stating “if I hear no more, I shall consider the horse mine” did not create a contract because silence cannot amount to acceptance).</li>
+</ol>
+<hr/>
+          </div>
+        </details>
+        <details class="topic-card" id="unit-I-t3">
+          <summary><span class="t-num">3</span>Definition and Essentials of a Valid Acceptance</summary>
+          <div class="topic-body">
+<p><strong>Definition</strong>: Sec. 2(b) — “When the person to whom the proposal is made signifies his assent thereto, the proposal is said to be accepted. A proposal, when accepted, becomes a promise.”</p>
+<p><strong>Essentials of a Valid Acceptance</strong>:</p>
+<ol type="1">
+<li><strong>Acceptance must be absolute and unqualified</strong> (Sec. 7) — it must correspond exactly with the terms of the offer (“mirror image rule”). A conditional or qualified acceptance is not an acceptance in law but amounts to a <strong>counter-offer</strong>, which the original offeror is free to accept or reject — <em>Hyde v. Wrench</em> (1840): an offer to sell a farm for £1000 was met with a counter-offer of £950; when this was rejected, the original offer could not later be accepted since the counter-offer had effectively destroyed it.</li>
+<li><strong>Acceptance must be communicated</strong> — mental assent alone is not sufficient; it must be expressed by words or conduct and actually communicated to the offeror, except in cases of general offers where performance of the condition itself is treated as acceptance.</li>
+<li><strong>Acceptance must be given in the mode prescribed</strong> by the offeror, or, if no mode is prescribed, in some usual and reasonable manner (Sec. 7(2)).</li>
+<li><strong>Acceptance must be given within a reasonable time / before the offer lapses.</strong></li>
+<li><strong>Acceptance cannot precede an offer</strong> — a person cannot accept an offer they are unaware of.</li>
+<li><strong>Acceptance must be by the person to whom the offer is made</strong> (in case of a specific offer) or by anyone in case of a general offer.</li>
+<li><strong>Mere silence does not amount to acceptance</strong>, unless the offeree’s conduct/course of dealing implies acceptance.</li>
+<li><strong>Acceptance “subject to contract”</strong> or “subject to formal contract” is not a valid, final acceptance, since it indicates the parties do not intend to be bound until a formal document is executed.</li>
+</ol>
+<hr/>
+          </div>
+        </details>
+        <details class="topic-card" id="unit-I-t4">
+          <summary><span class="t-num">4</span>Communication of Offer and Acceptance</summary>
+          <div class="topic-body">
+<p>Governed by <strong>Sections 3 and 4</strong> of the Act.</p>
+<ul>
+<li><strong>Communication of Proposal</strong> (Sec. 4): Complete <strong>when it comes to the knowledge of the person to whom it is made</strong>.</li>
+<li><strong>Communication of Acceptance</strong>: Complete <strong>as against the proposer</strong>, when it is put in a course of transmission to him, so as to be out of the power of the acceptor (e.g., when a letter of acceptance is posted); Complete <strong>as against the acceptor</strong>, when it comes to the knowledge of the proposer (i.e., when the letter of acceptance actually reaches the proposer). This creates a time-gap during which the proposer is bound but the acceptor is not yet bound (and may revoke acceptance before it reaches the proposer).</li>
+<li><strong>Modes of Communication</strong> (Sec. 3): Communication may be made by act (words, spoken or written) or by conduct which has the effect of communicating it.</li>
+<li><strong>The “Postal Rule”</strong>: Under the general law of contract (particularly influential English law — <em>Adams v. Lindsell</em> (1818) and <em>Household Fire Insurance v. Grant</em> (1879)), where post is the agreed/reasonable mode, a contract is complete the moment the letter of acceptance is posted, even if it is delayed or lost in transit — reflected in the Indian scheme through Sec. 4.</li>
+<li><strong>Electronic Communication</strong>: With the growth of e-commerce, offer and acceptance through email, website transactions, and electronic data interchange are recognized as valid communications, and the <strong>Information Technology Act, 2000</strong> supplements the Contract Act by giving legal recognition to electronic records and electronic communication of offer and acceptance (e.g., Sec. 10A of the IT Act validates contracts formed through electronic means, and rules under Sec. 13 of the IT Act determine the time and place of dispatch/receipt of electronic records, analogous to the postal rule).</li>
+</ul>
+<hr/>
+          </div>
+        </details>
+        <details class="topic-card" id="unit-I-t5">
+          <summary><span class="t-num">5</span>Revocation of Offer and Acceptance (Including Electronic Medium)</summary>
+          <div class="topic-body">
+<p><strong>Definition</strong>: Revocation means the withdrawal or taking back of an offer or acceptance.</p>
+<p><strong>Time Limits for Revocation</strong> (Sec. 5): - An <strong>offer</strong> may be revoked at any time before the communication of its acceptance is complete as against the offeror (i.e., before the letter of acceptance is posted by the offeree), but not afterwards. - An <strong>acceptance</strong> may be revoked at any time before the communication of the acceptance is complete as against the acceptor (i.e., before the letter of acceptance reaches the offeror), but not afterwards.</p>
+<p><strong>Modes of Revocation of Offer</strong> (Sec. 6): 1. <strong>By notice of revocation</strong> given by the offeror to the other party. 2. <strong>By lapse of time</strong> prescribed in the offer, or, if no time is prescribed, by lapse of a reasonable time. 3. <strong>By failure of the acceptor to fulfil a condition precedent</strong> to acceptance. 4. <strong>By death or insanity of the offeror</strong>, provided this fact comes to the knowledge of the acceptor before acceptance.</p>
+<p><strong>Revocation in the Electronic Medium</strong>: Under the framework of the IT Act, 2000, an electronic offer/acceptance can similarly be revoked before it is “received” by the other party — Sec. 13 of the IT Act treats dispatch as occurring when the electronic record enters a computer resource outside the sender’s control, and receipt as occurring when it enters the designated computer resource of the addressee (or, if none designated, when retrieved by the addressee) — mirroring the logic of Sec. 4 of the Contract Act for the digital age.</p>
+<hr/>
+          </div>
+        </details>
+        <details class="topic-card" id="unit-I-t6">
+          <summary><span class="t-num">6</span>Consideration — Salient Features</summary>
+          <div class="topic-body">
+<p><strong>Definition</strong>: Sec. 2(d) — “When, at the desire of the promisor, the promisee or any other person has done or abstained from doing, or does or abstains from doing, or promises to do or abstain from doing, something, such act or abstinence or promise is called a consideration for the promise.”</p>
+<p><strong>Salient Features / Essentials of Valid Consideration</strong>:</p>
+<ol type="1">
+<li><strong>Consideration must move at the desire of the promisor</strong> — an act done voluntarily, or at the desire of a third party, is not good consideration — <em>Durga Prasad v. Baldeo</em> (1880): expenses incurred by a person on a market built at the collector’s (not the defendant’s) desire could not be recovered from the defendant, since the act was not done at the defendant’s desire.</li>
+<li><strong>Consideration may move from the promisee or any other person</strong> (Doctrine of “Consideration may move from a third party”) — Indian law is wider than English law here — <em>Chinnaya v. Ramayya</em> (1882): a person can enforce a promise even though consideration for it was furnished not by them but by a third party, as long as they are a party to the agreement.</li>
+<li><strong>Consideration may be past, present, or future</strong>: Past consideration = act done before the promise was made; Present (executed) consideration = act done simultaneously with the promise; Future (executory) consideration = a promise to do something in the future. (Note: past consideration, though generally not valid in English law, is recognized in Indian law under Sec. 2(d) — the phrase “has done or abstained from doing” covers past acts.)</li>
+<li><strong>Consideration need not be adequate, but must be real</strong> (Explanation 2 to Sec. 25) — courts do not inquire into adequacy of consideration; freedom of contract implies parties can settle on any bargain they wish, but the consideration must have some value in the eyes of the law, not be illusory or sham.</li>
+<li><strong>Consideration must be something which the promisor is not already legally bound to do</strong> — performance of an existing legal/contractual duty is generally not good consideration for a new promise.</li>
+<li><strong>Consideration must be lawful</strong> — consideration that is forbidden by law, defeats provisions of law, is fraudulent, injurious, or opposed to public policy renders the agreement void (Sec. 23).</li>
+</ol>
+<hr/>
+          </div>
+        </details>
+        <details class="topic-card" id="unit-I-t7">
+          <summary><span class="t-num">7</span>Exceptions to Consideration (“Nudum Pactum” Exceptions)</summary>
+          <div class="topic-body">
+<p>The general rule “no consideration, no contract” (nudum pactum rule) is subject to statutory exceptions under <strong>Section 25</strong>, where an agreement made without consideration is still valid:</p>
+<ol type="1">
+<li><strong>Natural Love and Affection</strong> [Sec. 25(1)]: An agreement made in writing, registered under the law for registration, and made on account of natural love and affection between parties standing in a near relation to each other, is valid without consideration (e.g., <em>Rajlukhy Dabee v. Bhootnath Mukherjee</em> — the agreement was held void as it did not show natural love and affection despite being between husband and wife, illustrating that mere relationship is not enough, love and affection must actually exist).</li>
+<li><strong>Compensation for Past Voluntary Service</strong> [Sec. 25(2)]: A promise to compensate a person who has already voluntarily done something for the promisor (or something the promisor was legally compellable to do) is enforceable without consideration.</li>
+<li><strong>Promise to Pay a Time-Barred Debt</strong> [Sec. 25(3)]: A written and signed promise to pay a debt which is barred by the Law of Limitation is valid without fresh consideration.</li>
+<li><strong>Completed Gifts</strong> (Explanation 1 to Sec. 25): The rule of “no consideration, no contract” does not affect the validity of a gift already made and accepted.</li>
+<li><strong>Agency</strong> (Sec. 185): No consideration is necessary to create an agency.</li>
+<li><strong>Contribution to Charity</strong>: Where a promisee incurs a liability on the promise of the promisor to contribute to charity, courts have sometimes enforced such a promise (though this is a more debated exception, generally requiring the promisee to have acted upon the promise to their detriment) — <em>Kedarnath Bhattacharji v. Gorie Mohamed</em> (1886) — a subscriber’s promise to contribute to construction of a town hall was enforced since the promisee had incurred a liability on the strength of that promise.</li>
+</ol>
+<hr/>
+          </div>
+        </details>
+        <details class="topic-card" id="unit-I-t8">
+          <summary><span class="t-num">8</span>Doctrine of Privity of Contract</summary>
+          <div class="topic-body">
+<p><strong>Meaning</strong>: The doctrine of privity of contract lays down the rule that <strong>only parties to a contract can sue or be sued upon it</strong>; a person who is not a party to the contract (a “stranger to the contract”), even if the contract is made for their benefit, cannot sue upon it.</p>
+<p><strong>Leading Case</strong>: <em>Tweddle v. Atkinson</em> (1861) — where fathers of a bride and groom agreed that each would pay a sum to the groom, the groom (a third party/beneficiary to the agreement between the fathers) could not sue for the amount as he was not a party to the contract, nor had he furnished any consideration.</p>
+<p><strong>Indian Position</strong>: <em>Dunlop Pneumatic Tyre Co. v. Selfridge &amp; Co.</em> (though an English case) reaffirmed the doctrine, and Indian courts have largely followed the privity rule, though with wider recognition of exceptions (partly due to Sec. 2(d) allowing consideration to move from a third party, which is related but distinct from the privity rule itself — privity concerns who can <em>sue</em>, not who can furnish consideration).</p>
+<hr/>
+          </div>
+        </details>
+        <details class="topic-card" id="unit-I-t9">
+          <summary><span class="t-num">9</span>Exceptions to the Doctrine of Privity of Contract</summary>
+          <div class="topic-body">
+<ol type="1">
+<li><strong>Trusts / Beneficiaries under a Trust</strong>: A beneficiary under a trust can enforce the trust even though they were not a party to the arrangement that created it — the beneficiary sues not on the contract itself but on the trust relationship.</li>
+<li><strong>Family Settlements / Marriage Arrangements</strong>: Where an arrangement is made in the course of a family settlement or marriage arrangement, and a provision is made for the benefit of a person (e.g., a female member), that person can enforce the provision even though not a party to the agreement — <em>Khwaja Muhammad Khan v. Husaini Begum</em> (1910).</li>
+<li><strong>Assignment of a Contract</strong>: An assignee of a contract (to whom the benefit of a contract has been transferred) can enforce it, though not an original party.</li>
+<li><strong>Acknowledgment or Estoppel</strong>: Where the promisor, by their conduct, acknowledges or creates an estoppel with a third party (e.g., admitting that a certain sum is held for the third party’s benefit), that third party may enforce the promise.</li>
+<li><strong>Agency</strong>: A principal can sue and be sued on contracts entered into by their duly authorized agent, even though the principal was not personally a party to the negotiations.</li>
+<li><strong>Covenants running with the land</strong>: In property law, a covenant relating to land may bind/benefit a subsequent purchaser of the land, even though they were not a party to the original agreement creating the covenant.</li>
+</ol>
+<hr/>
+          </div>
+        </details>
+        <details class="topic-card" id="unit-I-t10">
+          <summary><span class="t-num">10</span>Standard Form of Contract</summary>
+          <div class="topic-body">
+<p><strong>Meaning</strong>: A standard form contract (also called a “contract of adhesion” or “take-it-or-leave-it contract”) is a contract where one party (usually a large enterprise) prepares a standard set of terms which are offered to a large number of persons (customers) on a “take it or leave it” basis, leaving little or no scope for negotiation of terms — common in insurance, transport, banking, and online consumer contracts.</p>
+<p><strong>Legal Concerns</strong>: - Since the weaker party (consumer) has no real bargaining power, courts have evolved special protective doctrines: 1. <strong>Doctrine of Reasonable Notice</strong>: The party imposing the standard terms must give reasonable notice of the terms/conditions to the other party at or before the time of contracting. 2. <strong>Doctrine of Fundamental Breach</strong>: A party cannot rely on an exemption clause to escape liability for a breach that goes to the very root of the contract. 3. <strong>Contra Proferentem Rule</strong>: If there is ambiguity in the terms of a standard form contract, it is interpreted against the party who drafted/imposed it (the “proferens”). 4. <strong>Statutory Protection</strong>: The Consumer Protection Act, 2019 provides remedies against unfair contract terms and unfair trade practices, supplementing the common law protections. - Standard form contracts are not inherently invalid; they are valid and useful for mass commercial transactions, but courts scrutinize them closely to prevent exploitation of unequal bargaining power.</p>
+<hr/>
+          </div>
+        </details>
+        </div>
+
+        <div class="unit-block" id="unit-II">
+          <h3 class="unit-title">Unit-II: Capacity, Free Consent and Legality of Object</h3>
+          <div class="topic-legend">
+              <a href="#unit-II-t1">1. Capacity of the Parties to Contract</a>
+              <a href="#unit-II-t2">2. Effect of a Minor’s Agreement</a>
+              <a href="#unit-II-t3">3. Contracts with Persons of Unsound Mind and Persons Disqualified by Law</a>
+              <a href="#unit-II-t4">4. Concepts of Free Consent</a>
+              <a href="#unit-II-t5">5. Coercion</a>
+              <a href="#unit-II-t6">6. Undue Influence</a>
+              <a href="#unit-II-t7">7. Misrepresentation</a>
+              <a href="#unit-II-t8">8. Fraud</a>
+              <a href="#unit-II-t9">9. Mistake</a>
+              <a href="#unit-II-t10">10. Lawful Object and Public Policy</a>
+              <a href="#unit-II-t11">11. Immoral Agreements</a>
+              <a href="#unit-II-t12">12. Illegal Agreements</a>
+              <a href="#unit-II-t13">13. Uncertain Agreements</a>
+              <a href="#unit-II-t14">14. Wagering Agreements</a>
+              <a href="#unit-II-t15">15. Contingent Contracts</a>
+              <a href="#unit-II-t16">16. Void and Voidable Contracts</a>
+          </div>
+        <details class="topic-card" id="unit-II-t1">
+          <summary><span class="t-num">1</span>Capacity of the Parties to Contract</summary>
+          <div class="topic-body">
+<p><strong>Definition</strong>: Sec. 11 — “Every person is competent to contract who is of the age of majority according to the law to which he is subject, and who is of sound mind, and is not disqualified from contracting by any law to which he is subject.”</p>
+<p><strong>Three Requirements for Capacity</strong>: 1. <strong>Age of Majority</strong>: 18 years under the Indian Majority Act, 1875 (or 21 years where a guardian of the minor’s person/property has been appointed by the court). 2. <strong>Soundness of Mind</strong>: Sec. 12 — a person is of sound mind for the purpose of making a contract if, at the time of making it, they are capable of understanding it and forming a rational judgment as to its effect on their interests. 3. <strong>Not Disqualified by Law</strong>: Includes alien enemies (during war), foreign sovereigns/diplomats (without consent of their government), insolvents, and convicts (during the period of imprisonment).</p>
+          </div>
+        </details>
+        <details class="topic-card" id="unit-II-t2">
+          <summary><span class="t-num">2</span>Effect of a Minor’s Agreement</summary>
+          <div class="topic-body">
+<p><strong>Rule</strong>: An agreement with or by a minor is <strong>void ab initio</strong> (void from the very beginning), not merely voidable.</p>
+<p><strong>Leading Case</strong>: <strong><em>Mohori Bibee v. Dharmodas Ghose</em> (1903)</strong> — a landmark Privy Council decision: a minor mortgaged his property to a moneylender who was aware of his minority. The Privy Council held that since the minor was not competent to contract, the mortgage was void ab initio; the moneylender could not recover the money advanced, nor could they enforce the mortgage.</p>
+<p><strong>Key Consequences of the Rule</strong>: 1. <strong>No Ratification</strong>: An agreement made during minority cannot be ratified by the person on attaining majority, since there was no valid agreement to begin with (there being no consideration furnished at the time of the earlier agreement to support a fresh promise). 2. <strong>Minor as a Beneficiary</strong>: A minor can be a beneficiary/promisee under a contract — e.g., a minor can enforce a contract of sale/lease/mortgage in their favour, or claim benefits under a contract for their necessities. 3. <strong>No Estoppel Against a Minor</strong>: A minor is not estopped from pleading minority even if they fraudulently represented themselves as a major at the time of contracting. 4. <strong>Doctrine of Restitution</strong>: Where a minor has obtained a benefit under a void agreement (e.g., by misrepresenting their age), equity may require the minor to restore the benefit if it is traceable and still in their possession, though they cannot be made to repay in money. 5. <strong>Minor’s Liability for Necessaries</strong> (Sec. 68): A person who supplies necessaries suited to the condition in life of a minor is entitled to be reimbursed from the minor’s property (not personally from the minor) — this is a quasi-contractual liability, not a contractual one. 6. <strong>Minor and Partnership</strong>: A minor cannot become a full partner in a firm but may be admitted to the benefits of partnership with the consent of all partners. 7. <strong>Minor as an Agent</strong>: A minor can act as an agent and bind the principal by their acts, though the minor themselves cannot be held personally liable to the principal.</p>
+          </div>
+        </details>
+        <details class="topic-card" id="unit-II-t3">
+          <summary><span class="t-num">3</span>Contracts with Persons of Unsound Mind and Persons Disqualified by Law</summary>
+          <div class="topic-body">
+<ul>
+<li><strong>Persons of Unsound Mind</strong> (Sec. 12): A person who is usually of unsound mind but occasionally of sound mind may contract during a <strong>lucid interval</strong>. Conversely, a person who is usually of sound mind but occasionally of unsound mind cannot contract when they are of unsound mind. Agreements by persons of unsound mind are generally void, similar to a minor’s agreement (though supply of necessaries to a person of unsound mind is similarly recoverable from their property under Sec. 68).</li>
+<li><strong>Persons Disqualified by Law</strong>: Includes <strong>alien enemies</strong> (a person owing allegiance to a country at war with India cannot contract, and existing contracts are suspended during the war), <strong>insolvents</strong> (an adjudicated insolvent’s property vests in the official receiver/assignee and they cannot enter into contracts related to that property), <strong>convicts</strong> (during the term of imprisonment, a convict’s capacity to contract is suspended, though it revives on the expiry of the sentence or on receiving a pardon), and <strong>corporations</strong> (a company’s contractual capacity is limited to the objects specified in its Memorandum of Association — acts beyond this are ultra vires and void).</li>
+</ul>
+          </div>
+        </details>
+        <details class="topic-card" id="unit-II-t4">
+          <summary><span class="t-num">4</span>Concepts of Free Consent</summary>
+          <div class="topic-body">
+<p><strong>Definition</strong>: “Consent” (Sec. 13) means that two or more persons agree upon the same thing in the same sense (<strong>“consensus ad idem”</strong>). “Free consent” (Sec. 14) means consent which is not caused by: 1. Coercion (Sec. 15) 2. Undue Influence (Sec. 16) 3. Fraud (Sec. 17) 4. Misrepresentation (Sec. 18) 5. Mistake (Sections 20, 21, 22)</p>
+<p><strong>Effect</strong>: When consent is caused by coercion, undue influence, fraud, or misrepresentation, the agreement is a contract <strong>voidable</strong> at the option of the party whose consent was so caused (Sec. 19, 19A). When consent is caused by a bilateral mistake of fact, the agreement is <strong>void</strong> (Sec. 20).</p>
+          </div>
+        </details>
+        <details class="topic-card" id="unit-II-t5">
+          <summary><span class="t-num">5</span>Coercion</summary>
+          <div class="topic-body">
+<p><strong>Definition</strong>: Sec. 15 — Coercion is <strong>“the committing, or threatening to commit, any act forbidden by the Indian Penal Code [now BNS], or the unlawful detaining, or threatening to detain, any property, to the prejudice of any person whatever, with the intention of causing any person to enter into an agreement.”</strong></p>
+<p><strong>Essentials</strong>: 1. Committing or threatening to commit an act forbidden by criminal law (BNS). 2. Unlawful detaining or threatening to detain property. 3. The act/threat must be done with the intention of causing the other person to enter into the agreement.</p>
+<p><strong>Illustration</strong>: <em>Ranganayakamma v. Alwar Setty</em> — a widow was forced to adopt a boy under threat that her husband’s dead body would not be allowed to be removed for cremation unless she consented; the adoption was held voidable on the ground of coercion.</p>
+<p><strong>Effect of Coercion</strong>: The contract is voidable at the option of the party whose consent was obtained by coercion (Sec. 19); the aggrieved party may also be required to restore any benefit received under the contract if they choose to rescind it.</p>
+          </div>
+        </details>
+        <details class="topic-card" id="unit-II-t6">
+          <summary><span class="t-num">6</span>Undue Influence</summary>
+          <div class="topic-body">
+<p><strong>Definition</strong>: Sec. 16(1) — A contract is said to be induced by undue influence “where the relations subsisting between the parties are such that one of the parties is in a position to dominate the will of the other and uses that position to obtain an unfair advantage over the other.”</p>
+<p><strong>When a Person is Deemed to Be in a Position to Dominate the Will of Another</strong> [Sec. 16(2)]: (a) Where they hold a real or apparent authority over the other (e.g., master-servant, police officer-accused), or where they stand in a fiduciary relation to the other (e.g., solicitor-client, trustee-beneficiary, doctor-patient, guardian-ward); (b) Where they make a contract with a person whose mental capacity is temporarily or permanently affected by reason of age, illness, or mental/bodily distress (e.g., contracting with an elderly, sick person).</p>
+<p><strong>Burden of Proof</strong>: Sec. 16(3) — where a person in a dominant position enters into a transaction with another that appears unconscionable on its face, the burden of proving that the contract was not induced by undue influence lies on the dominant party.</p>
+<p><strong>Distinction from Coercion</strong>: Coercion involves physical/criminal force or threat; undue influence involves moral/mental domination arising from a special relationship.</p>
+          </div>
+        </details>
+        <details class="topic-card" id="unit-II-t7">
+          <summary><span class="t-num">7</span>Misrepresentation</summary>
+          <div class="topic-body">
+<p><strong>Definition</strong>: Sec. 18 — Misrepresentation includes: 1. The positive assertion, in a manner not warranted by the information of the person making it, of that which is not true, though they believe it to be true. 2. Any breach of duty which, without an intent to deceive, gains an advantage to the person committing it, by misleading another to their prejudice. 3. Causing, however innocently, a party to an agreement to make a mistake as to the substance of the subject matter.</p>
+<p><strong>Key Feature</strong>: Misrepresentation is an <strong>innocent</strong> false statement — the person making it honestly believes it to be true (unlike fraud, where there is knowledge of falsity or reckless disregard for the truth).</p>
+<p><strong>Effect</strong>: The contract is voidable at the option of the party whose consent was obtained by misrepresentation; they may also, in certain cases, insist that the contract be performed and that they be put in the position they would have been if the representation made had been true.</p>
+          </div>
+        </details>
+        <details class="topic-card" id="unit-II-t8">
+          <summary><span class="t-num">8</span>Fraud</summary>
+          <div class="topic-body">
+<p><strong>Definition</strong>: Sec. 17 — Fraud means any of the following acts committed by a party to a contract (or with their connivance/agent) with intent to deceive another party or induce them to enter into the contract: 1. The suggestion of a fact which is not true, by one who does not believe it to be true. 2. The active concealment of a fact by one having knowledge/belief of the fact. 3. A promise made without any intention of performing it. 4. Any other act fitted to deceive. 5. Any such act or omission as the law specially declares to be fraudulent.</p>
+<p><strong>Silence as Fraud</strong>: Explanation to Sec. 17 — mere silence as to facts likely to affect a person’s willingness to enter into a contract is not fraud, <strong>unless</strong>: (a) the circumstances create a duty on the person keeping silent to speak (e.g., contracts of insurance, which are contracts of <em>uberrimae fidei</em> — utmost good faith); or (b) silence itself is, in effect, equivalent to speech (e.g., where a person’s silence, combined with their conduct, actively misleads the other party).</p>
+<p><strong>Effect</strong>: The contract is voidable at the option of the deceived party; they may also claim damages in tort (deceit) in addition to avoiding the contract.</p>
+          </div>
+        </details>
+        <details class="topic-card" id="unit-II-t9">
+          <summary><span class="t-num">9</span>Mistake</summary>
+          <div class="topic-body">
+<p><strong>Meaning</strong>: An erroneous belief about something.</p>
+<p><strong>Kinds of Mistake</strong>: 1. <strong>Mistake of Law</strong>: Ignorance of law is no excuse (“ignorantia juris non excusat”) — a mistake as to Indian law does not affect the validity of a contract (Sec. 21), though a mistake as to a <strong>foreign law</strong> is treated as a mistake of fact. 2. <strong>Mistake of Fact</strong>: - <strong>Bilateral Mistake</strong> (Sec. 20): Where <strong>both</strong> parties to an agreement are mistaken as to a matter of fact essential to the agreement, the agreement is <strong>void</strong>. This includes mistake as to the existence of the subject matter, its identity, its title, its price, or the possibility of performance. - <strong>Unilateral Mistake</strong> (Sec. 22): Where only <strong>one</strong> party is mistaken as to a matter of fact, the contract is <strong>not</strong> voidable merely on that ground — the general rule is that unilateral mistake does not affect the validity of a contract, though there are exceptions (e.g., mistake as to the identity of a party, or mistake as to the nature of the document signed — “non est factum”).</p>
+          </div>
+        </details>
+        <details class="topic-card" id="unit-II-t10">
+          <summary><span class="t-num">10</span>Lawful Object and Public Policy</summary>
+          <div class="topic-body">
+<p><strong>Definition</strong>: Sec. 23 — The consideration or object of an agreement is unlawful if it: 1. Is forbidden by law; 2. Is of such a nature that, if permitted, it would defeat the provisions of any law; 3. Is fraudulent; 4. Involves or implies injury to the person or property of another; 5. Is regarded by the court as immoral; or 6. Is opposed to public policy.</p>
+<p><strong>Effect</strong>: Every agreement of which the object or consideration is unlawful is <strong>void</strong>.</p>
+<p><strong>Heads of Public Policy</strong> (illustrative, not exhaustive) — courts have identified various categories of agreements considered opposed to public policy, including: agreements for trading with an enemy, agreements to commit a crime, agreements interfering with the administration of justice (e.g., stifling prosecution), agreements in restraint of legal proceedings, marriage brokerage agreements, agreements in restraint of parental rights, agreements restricting personal liberty, and agreements tending to create monopolies or interfere with the course of justice.</p>
+          </div>
+        </details>
+        <details class="topic-card" id="unit-II-t11">
+          <summary><span class="t-num">11</span>Immoral Agreements</summary>
+          <div class="topic-body">
+<p>Agreements the object of which is immoral (e.g., an agreement for an immoral purpose, or an agreement based on an immoral consideration such as future illicit cohabitation) are void under Sec. 23. Indian courts have generally interpreted “immoral” to include sexually immoral purposes as well as broader conduct considered contrary to accepted standards of morality.</p>
+          </div>
+        </details>
+        <details class="topic-card" id="unit-II-t12">
+          <summary><span class="t-num">12</span>Illegal Agreements</summary>
+          <div class="topic-body">
+<p>An illegal agreement is one that is forbidden by law or is of a criminal nature. Unlike a merely void agreement (which may still have collateral, unconnected transactions unaffected), an illegal agreement taints even collateral transactions connected with it — courts refuse to enforce illegal agreements based on the maxim “ex turpi causa non oritur actio” (no action arises from a base/illegal cause).</p>
+          </div>
+        </details>
+        <details class="topic-card" id="unit-II-t13">
+          <summary><span class="t-num">13</span>Uncertain Agreements</summary>
+          <div class="topic-body">
+<p><strong>Definition</strong>: Sec. 29 — “Agreements, the meaning of which is not certain, or capable of being made certain, are void.” E.g., an agreement to sell “a hundred tons of oil” without specifying which kind of oil is void for uncertainty, unless the surrounding circumstances/course of dealing make the meaning clear.</p>
+          </div>
+        </details>
+        <details class="topic-card" id="unit-II-t14">
+          <summary><span class="t-num">14</span>Wagering Agreements</summary>
+          <div class="topic-body">
+<p><strong>Definition</strong>: Sec. 30 — Agreements by way of wager are <strong>void</strong>, and no suit can be brought for recovering anything won on any wager. A wager is essentially a promise to pay money/money’s worth upon the determination of an uncertain event, where the parties have no interest in the outcome other than the sum they will win or lose.</p>
+<p><strong>Essentials of a Wager</strong>: 1. Promise to pay money/money’s worth. 2. Dependent on the determination of an uncertain event. 3. Mutual chance of gain or loss — each party stands to either win or lose. 4. Neither party has any interest in the event other than the stake.</p>
+<p><strong>Exceptions</strong>: Certain transactions, though appearing to involve chance, are excluded from being wagers — e.g., a contract of insurance (where the insured has an insurable interest), a genuine commercial transaction for the sale/purchase of shares/commodities (as distinguished from speculative wagering on price movements alone), and games of skill to a certain extent as permitted by state laws.</p>
+          </div>
+        </details>
+        <details class="topic-card" id="unit-II-t15">
+          <summary><span class="t-num">15</span>Contingent Contracts</summary>
+          <div class="topic-body">
+<p><strong>Definition</strong>: Sec. 31 — A contingent contract is “a contract to do or not to do something, if some event, collateral to such contract, does or does not happen.” E.g., a contract of insurance, indemnity, or guarantee.</p>
+<p><strong>Rules Regarding Contingent Contracts</strong> (Sec. 32-36): - Contracts contingent on the <strong>happening</strong> of a future uncertain event cannot be enforced until the event happens; if the event becomes impossible, the contract becomes void (Sec. 32). - Contracts contingent on the <strong>non-happening</strong> of a future uncertain event can be enforced when the happening becomes impossible (Sec. 33). - Contracts contingent on how a person will act at an unspecified time are treated as impossible when that person does anything which renders it impossible for them to act in the specified manner within a reasonable time, or when a reasonable time elapses (Sec. 34). - Contingent agreements to do/not do something on the happening/non-happening of a specified uncertain event <strong>within a fixed time</strong> become void if the event does not happen (or the possibility of its happening ceases) before the time expires (Sec. 35). - Agreements contingent on impossible events are void ab initio (Sec. 36), whether or not the impossibility is known to the parties at the time the agreement is made.</p>
+<p><strong>Distinguishing from Wagering Agreements</strong>: While both depend on an uncertain future event, a contingent contract involves genuine parties with an actual interest in the subject matter, whereas a wagering agreement is purely speculative with no genuine underlying interest — hence contingent contracts are valid while wagering agreements are void.</p>
+          </div>
+        </details>
+        <details class="topic-card" id="unit-II-t16">
+          <summary><span class="t-num">16</span>Void and Voidable Contracts</summary>
+          <div class="topic-body">
+<ul>
+<li><strong>Void Agreement</strong> [Sec. 2(g)]: “An agreement not enforceable by law is said to be void.” It has no legal effect from the very beginning (void ab initio) or becomes void due to a subsequent event (e.g., subsequent impossibility under Sec. 56).</li>
+<li><strong>Voidable Contract</strong> [Sec. 2(i)]: “An agreement which is enforceable by law at the option of one or more of the parties thereto, but not at the option of the other or others, is a voidable contract.” A voidable contract remains valid and binding until the aggrieved party exercises their option to avoid/rescind it.</li>
+<li><strong>Key Difference</strong>: A void agreement is void from the start and confers no rights on either party; a voidable contract is valid until the aggrieved party chooses to rescind it, and confers rights that can be enforced unless/until rescission takes place.</li>
+</ul>
+<hr/>
+          </div>
+        </details>
+        </div>
+
+        <div class="unit-block" id="unit-III">
+          <h3 class="unit-title">Unit-III: Discharge and Breach of Contracts</h3>
+          <div class="topic-legend">
+              <a href="#unit-III-t1">1. Discharge of Contracts by Performance</a>
+              <a href="#unit-III-t2">2. Appropriation of Payments</a>
+              <a href="#unit-III-t3">3. Performance by Joint Promisors</a>
+              <a href="#unit-III-t4">4. Discharge by Novation, Rescission, Alteration</a>
+              <a href="#unit-III-t5">5. Remission</a>
+              <a href="#unit-III-t6">6. Accord and Satisfaction</a>
+              <a href="#unit-III-t7">7. Discharge by Impossibility of Performance (Doctrine of Frustration)</a>
+              <a href="#unit-III-t8">8. Discharge by Breach</a>
+          </div>
+        <details class="topic-card" id="unit-III-t1">
+          <summary><span class="t-num">1</span>Discharge of Contracts by Performance</summary>
+          <div class="topic-body">
+<p><strong>Meaning</strong>: A contract is discharged by performance when both parties fulfil their respective obligations under the contract, in accordance with its terms.</p>
+<p><strong>Kinds of Performance</strong>: 1. <strong>Actual Performance</strong> (Sec. 37): Where a party has done what they had undertaken to do. 2. <strong>Attempted Performance / Tender</strong> (Sec. 38): Where the promisor offers to perform their obligation but the promisee refuses to accept the performance; a valid tender discharges the promisor from liability for non-performance, provided the tender is unconditional, at the proper time/place, and of the whole obligation.</p>
+<p><strong>Time and Place of Performance</strong> (Sections 46-50): Where no time is specified, performance must be within a reasonable time; where a specific day is fixed, performance must be on that day during usual business hours, at a place agreed upon by the parties or, in the absence of agreement, at a place the promisor may reasonably designate.</p>
+          </div>
+        </details>
+        <details class="topic-card" id="unit-III-t2">
+          <summary><span class="t-num">2</span>Appropriation of Payments</summary>
+          <div class="topic-body">
+<p><strong>Sections 59-61</strong>: Where a debtor owes several distinct debts to the same creditor and makes a payment, the following rules of appropriation apply: 1. <strong>Sec. 59</strong>: If the debtor, at the time of payment, indicates (expressly or by the circumstances) which debt the payment is to be applied to, the creditor must apply it accordingly. 2. <strong>Sec. 60</strong>: If the debtor gives no such indication, the creditor may apply the payment to any lawful debt actually due, including a time-barred debt. 3. <strong>Sec. 61</strong>: If neither party appropriates the payment, it must be applied in discharge of the debts in order of time, and if the debts are of equal standing, proportionately.</p>
+          </div>
+        </details>
+        <details class="topic-card" id="unit-III-t3">
+          <summary><span class="t-num">3</span>Performance by Joint Promisors</summary>
+          <div class="topic-body">
+<p><strong>Sections 42-45</strong>: Where two or more persons make a joint promise: - <strong>Sec. 42</strong>: All joint promisors must jointly fulfil the promise, and if any of them dies, their legal representatives must, jointly with the surviving promisors, fulfil the promise. - <strong>Sec. 43</strong>: In the absence of an express contract to the contrary, the promisee may compel any one or more of the joint promisors to perform the whole of the promise (joint and several liability towards the promisee); a promisor compelled to perform may seek contribution from the other joint promisors. - <strong>Sec. 44</strong>: A release of one joint promisor by the promisee does not discharge the other joint promisors from liability, nor does it free the released promisor from responsibility to the other joint promisors. - <strong>Sec. 45</strong>: Where a person has made a joint promise to several persons jointly, the right to claim performance rests with all the joint promisees jointly (during their lifetime), and after the death of any of them, with their representative jointly with the surviving promisees.</p>
+          </div>
+        </details>
+        <details class="topic-card" id="unit-III-t4">
+          <summary><span class="t-num">4</span>Discharge by Novation, Rescission, Alteration</summary>
+          <div class="topic-body">
+<p><strong>Section 62</strong>: If the parties to a contract agree to substitute a new contract for it, or to rescind or alter it, the original contract need not be performed.</p>
+<ul>
+<li><strong>Novation</strong>: Substitution of a new contract in place of the existing one, either between the same parties or with a new party being substituted for one of the original parties (with the consent of all concerned). The original contract is discharged, and the new contract must be valid and enforceable.</li>
+<li><strong>Rescission</strong>: Cancellation of the contract by mutual consent of the parties, releasing them from their obligations under it, without substituting a new agreement.</li>
+<li><strong>Alteration</strong>: A change in one or more of the terms of the contract with the consent of all parties, while the identity of the parties remains the same — distinguished from novation, which involves a change in the terms so fundamental as to constitute an entirely new contract, or a change of parties.</li>
+</ul>
+          </div>
+        </details>
+        <details class="topic-card" id="unit-III-t5">
+          <summary><span class="t-num">5</span>Remission</summary>
+          <div class="topic-body">
+<p><strong>Section 63</strong>: Every promisee may: (a) dispense with or remit, wholly or in part, the performance of the promise made to them; (b) extend the time for such performance; or (c) accept any satisfaction they think fit, instead of full performance.</p>
+<p><strong>Illustration</strong>: A owes B ₹5,000. A pays B ₹2,000, and B accepts it in full satisfaction of the whole debt. This is a valid discharge of the whole debt through remission (note: remission under Indian law does not require fresh consideration, unlike English law’s rule in <em>Pinnel’s Case</em>/<em>Foakes v. Beer</em> requiring consideration for accepting a lesser sum, since Sec. 63 is an express statutory exception).</p>
+          </div>
+        </details>
+        <details class="topic-card" id="unit-III-t6">
+          <summary><span class="t-num">6</span>Accord and Satisfaction</summary>
+          <div class="topic-body">
+<p><strong>Meaning</strong>: “Accord” refers to the agreement by which an obligation is discharged, and “satisfaction” is the consideration which makes the agreement operative. Under Indian law, this is essentially covered within Sec. 63 (remission — acceptance of a different performance in satisfaction), and does not require separate consideration in the way English common law traditionally demanded.</p>
+          </div>
+        </details>
+        <details class="topic-card" id="unit-III-t7">
+          <summary><span class="t-num">7</span>Discharge by Impossibility of Performance (Doctrine of Frustration)</summary>
+          <div class="topic-body">
+<p><strong>Section 56</strong>: - Para 1: An agreement to do an act <strong>impossible in itself</strong> is void. - Para 2: A contract to do an act which, after the contract is made, becomes <strong>impossible</strong>, or, by reason of some event which the promisor could not prevent, <strong>unlawful</strong>, becomes void when the act becomes impossible or unlawful. - Para 3: Where a person promised to do something they knew, or with reasonable diligence might have known, to be impossible or unlawful, but the promisee did not know this, the promisor must compensate the promisee for any loss caused by non-performance.</p>
+<p><strong>Grounds for Frustration</strong> (illustrative categories developed through case law): 1. <strong>Destruction of the subject matter</strong> — <em>Taylor v. Caldwell</em> (1863): a music hall hired for concerts was destroyed by fire before the date of performance; the contract was held frustrated as performance had become impossible. 2. <strong>Death or incapacity in contracts of a personal nature</strong> (e.g., a contract for personal services where the performer dies or becomes incapacitated). 3. <strong>Non-occurrence of a contemplated event forming the very foundation of the contract</strong> — <em>Krell v. Henry</em> (1903): a room was hired specifically to view the coronation procession of King Edward VII; when the procession was cancelled due to the King’s illness, the contract was held frustrated, as the very foundation of the contract had failed. 4. <strong>Supervening illegality</strong> — a change in law after the contract is made, which renders performance unlawful (e.g., outbreak of war rendering trade with an enemy country illegal). 5. <strong>Government/administrative intervention</strong> frustrating the object of the contract.</p>
+<p><strong>Leading Indian Case</strong>: <em>Satyabrata Ghose v. Mugneeram Bangur &amp; Co.</em> (1954) — the Supreme Court held that Sec. 56 encompasses the English doctrine of frustration; the true test is whether a supervening event has struck at the root of the contract and gone beyond what was contemplated by the parties, rendering performance impossible or radically different from what was undertaken. <strong>Mere commercial hardship, delay, or difficulty in performance does not amount to frustration</strong> — the impossibility must be real, not merely inconvenient or unprofitable.</p>
+<p><strong>Effect</strong>: Where a contract becomes void under Sec. 56, any person who has received an advantage under such agreement/contract is bound to restore it, or to make compensation for it, to the person from whom they received it (Sec. 65).</p>
+          </div>
+        </details>
+        <details class="topic-card" id="unit-III-t8">
+          <summary><span class="t-num">8</span>Discharge by Breach</summary>
+          <div class="topic-body">
+<p><strong>Meaning</strong>: Breach of contract occurs when a party fails, without lawful excuse, to perform their obligation under the contract, or disables themselves from performing it, or repudiates their liability under it.</p>
+<p><strong>Kinds of Breach</strong>: 1. <strong>Anticipatory Breach</strong>: Occurs when a party, before the time fixed for performance has arrived, either expressly renounces the contract (declares an intention not to perform) or does some act which makes performance impossible (implied repudiation). The aggrieved party has an <strong>option</strong>: (a) to treat the contract as discharged immediately and sue for damages without waiting for the actual date of performance, or (b) to treat the contract as still subsisting and wait for the actual date of performance, keeping it alive for the benefit of both parties (though this carries the risk that a subsequent supervening event, e.g., frustration, may discharge the contract before performance falls due, and the breaching party may also, in some cases, take advantage of any excuse arising in the interim). - Leading Case: <em>Hochster v. De La Tour</em> (1853) — established that an aggrieved party may sue immediately upon anticipatory breach without waiting for the performance date. 2. <strong>Actual Breach</strong>: Occurs either (a) at the time when performance is due — a party fails/refuses to perform their obligation when it falls due for performance, or (b) during the performance of the contract — a party fails/refuses to perform their obligation while performance is in progress.</p>
+<p><strong>Effect of Breach</strong>: The aggrieved party is discharged from performing their own obligations and becomes entitled to claim remedies for the breach (damages, specific performance, injunction, quantum meruit, or rescission, as discussed in Unit-IV/V).</p>
+<hr/>
+          </div>
+        </details>
+        </div>
+
+        <div class="unit-block" id="unit-IV">
+          <h3 class="unit-title">Unit-IV: Quasi-Contracts and Remedies for Breach</h3>
+          <div class="topic-legend">
+              <a href="#unit-IV-t1">1. Quasi-Contract — General Concept</a>
+              <a href="#unit-IV-t2">2. Necessaries Supplied to a Person Incapable of Contracting</a>
+              <a href="#unit-IV-t3">3. Payment by an Interested Person</a>
+              <a href="#unit-IV-t4">4. Liability to Pay for Non-Gratuitous Acts (Quantum Meruit within Quasi-Contract)</a>
+              <a href="#unit-IV-t5">5. Rights and Duties of the Finder of Lost Goods</a>
+              <a href="#unit-IV-t6">6. Money Paid or Thing Delivered by Mistake or Coercion</a>
+              <a href="#unit-IV-t7">7. Quantum Meruit</a>
+              <a href="#unit-IV-t8">8. Remedies for Breach of Contract</a>
+              <a href="#unit-IV-t9">9. Kinds of Damages</a>
+              <a href="#unit-IV-t10">10. Duty to Mitigate Loss</a>
+          </div>
+        <details class="topic-card" id="unit-IV-t1">
+          <summary><span class="t-num">1</span>Quasi-Contract — General Concept</summary>
+          <div class="topic-body">
+<p><strong>Meaning</strong>: A quasi-contract is not a contract in the true sense (there is no offer, acceptance, or consensus ad idem between the parties), but the law, based on principles of <strong>equity, justice, and good conscience</strong> (and to prevent unjust enrichment), imposes obligations on a person as if a contract existed. The Indian Contract Act deals with these under <strong>Sections 68 to 72</strong>, under the heading “Certain Relations Resembling Those Created by Contract.”</p>
+<p><strong>Underlying Principle</strong>: No person should be allowed to unjustly enrich themselves at the expense of another.</p>
+          </div>
+        </details>
+        <details class="topic-card" id="unit-IV-t2">
+          <summary><span class="t-num">2</span>Necessaries Supplied to a Person Incapable of Contracting</summary>
+          <div class="topic-body">
+<p><strong>Section 68</strong>: “If a person, incapable of entering into a contract, or any one whom he is legally bound to support, is supplied by another person with necessaries suited to his condition in life, the person who has furnished such supplies is entitled to be reimbursed from the property of such incapable person.”</p>
+<p><strong>Key Points</strong>: - Applies to minors, persons of unsound mind, and other legally incapable persons. - Liability is only to the extent of the <strong>incapable person’s property</strong> — there is no personal liability. - “Necessaries” are goods/services suited to the actual requirements and social status of the person (food, clothing, shelter, medical aid, education) — not luxuries.</p>
+          </div>
+        </details>
+        <details class="topic-card" id="unit-IV-t3">
+          <summary><span class="t-num">3</span>Payment by an Interested Person</summary>
+          <div class="topic-body">
+<p><strong>Section 69</strong>: “A person who is interested in the payment of money which another is bound by law to pay, and who therefore pays it, is entitled to be reimbursed by the other.”</p>
+<p><strong>Illustration</strong>: B holds land in Bengal on lease granted by A, the zamindar. The revenue payable by A to the government being in arrears, the government advertises the land for sale. Under the revenue law, the consequence of such sale will be the annulment of B’s lease. B, to prevent this sale and consequent annulment of their lease, pays the government the sum due from A. A is bound to make good to B the amount so paid.</p>
+          </div>
+        </details>
+        <details class="topic-card" id="unit-IV-t4">
+          <summary><span class="t-num">4</span>Liability to Pay for Non-Gratuitous Acts (Quantum Meruit within Quasi-Contract)</summary>
+          <div class="topic-body">
+<p><strong>Section 70</strong>: “Where a person lawfully does anything for another person, or delivers anything to him, not intending to do so gratuitously, and such other person enjoys the benefit thereof, the latter is bound to make compensation to the former in respect of, or to restore, the thing so done or delivered.”</p>
+<p><strong>Essentials</strong>: 1. The act/delivery of goods must be lawful. 2. It must not be intended to be done gratuitously (i.e., free of charge). 3. The person for whom the act is done must have enjoyed the benefit of it.</p>
+<p><strong>Illustration</strong>: A, a tradesman, leaves goods at B’s house by mistake. B treats the goods as their own. B is bound to pay A for them.</p>
+          </div>
+        </details>
+        <details class="topic-card" id="unit-IV-t5">
+          <summary><span class="t-num">5</span>Rights and Duties of the Finder of Lost Goods</summary>
+          <div class="topic-body">
+<p><strong>Section 71</strong>: “A person who finds goods belonging to another, and takes them into his custody, is subject to the same responsibility as a bailee.” The finder must take reasonable care of the goods, must not use them for their own purposes, and must try to find the true owner; the finder acquires a <strong>lien</strong> on the goods for expenses incurred, and can also claim a reward if one was offered, but generally cannot sell the goods except in limited circumstances (e.g., where the goods are perishable, or the owner cannot be found with reasonable diligence, or the owner refuses to pay lawful charges, subject to specific conditions under Sec. 169).</p>
+          </div>
+        </details>
+        <details class="topic-card" id="unit-IV-t6">
+          <summary><span class="t-num">6</span>Money Paid or Thing Delivered by Mistake or Coercion</summary>
+          <div class="topic-body">
+<p><strong>Section 72</strong>: “A person to whom money has been paid, or anything delivered, by mistake or under coercion, must repay or return it.” This applies regardless of whether the mistake is of fact or law (Indian law, unlike some common law jurisdictions historically, allows recovery of money paid under a mistake of law as well).</p>
+          </div>
+        </details>
+        <details class="topic-card" id="unit-IV-t7">
+          <summary><span class="t-num">7</span>Quantum Meruit</summary>
+          <div class="topic-body">
+<p><strong>Meaning</strong>: Literally, “as much as earned/deserved.” It is a remedy that allows a party to claim reasonable remuneration for work done or services rendered, in situations where a lump-sum contract cannot be enforced or has not been completed.</p>
+<p><strong>Situations Where Quantum Meruit Applies</strong>: 1. Where the contract is discharged because one party prevents the other from completing performance. 2. Where a contract is void or becomes void, and one party has already performed part of it, or conferred a benefit. 3. Where work is done under a contract that is later found to be unenforceable for want of writing/registration (but not illegal). 4. Where there is an express/implied contract to render services, but no agreement as to remuneration. 5. Where a divisible contract is partially performed and accepted by the other party.</p>
+          </div>
+        </details>
+        <details class="topic-card" id="unit-IV-t8">
+          <summary><span class="t-num">8</span>Remedies for Breach of Contract</summary>
+          <div class="topic-body">
+<p>Upon breach of contract, the aggrieved party is entitled to one or more of the following remedies: 1. <strong>Rescission</strong>: Treating the contract as cancelled and refusing further performance. 2. <strong>Damages</strong>: Monetary compensation for the loss suffered. 3. <strong>Specific Performance</strong>: A decree of the court compelling the defaulting party to perform the exact terms of the contract (discussed in detail under Unit-V). 4. <strong>Injunction</strong>: A court order restraining a party from doing something in breach of a negative term of the contract. 5. <strong>Quantum Meruit</strong>: As discussed above, a claim for reasonable compensation for work actually done.</p>
+          </div>
+        </details>
+        <details class="topic-card" id="unit-IV-t9">
+          <summary><span class="t-num">9</span>Kinds of Damages</summary>
+          <div class="topic-body">
+<p>Governed primarily by <strong>Sections 73-75</strong> and developed further through case law:</p>
+<ol type="1">
+<li><strong>Ordinary (General/Compensatory) Damages</strong>: Damages naturally arising in the usual course of things from the breach itself — based on the rule in <em>Hadley v. Baxendale</em> (1854), which laid down that damages recoverable for breach are those which arise naturally from the breach, or which the parties could reasonably have contemplated as the probable result of the breach at the time of making the contract.</li>
+<li><strong>Special Damages</strong>: Damages arising from special/unusual circumstances affecting the plaintiff, which are recoverable only if those special circumstances were known to (or communicated to) the defendant at the time of contracting.</li>
+<li><strong>Remote Damages</strong>: Damages which are too indirect or remote a consequence of the breach are <strong>not recoverable</strong> — Sec. 73 explicitly excludes compensation “for any remote and indirect loss or damage sustained by reason of the breach.”</li>
+<li><strong>Nominal Damages</strong>: A small/token sum awarded where a breach has occurred but no real/substantial loss has been suffered, merely to recognize that a legal right has been infringed.</li>
+<li><strong>Exemplary/Punitive Damages</strong>: Awarded in exceptional cases (rare in pure contract law, more common in tort) to punish the defendant, e.g., in cases of breach of promise to marry, or wrongful dishonour of a cheque by a bank.</li>
+<li><strong>Liquidated Damages and Penalty</strong> (Sec. 74): Where a contract names a sum to be paid in case of breach, or contains a stipulation by way of penalty, the aggrieved party is entitled to receive from the party who has broken the contract <strong>reasonable compensation not exceeding the amount so named or the penalty stipulated</strong>, whether or not actual damage/loss is proved to have been caused. Indian law, unlike English common law, does not sharply distinguish between “liquidated damages” (a genuine pre-estimate) and “penalty” (a sum intended to deter breach) — under Sec. 74, courts award reasonable compensation up to the stipulated sum in either case, without requiring the plaintiff to prove the stipulated sum was a genuine pre-estimate of loss (subject to certain exceptions like fixed-sum obligations, e.g., bonds for repayment of money, which are still treated somewhat differently).</li>
+</ol>
+          </div>
+        </details>
+        <details class="topic-card" id="unit-IV-t10">
+          <summary><span class="t-num">10</span>Duty to Mitigate Loss</summary>
+          <div class="topic-body">
+<p><strong>Principle</strong>: The aggrieved party is expected to take all reasonable steps to mitigate (minimize) the loss caused by the breach; they cannot claim compensation for any part of the loss which arises from their own <strong>failure to take reasonable steps to mitigate</strong> the loss caused by the breach (Explanation to Sec. 73). This does not create a positive “duty” enforceable by the defendant, but rather a limitation on the damages recoverable by the plaintiff.</p>
+<hr/>
+          </div>
+        </details>
+        </div>
+
+        <div class="unit-block" id="unit-V">
+          <h3 class="unit-title">Unit-V: Specific Relief</h3>
+          <div class="topic-legend">
+              <a href="#unit-V-t1">1. The Specific Relief Act, 1963 (as Amended by the Specific Relief (Amendment) Act, 2018)</a>
+              <a href="#unit-V-t2">2. Recovering Possession of Property</a>
+              <a href="#unit-V-t3">3. Specific Performance of Contracts — As a Rule (Post-2018 Amendment)</a>
+              <a href="#unit-V-t4">4. Rectification of Instruments</a>
+              <a href="#unit-V-t5">5. Rescission of Contracts</a>
+              <a href="#unit-V-t6">6. Cancellation of Instruments</a>
+              <a href="#unit-V-t7">7. Declaratory Decrees</a>
+              <a href="#unit-V-t8">8. Preventive Relief and Injunctions Generally</a>
+              <a href="#unit-V-t9">9. Mandatory and Prohibitory Injunctions</a>
+              <a href="#unit-V-t10">10. Injunction to Perform a Negative Agreement</a>
+              <a href="#unit-V-t11">11. Special Provisions: LLP, Infrastructure Projects, and Arbitration Clauses</a>
+              <a href="#unit-V-t12">12. Impact of COVID-19 on Specific Performance of Contracts</a>
+          </div>
+        <details class="topic-card" id="unit-V-t1">
+          <summary><span class="t-num">1</span>The Specific Relief Act, 1963 (as Amended by the Specific Relief (Amendment) Act, 2018)</summary>
+          <div class="topic-body">
+<p><strong>Background</strong>: The Specific Relief Act provides remedies to a party where damages (monetary compensation) would not be an adequate remedy for breach — enabling the court to grant relief that puts the aggrieved party, as far as possible, in the position they would have been in had the contract been performed. The <strong>2018 Amendment</strong> made significant, pro-enforcement changes, discussed below.</p>
+          </div>
+        </details>
+        <details class="topic-card" id="unit-V-t2">
+          <summary><span class="t-num">2</span>Recovering Possession of Property</summary>
+          <div class="topic-body">
+<p>The Act provides remedies for recovery of possession of both movable and immovable property: - <strong>Recovery of Possession of Immovable Property</strong> (Sections 5-6): A person entitled to possession of specific immovable property may recover it through a regular title suit (Sec. 5), or, if dispossessed otherwise than in due course of law, may recover possession through a summary suit filed within six months of dispossession, without needing to prove title (Sec. 6) — a special, expeditious remedy protecting settled possession against forcible/unlawful dispossession. - <strong>Recovery of Possession of Movable Property</strong> (Sections 7-8): A person entitled to possession of specific movable property may recover it in the manner provided under the Code of Civil Procedure; a specific remedy also exists against a person having possession/control of an article as trustee, to compel delivery of the specific article rather than mere compensation.</p>
+          </div>
+        </details>
+        <details class="topic-card" id="unit-V-t3">
+          <summary><span class="t-num">3</span>Specific Performance of Contracts — As a Rule (Post-2018 Amendment)</summary>
+          <div class="topic-body">
+<p><strong>Old Position (Pre-2018)</strong>: Specific performance was traditionally treated as a <strong>discretionary and exceptional remedy</strong>, granted only where damages would not afford adequate relief (e.g., contracts relating to immovable property, or unique/rare goods).</p>
+<p><strong>Position After the 2018 Amendment</strong>: The Amendment made specific performance the <strong>general rule</strong> rather than the exception. Sec. 10 (as amended) now provides that the specific performance of a contract shall be enforced by the court, <strong>subject to</strong> the provisions contained in Sections 11(2), 14, and 16 of the Act — reversing the earlier discretionary framework and significantly reducing the situations in which a court can refuse specific performance (limited largely to cases where compensation is an adequate relief, or where specific performance would be inequitable, or where the contract is not enforceable for want of consent/capacity etc.).</p>
+<p><strong>Substituted Performance</strong> (Sec. 20, introduced by the 2018 Amendment): Where a contract is broken, the aggrieved party has the option of obtaining substituted performance through a third party or by their own agency, and claiming the costs/expenses (including compensation) from the defaulting party, provided a written notice of not less than 30 days is given to the defaulting party calling upon them to perform, which they fail to do.</p>
+          </div>
+        </details>
+        <details class="topic-card" id="unit-V-t4">
+          <summary><span class="t-num">4</span>Rectification of Instruments</summary>
+          <div class="topic-body">
+<p><strong>Section 26</strong>: Where, through fraud or a mutual mistake of the parties, a contract or other instrument in writing does not truly express their real intention, either party (or their representative) may seek rectification of the instrument so as to express their real intention, provided such rectification does not prejudicially affect the rights acquired by third persons in good faith and for value.</p>
+          </div>
+        </details>
+        <details class="topic-card" id="unit-V-t5">
+          <summary><span class="t-num">5</span>Rescission of Contracts</summary>
+          <div class="topic-body">
+<p><strong>Sections 27-30</strong>: A party to a contract may sue to have it <strong>rescinded</strong> (cancelled) where the contract is voidable or terminable at their option, or where the contract is unlawful for causes not apparent on its face and the defendant is more to blame than the plaintiff. The court has discretion to refuse rescission where, e.g., the plaintiff has expressly/impliedly ratified the contract, or where circumstances have changed such that the parties cannot be restored substantially to their original position, or where third-party rights in good faith and for value would be prejudiced.</p>
+          </div>
+        </details>
+        <details class="topic-card" id="unit-V-t6">
+          <summary><span class="t-num">6</span>Cancellation of Instruments</summary>
+          <div class="topic-body">
+<p><strong>Sections 31-33</strong>: Any person against whom a written instrument is void or voidable, and who has reasonable apprehension that such instrument, if left outstanding, may cause them serious injury, may sue to have it <strong>adjudged void or voidable</strong>, and the court may order it to be delivered up and cancelled.</p>
+          </div>
+        </details>
+        <details class="topic-card" id="unit-V-t7">
+          <summary><span class="t-num">7</span>Declaratory Decrees</summary>
+          <div class="topic-body">
+<p><strong>Sections 34-35</strong>: A person entitled to any legal character, or to any right as to property, may institute a suit against a person denying/interested in denying their title, and the court may, in its discretion, make a declaration that they are so entitled — without necessarily granting any further/consequential relief. Where the plaintiff is able to seek further relief beyond a mere declaration, they must claim it; the court will not grant a bare declaration if further relief was available and not sought.</p>
+          </div>
+        </details>
+        <details class="topic-card" id="unit-V-t8">
+          <summary><span class="t-num">8</span>Preventive Relief and Injunctions Generally</summary>
+          <div class="topic-body">
+<p><strong>Section 36-37</strong>: Preventive relief is granted at the discretion of the court by way of <strong>injunction</strong> — an order restraining a party from doing a particular act.</p>
+<p><strong>Kinds of Injunction</strong>: 1. <strong>Temporary Injunction</strong> (Sec. 37(1)): Granted at any stage of a suit to preserve the status quo until the matter is finally decided, regulated by Order XXXIX CPC. 2. <strong>Perpetual (Permanent) Injunction</strong> (Sec. 37(2), Sections 38-42): Granted by the decree made at the hearing and upon the merits of the case, finally and permanently restraining the defendant from an act which would be contrary to the plaintiff’s rights.</p>
+          </div>
+        </details>
+        <details class="topic-card" id="unit-V-t9">
+          <summary><span class="t-num">9</span>Mandatory and Prohibitory Injunctions</summary>
+          <div class="topic-body">
+<ul>
+<li><strong>Prohibitory Injunction</strong>: Restrains a party from doing a particular act (a negative order — “do not do X”).</li>
+<li><strong>Mandatory Injunction</strong> (Sec. 39): Where, to prevent the breach of an obligation, it is necessary to compel the performance of certain acts which the court is capable of enforcing, the court may, in its discretion, grant an injunction to prevent the breach complained of, and also to compel performance of the requisite acts (a positive order compelling an act to be done, e.g., ordering removal of an unauthorized construction).</li>
+</ul>
+          </div>
+        </details>
+        <details class="topic-card" id="unit-V-t10">
+          <summary><span class="t-num">10</span>Injunction to Perform a Negative Agreement</summary>
+          <div class="topic-body">
+<p><strong>Section 42</strong>: Where a contract comprises an affirmative agreement to do a certain act, coupled with a negative agreement, express or implied, not to do a certain act, the circumstance that the court is unable to compel specific performance of the affirmative agreement does not preclude it from granting an injunction to perform the negative agreement, <strong>provided</strong> the plaintiff has not failed to perform the contract so far as it is binding on them (e.g., in a contract for personal services where a performer agrees to sing exclusively for one employer for a period, the court may restrain them from singing for a rival employer even though it cannot compel them to sing for the plaintiff — reflecting the classic English case <em>Lumley v. Wagner</em> (1852)).</p>
+          </div>
+        </details>
+        <details class="topic-card" id="unit-V-t11">
+          <summary><span class="t-num">11</span>Special Provisions: LLP, Infrastructure Projects, and Arbitration Clauses</summary>
+          <div class="topic-body">
+<ul>
+<li><strong>Limited Liability Partnership (LLP)</strong>: The 2018 Amendment expanded the definition of “trust” and related provisions to bring LLPs within the scope of certain provisions of the Act (e.g., regarding specific performance of contracts relating to LLPs).</li>
+<li><strong>Infrastructure Project Contracts</strong>: The 2018 Amendment introduced Sec. 20A and 20B, providing that no injunction shall be granted by a court in a suit involving a contract relating to an “infrastructure project” (as specified in the Schedule to the Act) where granting such injunction would cause impediment or delay in the progress/completion of the project — reflecting a policy shift to protect large public infrastructure projects from being stalled by litigation. Sec. 20B further provides for the establishment of <strong>Special Courts</strong> to try suits relating to infrastructure project contracts.</li>
+<li><strong>Arbitration Clause</strong>: Sec. 20B/related provisions of the amended Act, read with the <strong>Arbitration and Conciliation Act, 1996</strong>, allow parties to a contract (including infrastructure contracts) to refer disputes to arbitration; courts generally respect and give effect to valid arbitration clauses, staying civil suits in favour of arbitration under Sec. 8 of the 1996 Act, where applicable.</li>
+</ul>
+          </div>
+        </details>
+        <details class="topic-card" id="unit-V-t12">
+          <summary><span class="t-num">12</span>Impact of COVID-19 on Specific Performance of Contracts</summary>
+          <div class="topic-body">
+<p>The COVID-19 pandemic led to widespread litigation on whether the pandemic (and associated lockdowns) constituted a <strong>force majeure</strong> event or triggered the <strong>doctrine of frustration</strong> under Sec. 56, excusing parties from specific performance of their contractual obligations: - Courts examined force majeure clauses in contracts to determine if “pandemic,” “epidemic,” or “act of God” were expressly covered. - Where contracts had no express force majeure clause, parties sought relief under Sec. 56 (frustration), but courts generally held that mere increased difficulty, delay, or hardship in performance caused by COVID-19 does not automatically amount to frustration — the impossibility must genuinely go to the root of the contract (in line with <em>Satyabrata Ghose</em> and later Supreme Court observations in cases arising during the pandemic, e.g., regarding the invocation of bank guarantees and construction/lease contract disputes). - Courts distinguished between temporary hardship (which may justify extension of time or partial relief) and permanent impossibility (which alone would justify treating the contract as void under Sec. 56), reaffirming that specific performance/damages remedies remain generally available notwithstanding the pandemic, unless genuine frustration is established on the facts of each case.</p>
+<hr/>
+          </div>
+        </details>
+        </div>
+
+        </div>
+
+        <div class="readings-block" id="readings" data-aos="fade-up">
+          <h3>Suggested Readings (as per Syllabus)</h3>
+<ol type="1">
+<li>Anson: <em>Law of Contract</em>, Clarendon Press, Oxford.</li>
+<li>Krishnan Nair: <em>Law of Contract</em>, S. Gogia &amp; Co., Hyderabad.</li>
+<li>G.C.V. Subba Rao: <em>Law of Contract</em>, S. Gogia &amp; Co., Hyderabad.</li>
+<li>T.S. Venkatesha Iyer: <em>Law of Contract</em>, revised by Dr. V. Krishnama Chary, S. Gogia &amp; Co.</li>
+<li>Avatar Singh: <em>Law of Contract</em>, Eastern Book Company, Lucknow.</li>
+</ol>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer" class="footer">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-about">
+          <a href="index.html#hero" class="logo d-flex align-items-center">
+            <span class="sitename">@Anvesh</span>
+          </a>
+          <p>  17.348745 &deg; N, , 78.536249 &deg; E</p>
+
+          <div class="social-links d-flex mt-4">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="index.html#hero">Home</a></li>
+            <li><a href="index.html#about">About us</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#portfolio">Terms of service</a></li>
+            <li><a href="index.html#contact">Privacy policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="index.html#portfolio">Web Design</a></li>
+            <li><a href="index.html#portfolio">Web Development</a></li>
+            <li><a href="index.html#portfolio">Product Management</a></li>
+            <li><a href="index.html#portfolio">Marketing</a></li>
+            <li><a href="index.html#portfolio">Graphic Design</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contact Us</h4>
+          <p>Anvesh Kumar aavula</p>
+          <p>Hyderabad, Telanagana</p>
+          <p>India</p>
+          <p class="mt-4"><strong>Phone:</strong> <span>+91 8121 957 441</span></p>
+          <p><strong>Email:</strong> <span>anveshkumaraavula1987@gmail.com</span></p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>&copy; <span>Copyright</span> <strong class="px-1 sitename">@.28.Leo</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> | <a href="https://bootstrapmade.com/tools/">DevTools</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Auto-open target <details> when navigating to a topic anchor -->
+  <script>
+  (function () {
+    function openTarget(hash) {
+      if (!hash) return;
+      var el = document.querySelector(hash);
+      if (!el) return;
+      var details = el.closest('details');
+      if (details) details.open = true;
+    }
+    document.querySelectorAll('.unit-legend a, .topic-legend a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        openTarget(this.getAttribute('href'));
+      });
+    });
+    window.addEventListener('DOMContentLoaded', function () {
+      if (window.location.hash) openTarget(window.location.hash);
+    });
+  })();
+  </script>
+
+</body>
+
+</html>

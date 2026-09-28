@@ -216,18 +216,27 @@
 		  <li><a href="#services">LLB - Bachelor of Legislative Law</a></li>
 		  <li class="dropdown"><a href="#"><span>LLB Notes</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
 		  <ul>
-		   <li><a href="#services2">First Year - Semester I</a></li>
+		   <!--<li><a href="#services2">First Year - Semester I</a></li> -->
+		     <li class="dropdown"><a href="#"><span>First Year - Semester I</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                 <ul>
+                  <li><a href="#services2">1) LLB Notes - 5 Subjects</a></li>
+                  <li><a href="#qpapers">2) Previous Question Papers</a></li>
+                  <!--<li><a href="#">Deep Dropdown 3</a></li>
+                  <li><a href="#">Deep Dropdown 4</a></li>
+                  <li><a href="#">Deep Dropdown 5</a></li> -->
+                </ul>
+              </li>
 		   </ul>
 		   </li>
 		  		  
-				<!--  <li class="dropdown"><a href="#"><span>LLB - Bachelor of Legislative Law</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+			<!--	<li class="dropdown"><a href="#"><span>LLB - Bachelor of Legislative Law</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-               <li><a href="LLB_Syllabus_Semesterwise.html">LLB - Syllabus Semester Wise</a></li>
+               <!--<li><a href="LLB_Syllabus_Semesterwise.html">LLB - Syllabus Semester Wise</a></li>
              
               <li><a href="LLB_Syllabus_Subjectwise_Table_Readings.html">LLB - Subject Wise Suggested Case Laws</a></li>
 			  <li><a href="LLB_Sem1_TimeTable.html">LLB - Semester I Time Table</a></li>
-			  <!--  <li><a href="LLB_Syllabus_Semesterwise.html">LLB - Bachelor of Legislative Law</a></li> -->
-			  <!-- <li class="dropdown"><a href="#"><span>Java Programming</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+			  <li><a href="LLB_Syllabus_Semesterwise.html">LLB - Bachelor of Legislative Law</a></li> -->
+			<!--  <li class="dropdown"><a href="#"><span>Java Programming</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                  <ul>
                   <li><a href="#">Deep Dropdown 1</a></li>
                   <li><a href="#">Deep Dropdown 2</a></li>
@@ -861,12 +870,10 @@
                 <i class="bi bi-arrow-right"></i>-->
               </a>
             </div>
-          </div>     
+          </div>	
 
-        
-
-       
-        </div>
+		  
+		  </div>
 
         <div class="row mt-5">
           <div class="col-12" data-aos="fade-up" data-aos-delay="200">
@@ -887,10 +894,6 @@
       </div>
 
     </section><!-- /Services Section -->
-	
-	
-	
-	
 	
 	
 	
@@ -1107,25 +1110,130 @@
 
 </section><!-- /Services Section -->
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+<section id="qpapers" class="services section">
+
+  <!-- Section Title -->
+  <div class="container section-title aos-init aos-animate" data-aos="fade-up">
+    <span class="subtitle">LLB - PREVIOUS QUESTION PAPERS SEMESTER - I</span>
+  </div><!-- End Section Title -->
+
+  <style>
+  #qpapers {
+    --st-bg: #171a23;
+    --st-border: #262b3a;
+    --st-text: #eef0f5;
+    --st-muted: #9aa1b4;
+    --st-accent1: #6c8cff;
+    --st-accent3: #4dd4ac;
+    --st-accent4: #ffd166;
+    --st-row-hover: #1f2330;
+  }
+  #qpapers .notes-table-wrap {
+    background: var(--st-bg);
+    border: 1px solid var(--st-border);
+    border-radius: 16px;
+    overflow: hidden;
+    overflow-x: auto;
+    box-shadow: 0 8px 30px rgba(0,0,0,.2);
+  }
+  #qpapers table.notes-table { width: 100%; border-collapse: collapse; min-width: 640px; }
+  #qpapers table.notes-table thead th {
+    text-align: left;
+    font-size: .76rem;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    color: var(--st-muted);
+    font-weight: 700;
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--st-border);
+    background: rgba(255,255,255,.02);
+  }
+  #qpapers table.notes-table thead th.col-icon { width: 56px; }
+  #qpapers table.notes-table thead th.col-link { width: 200px; text-align: center; }
+  #qpapers table.notes-table tbody td {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--st-border);
+    vertical-align: middle;
+    color: var(--st-text);
+    font-size: .9rem;
+  }
+  #qpapers table.notes-table tbody tr:last-child td { border-bottom: none; }
+  #qpapers table.notes-table tbody tr:hover { background: var(--st-row-hover); }
+  #qpapers table.notes-table td.col-icon { text-align: center; font-size: 1.3rem; color: var(--st-accent1); }
+  #qpapers table.notes-table td.col-link { text-align: center; }
+  #qpapers table.notes-table .featured-badge {
+    display: inline-block;
+    font-size: .64rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    color: var(--st-accent4);
+    background: rgba(255,209,102,.12);
+    border: 1px solid rgba(255,209,102,.3);
+    border-radius: 999px;
+    padding: 2px 9px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+  #qpapers a.notes-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    font-size: .78rem;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 999px;
+    color: var(--st-accent3);
+    background: rgba(77,212,172,.12);
+    border: 1px solid rgba(77,212,172,.25);
+    transition: background .15s ease;
+  }
+  #qpapers a.notes-link:hover { background: rgba(77,212,172,.22); }
+  #qpapers a.notes-link.disabled {
+    color: var(--st-muted);
+    background: rgba(255,255,255,.04);
+    border: 1px dashed var(--st-border);
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  </style>
+
+  <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="notes-table-wrap">
+      <table class="notes-table">
+        <thead>
+          <tr>
+            <th class="col-icon">&nbsp;</th>
+            <th>Year</th>
+          <!--  <th class="col-link">Model Question Paper</th> -->
+            <th class="col-link">Previous Year Papers</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+            <td class="col-icon"><i class="bi bi-chevron-bar-contract"></i></td>
+            <td>I SEM - APRIL 2024</td>
+            <td class="col-link"><a href="I Sem Exam QP - Law Papers I to V, April 2024.pdf" download>
+			<i class="bi bi-file-earmark-pdf"></i> Download</a></td>
+           
+          </tr>
+
+      
+
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+</section><!-- /Previous Question Papers Section -->
+
+
 
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio section">

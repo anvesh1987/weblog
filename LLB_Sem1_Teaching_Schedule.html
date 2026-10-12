@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>LLB Semester I - Academic Schedule | Anvesh Kumar Aavula</title>
+  <meta name="description" content="LLB Semester I teaching schedule, 15 October to 31 December 2026, unit-wise dates with faculty in charge for each paper.">
+  <meta name="keywords" content="LLB, Semester I, Teaching Schedule, Unit Wise Dates, Palamuru University College of Law">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+  :root {
+    --bg: #0f1117;
+    --card: #171a23;
+    --row-hover: #1f2330;
+    --border: #262b3a;
+    --text: #eef0f5;
+    --muted: #9aa1b4;
+    --accent1: #6c8cff;
+    --accent2: #c792ea;
+    --accent3: #4dd4ac;
+    --accent4: #ffd166;
+  }
+  * { box-sizing: border-box; }
+
+  .llb-page {
+    background: var(--bg);
+    color: var(--text);
+    padding: 140px 0 80px;
+    min-height: 100vh;
+  }
+  .llb-header {
+    text-align: center;
+    margin-bottom: 36px;
+  }
+  .llb-header h2 {
+    color: var(--text);
+    font-weight: 800;
+    font-size: 2rem;
+  }
+  .llb-header p {
+    color: var(--muted);
+    font-size: .95rem;
+    font-style: italic;
+  }
+  .sem-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 28px;
+  }
+  .sem-legend a {
+    text-decoration: none;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: .78rem;
+    font-weight: 700;
+    color: var(--accent1);
+    background: rgba(108,140,255,.12);
+    border: 1px solid rgba(108,140,255,.25);
+  }
+  .table-wrap {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow-x: auto;
+    box-shadow: 0 8px 30px rgba(0,0,0,.25);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 900px;
+  }
+  thead th {
+    text-align: left;
+    font-size: .72rem;
+    text-transform: uppercase;
+    letter-spacing: .6px;
+    color: var(--muted);
+    font-weight: 700;
+    padding: 16px 18px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(255,255,255,.02);
+    position: sticky;
+    top: 0;
+  }
+  thead th.col-year { text-align: center; width: 70px; }
+  tbody td {
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    font-size: .85rem;
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr { transition: background .15s ease; }
+  tbody tr:hover { background: var(--row-hover); }
+
+  .title {
+    font-weight: 700;
+    font-size: .92rem;
+    color: var(--text);
+    line-height: 1.4;
+  }
+  .venue {
+    margin-top: 2px;
+    color: var(--muted);
+    font-size: .82rem;
+    line-height: 1.5;
+  }
+  .idx {
+    color: var(--accent1);
+    font-size: .8rem;
+    font-weight: 700;
+  }
+  .nowrap { white-space: nowrap; }
+  .center { text-align: center; }
+  .muted { color: var(--muted); }
+
+  td ul {
+    margin: 0;
+    padding-left: 16px;
+  }
+  td li {
+    margin-bottom: 6px;
+    line-height: 1.4;
+    color: var(--muted);
+    font-size: .8rem;
+  }
+
+  tr.sem-band td {
+    background: rgba(108,140,255,.08);
+    color: var(--accent1);
+    font-weight: 800;
+    font-size: .82rem;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    padding: 12px 18px;
+    border-bottom: 1px solid var(--border);
+  }
+  tr.sem-band {
+    scroll-margin-top: 110px;
+  }
+
+  @media (max-width: 900px) {
+    .table-wrap { overflow-x: scroll; }
+  }
+  
+  td.dates { white-space: nowrap; font-weight: 700; color: var(--accent4); font-size: .85rem; }
+  td.unit-cell .title { color: var(--accent1); }
+  td ul.fac { list-style: none; padding-left: 0; }
+  td ul.fac li { color: var(--text); font-size: .82rem; margin-bottom: 4px; }
+  tr.rev-row td { background: rgba(77,212,172,.06); }
+  tr.rev-row .title { color: var(--accent3); }
+  .note { color: var(--muted); font-size: .8rem; text-align: center; margin-top: 18px; }
+  </style>
+
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+ 	  <img src="assets/img/Anvesh Kumar Aavula.PNG" alt=""> 
+        <h1 class="sitename">@Anvesh</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html#hero">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+		 <li><a href="index.html#services">LLB - Bachelor of Legislative Law</a></li>
+		  		  <li class="dropdown"><a href="#"><span>LLB Notes</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+		  <ul>
+		   <!--<li><a href="#services2">First Year - Semester I</a></li> -->
+		     <li class="dropdown"><a href="#"><span>First Year - Semester I</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                 <ul>
+                  <li><a href="index.html#services2">1) LLB Notes - 5 Subjects</a></li>
+				   <li><a href="Bare_Acts_List_LLB_Syllabus_Links.html">2) LLB - Bare Acts</a></li>
+                  <li><a href="index.html#qpapers">3) Previous Question Papers</a></li>
+				  <li><a href="index.html#services3">4) Important Questions Unit Wise</a></li>
+                  <!--<li><a href="#">Deep Dropdown 3</a></li>
+                  <li><a href="#">Deep Dropdown 4</a></li>
+                  <li><a href="#">Deep Dropdown 5</a></li> -->
+                </ul>
+              </li>
+		   </ul>
+		   </li>
+		  		  
+				<!--  <li class="dropdown"><a href="#"><span>LLB - Bachelor of Legislative Law</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+               <li><a href="LLB_Syllabus_Semesterwise.html">LLB - Syllabus Semester Wise</a></li>
+             
+              <li><a href="LLB_Syllabus_Subjectwise_Table_Readings.html">LLB - Subject Wise Suggested Case Laws</a></li>
+			  <li><a href="LLB_Sem1_TimeTable.html">LLB - Semester I Time Table</a></li>
+			  <!--  <li><a href="LLB_Syllabus_Semesterwise.html">LLB - Bachelor of Legislative Law</a></li> -->
+			  <!-- <li class="dropdown"><a href="#"><span>Java Programming</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                 <ul>
+                  <li><a href="#">Deep Dropdown 1</a></li>
+                  <li><a href="#">Deep Dropdown 2</a></li>
+                  <li><a href="#">Deep Dropdown 3</a></li>
+                  <li><a href="#">Deep Dropdown 4</a></li>
+                  <li><a href="#">Deep Dropdown 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Dropdown 3</a></li>
+              <li><a href="#">Dropdown 4</a></li>
+            </ul>
+          </li> -->
+          <li><a href="index.html#resume">Resume</a></li>
+          <li><a href="index.html#portfolio">Portfolio</a></li>
+		  
+          <li class="dropdown"><a href="#"><span>B.Tech Subjects</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="Blockchain-Technology-Proj/Blockchain_HomePage.html">Blockchain Technology</a></li>
+              <li><a href="Java-Programming-Proj/JavaProgramming_HomePage.html">Java Programming</a></li>
+              <!--<li><a href="LLB_Syllabus_Semesterwise.html">LLB - Bachelor of Legislative Law</a></li>
+              <li><a href="LLB_Syllabus_Subjectwise_Table_Readings.html">LLB - Readings &amp; Case Laws</a></li> -->
+            </ul>
+          </li>
+		 
+        <!--   <li><a href="index.html#services">Services</a></li> -->
+          <li><a href="index.html#contact">Contact</a></li>
+ <!-- <li><a href="#calendar-check">Calendar</a></li> -->
+         <!-- <<li><a href="LLB_Syllabus_Subjectwise_Table_Readings.html" class="active">LLB - Readings &amp; Case Laws</a></li> -->
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="index.html#calendar-check">Holidays Calendar</a>
+
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="llb-page">
+      <div class="container">
+
+        <div class="llb-header" data-aos="fade-up">
+          <h2>LLB &ndash; SEMESTER I ACADEMIC SCHEDULE</h2>
+          <!-- <p>Palamuru University College of Law &middot; First Year, First Semester<br> -->
+             15 October 2026 &ndash; 31 December 2026 &middot; Unit-wise Academic dates with Team</p>
+        </div>
+
+        <div class="sem-legend" data-aos="fade-up" data-aos-delay="100">
+          <a href="#teaching">Academic Phase</a>
+          <a href="#revision">Revision</a>
+        </div>
+
+        <div class="table-wrap" data-aos="fade-up" data-aos-delay="150">
+          <table>
+            <thead>
+              <tr>
+                <th style="width:90px;">Unit</th>
+                <th style="width:150px;">Dates (10 days)</th>
+                <th>Paper 1<br><span style="text-transform:none;letter-spacing:0;">LLB-101 &middot; Law of Contracts</span></th><th>Paper 2<br><span style="text-transform:none;letter-spacing:0;">LLB-102 &middot; Family Law</span></th><th>Paper 3<br><span style="text-transform:none;letter-spacing:0;">LLB-103 &middot; Constitutional Law</span></th><th>Paper 4<br><span style="text-transform:none;letter-spacing:0;">LLB-104 &middot; Law of Torts</span></th><th>Paper 5<br><span style="text-transform:none;letter-spacing:0;">LLB-105 &middot; Environmental Law</span></th>
+              </tr>
+            </thead>
+            <tbody>
+        <tr id="teaching" class="sem-band"><td colspan="7">Unit Wise Alloted Time Limit &middot; 10 days per unit</td></tr>
+        <tr>
+          <td class="unit-cell nowrap"><div class="title">Unit 1</div></td>
+          <td class="dates">15 Oct &ndash; 24 Oct</td>
+          <td><ul class="fac"><li>P. Rajitha</li><li>M. Sonu</li></ul></td>
+          <td><ul class="fac"><li>M. Prathibha Bharathi</li><li>N. Rajesh</li></ul></td>
+          <td><ul class="fac"><li>A. Susheela</li><li>A. Anvesh Kumar</li></ul></td>
+          <td><ul class="fac"><li>B. Anusha</li></ul></td>
+          <td><ul class="fac"><li>G. Rani</li></ul></td>
+        </tr>
+        <tr>
+          <td class="unit-cell nowrap"><div class="title">Unit 2</div></td>
+          <td class="dates">25 Oct &ndash; 3 Nov</td>
+          <td><ul class="fac"><li>P. Rajitha</li><li>M. Sonu</li></ul></td>
+          <td><ul class="fac"><li>M. Prathibha Bharathi</li><li>N. Rajesh</li></ul></td>
+          <td><ul class="fac"><li>A. Susheela</li><li>A. Anvesh Kumar</li></ul></td>
+          <td><ul class="fac"><li>B. Anusha</li></ul></td>
+          <td><ul class="fac"><li>G. Rani</li></ul></td>
+        </tr>
+        <tr>
+          <td class="unit-cell nowrap"><div class="title">Unit 3</div></td>
+          <td class="dates">4 Nov &ndash; 13 Nov</td>
+          <td><ul class="fac"><li>P. Rajitha</li><li>M. Sonu</li></ul></td>
+          <td><ul class="fac"><li>M. Prathibha Bharathi</li><li>N. Rajesh</li></ul></td>
+          <td><ul class="fac"><li>A. Susheela</li><li>A. Anvesh Kumar</li></ul></td>
+          <td><ul class="fac"><li>B. Anusha</li></ul></td>
+          <td><ul class="fac"><li>G. Rani</li></ul></td>
+        </tr>
+        <tr>
+          <td class="unit-cell nowrap"><div class="title">Unit 4</div></td>
+          <td class="dates">14 Nov &ndash; 23 Nov</td>
+          <td><ul class="fac"><li>P. Rajitha</li><li>M. Sonu</li></ul></td>
+          <td><ul class="fac"><li>M. Prathibha Bharathi</li><li>N. Rajesh</li></ul></td>
+          <td><ul class="fac"><li>A. Susheela</li><li>A. Anvesh Kumar</li></ul></td>
+          <td><ul class="fac"><li>B. Anusha</li></ul></td>
+          <td><ul class="fac"><li>G. Rani</li></ul></td>
+        </tr>
+        <tr>
+          <td class="unit-cell nowrap"><div class="title">Unit 5</div></td>
+          <td class="dates">24 Nov &ndash; 3 Dec</td>
+          <td><ul class="fac"><li>P. Rajitha</li><li>M. Sonu</li></ul></td>
+          <td><ul class="fac"><li>M. Prathibha Bharathi</li><li>N. Rajesh</li></ul></td>
+          <td><ul class="fac"><li>A. Susheela</li><li>A. Anvesh Kumar</li></ul></td>
+          <td><ul class="fac"><li>B. Anusha</li></ul></td>
+          <td><ul class="fac"><li>G. Rani</li></ul></td>
+        </tr>
+        <tr id="revision" class="sem-band"><td colspan="7">Revision Phase</td></tr>
+        <tr class="rev-row">
+          <td class="unit-cell nowrap"><div class="title">Revision</div></td>
+          <td class="dates">4 Dec &ndash; 31 Dec</td>
+          <td colspan="5"><div class="venue">All five papers &middot; revision of Units 1 to 5 and overall review</div></td>
+        </tr>
+            </tbody>
+          </table>
+        </div>
+
+     <!--   <p class="note">All five papers run side by side. Each 10-day block covers the same unit number in every paper, taught by that paper&#x27;s faculty.</p> -->
+
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer" class="footer">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-about">
+          <a href="index.html#hero" class="logo d-flex align-items-center">
+		   <img src="assets/img/Anvesh Kumar Aavula.PNG" alt=""> 
+            <span class="sitename">@Anvesh</span>
+          </a>
+          <p>  17.348745 &deg; N, , 78.536249 &deg; E</p>
+
+          <div class="social-links d-flex mt-4">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="index.html#hero">Home</a></li>
+            <li><a href="index.html#about">About us</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#portfolio">Terms of service</a></li>
+            <li><a href="index.html#contact">Privacy policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="index.html#portfolio">Web Design</a></li>
+            <li><a href="index.html#portfolio">Web Development</a></li>
+            <li><a href="index.html#portfolio">Product Management</a></li>
+            <li><a href="index.html#portfolio">Marketing</a></li>
+            <li><a href="index.html#portfolio">Graphic Design</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contact Us</h4>
+          <p>Anvesh Kumar aavula</p>
+          <p>Hyderabad, Telanagana</p>
+          <p>India</p>
+          <p class="mt-4"><strong>Phone:</strong> <span>+91 8121 957 441</span></p>
+          <p><strong>Email:</strong> <span>anveshkumaraavula1987@gmail.com</span></p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>&copy; <span>Copyright</span> <strong class="px-1 sitename">@.28.Leo</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> | <a href="https://bootstrapmade.com/tools/">DevTools</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

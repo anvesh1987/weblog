@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>LLB Notes Semester I | Anvesh Kumar Aavula</title>
+  <meta name="description" content="LLB Semester I notes: detailed notes, reference documents and unit-wise faculty notes for all five papers.">
+  <meta name="keywords" content="LLB, Semester I, Teaching Schedule, Unit Wise Dates, Palamuru University College of Law">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+  :root {
+    --bg: #0f1117;
+    --card: #171a23;
+    --row-hover: #1f2330;
+    --border: #262b3a;
+    --text: #eef0f5;
+    --muted: #9aa1b4;
+    --accent1: #6c8cff;
+    --accent2: #c792ea;
+    --accent3: #4dd4ac;
+    --accent4: #ffd166;
+  }
+  * { box-sizing: border-box; }
+
+  .llb-page {
+    background: var(--bg);
+    color: var(--text);
+    padding: 140px 0 80px;
+    min-height: 100vh;
+  }
+  .llb-header {
+    text-align: center;
+    margin-bottom: 36px;
+  }
+  .llb-header h2 {
+    color: var(--text);
+    font-weight: 800;
+    font-size: 2rem;
+  }
+  .llb-header p {
+    color: var(--muted);
+    font-size: .95rem;
+    font-style: italic;
+  }
+  .sem-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 28px;
+  }
+  .sem-legend a {
+    text-decoration: none;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: .78rem;
+    font-weight: 700;
+    color: var(--accent1);
+    background: rgba(108,140,255,.12);
+    border: 1px solid rgba(108,140,255,.25);
+  }
+  .table-wrap {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow-x: auto;
+    box-shadow: 0 8px 30px rgba(0,0,0,.25);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 900px;
+  }
+  thead th {
+    text-align: left;
+    font-size: .72rem;
+    text-transform: uppercase;
+    letter-spacing: .6px;
+    color: var(--muted);
+    font-weight: 700;
+    padding: 16px 18px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(255,255,255,.02);
+    position: sticky;
+    top: 0;
+  }
+  thead th.col-year { text-align: center; width: 70px; }
+  tbody td {
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    font-size: .85rem;
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr { transition: background .15s ease; }
+  tbody tr:hover { background: var(--row-hover); }
+
+  .title {
+    font-weight: 700;
+    font-size: .92rem;
+    color: var(--text);
+    line-height: 1.4;
+  }
+  .venue {
+    margin-top: 2px;
+    color: var(--muted);
+    font-size: .82rem;
+    line-height: 1.5;
+  }
+  .idx {
+    color: var(--accent1);
+    font-size: .8rem;
+    font-weight: 700;
+  }
+  .nowrap { white-space: nowrap; }
+  .center { text-align: center; }
+  .muted { color: var(--muted); }
+
+  td ul {
+    margin: 0;
+    padding-left: 16px;
+  }
+  td li {
+    margin-bottom: 6px;
+    line-height: 1.4;
+    color: var(--muted);
+    font-size: .8rem;
+  }
+
+  tr.sem-band td {
+    background: rgba(108,140,255,.08);
+    color: var(--accent1);
+    font-weight: 800;
+    font-size: .82rem;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    padding: 12px 18px;
+    border-bottom: 1px solid var(--border);
+  }
+  tr.sem-band {
+    scroll-margin-top: 110px;
+  }
+
+  @media (max-width: 900px) {
+    .table-wrap { overflow-x: scroll; }
+  }
+  
+  td.dates { white-space: nowrap; font-weight: 700; color: var(--accent4); font-size: .85rem; }
+  td.unit-cell .title { color: var(--accent1); }
+  td ul.fac { list-style: none; padding-left: 0; }
+  td ul.fac li { color: var(--text); font-size: .82rem; margin-bottom: 4px; }
+  tr.rev-row td { background: rgba(77,212,172,.06); }
+  tr.rev-row .title { color: var(--accent3); }
+  .note { color: var(--muted); font-size: .8rem; text-align: center; margin-top: 18px; }
+    tr.pres-row td { background: rgba(199,146,234,.07); }
+  tr.pres-row .title { color: var(--accent2); }
+  tr.pres-row td.dates { color: var(--accent2); }
+  </style>
+
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+ 	  <img src="assets/img/Anvesh Kumar Aavula.PNG" alt=""> 
+        <h1 class="sitename">@Anvesh</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html#hero">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+		 <li><a href="index.html#services">LLB - Bachelor of Legislative Law</a></li>
+		  		  <li class="dropdown"><a href="#"><span>LLB Notes</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+		  <ul>
+		   <!--<li><a href="#services2">First Year - Semester I</a></li> -->
+		     <li class="dropdown"><a href="#"><span>First Year - Semester I</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                 <ul>
+                  <li><a href="index.html#services2">1) LLB Notes - 5 Subjects</a></li>
+				   <li><a href="Bare_Acts_List_LLB_Syllabus_Links.html">2) LLB - Bare Acts</a></li>
+                  <li><a href="index.html#qpapers">3) Previous Question Papers</a></li>
+				  <li><a href="index.html#services3">4) Important Questions Unit Wise</a></li>
+                  <!--<li><a href="#">Deep Dropdown 3</a></li>
+                  <li><a href="#">Deep Dropdown 4</a></li>
+                  <li><a href="#">Deep Dropdown 5</a></li> -->
+                </ul>
+              </li>
+		   </ul>
+		   </li>
+		  		  
+				<!--  <li class="dropdown"><a href="#"><span>LLB - Bachelor of Legislative Law</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+               <li><a href="LLB_Syllabus_Semesterwise.html">LLB - Syllabus Semester Wise</a></li>
+             
+              <li><a href="LLB_Syllabus_Subjectwise_Table_Readings.html">LLB - Subject Wise Suggested Case Laws</a></li>
+			  <li><a href="LLB_Sem1_TimeTable.html">LLB - Semester I Time Table</a></li>
+			  <!--  <li><a href="LLB_Syllabus_Semesterwise.html">LLB - Bachelor of Legislative Law</a></li> -->
+			  <!-- <li class="dropdown"><a href="#"><span>Java Programming</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                 <ul>
+                  <li><a href="#">Deep Dropdown 1</a></li>
+                  <li><a href="#">Deep Dropdown 2</a></li>
+                  <li><a href="#">Deep Dropdown 3</a></li>
+                  <li><a href="#">Deep Dropdown 4</a></li>
+                  <li><a href="#">Deep Dropdown 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Dropdown 3</a></li>
+              <li><a href="#">Dropdown 4</a></li>
+            </ul>
+          </li> -->
+          <li><a href="index.html#resume">Resume</a></li>
+          <li><a href="index.html#portfolio">Portfolio</a></li>
+		  
+          <li class="dropdown"><a href="#"><span>B.Tech Subjects</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="Blockchain-Technology-Proj/Blockchain_HomePage.html">Blockchain Technology</a></li>
+              <li><a href="Java-Programming-Proj/JavaProgramming_HomePage.html">Java Programming</a></li>
+              <!--<li><a href="LLB_Syllabus_Semesterwise.html">LLB - Bachelor of Legislative Law</a></li>
+              <li><a href="LLB_Syllabus_Subjectwise_Table_Readings.html">LLB - Readings &amp; Case Laws</a></li> -->
+            </ul>
+          </li>
+		 
+        <!--   <li><a href="index.html#services">Services</a></li> -->
+          <li><a href="index.html#contact">Contact</a></li>
+ <!-- <li><a href="#calendar-check">Calendar</a></li> -->
+         <!-- <<li><a href="LLB_Syllabus_Subjectwise_Table_Readings.html" class="active">LLB - Readings &amp; Case Laws</a></li> -->
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="index.html#calendar-check">Holidays Calendar</a>
+
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="llb-page" style="padding-top:140px;padding-bottom:80px;">
+	<!-- Services Section (converted to table format) -->
+<section id="services2" class="services section">
+
+  <!-- Section Title -->
+  <div class="container section-title aos-init aos-animate" data-aos="fade-up">
+    <span class="subtitle">LLB - NOTES SEMESTER - I</span>
+    <!--<h2>Services</h2>-->
+  </div><!-- End Section Title -->
+
+  <style>
+  #services2 {
+    --st-bg: #171a23;
+    --st-border: #262b3a;
+    --st-text: #eef0f5;
+    --st-muted: #9aa1b4;
+    --st-accent1: #6c8cff;
+    --st-accent3: #4dd4ac;
+    --st-accent4: #ffd166;
+    --st-row-hover: #1f2330;
+  }
+  #services2 .notes-table-wrap {
+    background: var(--st-bg);
+    border: 1px solid var(--st-border);
+    border-radius: 16px;
+    overflow: hidden;
+    overflow-x: auto;
+    box-shadow: 0 8px 30px rgba(0,0,0,.2);
+  }
+  #services2 table.notes-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 640px;
+  }
+  #services2 table.notes-table thead th {
+    text-align: left;
+    font-size: .76rem;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    color: var(--st-muted);
+    font-weight: 700;
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--st-border);
+    background: rgba(255,255,255,.02);
+  }
+  #services2 table.notes-table thead th.col-icon { width: 56px; }
+  #services2 table.notes-table thead th.col-link { width: 160px; text-align: center; }
+  #services2 table.notes-table tbody td {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--st-border);
+    vertical-align: middle;
+    color: var(--st-text);
+    font-size: .9rem;
+  }
+  #services2 table.notes-table tbody tr:last-child td { border-bottom: none; }
+  #services2 table.notes-table tbody tr:hover { background: var(--st-row-hover); }
+  #services2 table.notes-table td.col-icon {
+    text-align: center;
+    font-size: 1.3rem;
+    color: var(--st-accent1);
+  }
+  #services2 table.notes-table td.col-link { text-align: center; }
+  #services2 table.notes-table .featured-badge {
+    display: inline-block;
+    font-size: .64rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    color: var(--st-accent4);
+    background: rgba(255,209,102,.12);
+    border: 1px solid rgba(255,209,102,.3);
+    border-radius: 999px;
+    padding: 2px 9px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+  #services2 a.notes-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    font-size: .78rem;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 999px;
+    transition: background .15s ease;
+  }
+  #services2 a.notes-link.html {
+    color: var(--st-accent1);
+    background: rgba(108,140,255,.12);
+    border: 1px solid rgba(108,140,255,.25);
+  }
+  #services2 a.notes-link.html:hover { background: rgba(108,140,255,.22); }
+  #services2 a.notes-link.docx {
+    color: var(--st-accent3);
+    background: rgba(77,212,172,.12);
+    border: 1px solid rgba(77,212,172,.25);
+  }
+  #services2 a.notes-link.docx:hover { background: rgba(77,212,172,.22); }
+  #services2 a.notes-link.disabled {
+    color: var(--st-muted);
+    background: rgba(255,255,255,.04);
+    border: 1px dashed var(--st-border);
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  @media (max-width: 700px) {
+    #services2 table.notes-table thead th.col-link:nth-of-type(3) { display: none; }
+  }
+  </style>
+
+  <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="notes-table-wrap">
+      <table class="notes-table">
+        <thead>
+          <tr>
+            <th class="col-icon">&nbsp;</th>
+            <th>Subject Name</th>
+            <th class="col-link">View Notes</th>
+            <th class="col-link">Reference Document</th>
+			<th class="col-link">UNIT - 1</th>
+			<th class="col-link">UNIT - 2</th>
+			<th class="col-link">UNIT - 3</th>
+			<th class="col-link">UNIT - 4</th>
+			<th class="col-link">UNIT - 5</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+            <td class="col-icon"><i class="bi bi-chevron-bar-contract"></i></td>
+            <td>Law of Contracts&ndash;I</td>
+            <td class="col-link">
+              <a class="notes-link html" href="Paper_I_Law_of_Contract_I_Detailed_Notes.html">
+                <i class="bi bi-file-earmark-text"></i> Read
+              </a>
+            </td>
+            <td class="col-link">
+              <a class="notes-link docx" href="Paper_I_Law_of_Contract_I.pdf" download>
+                <i class="bi bi-file-earmark-word"></i> Download
+              </a>
+            </td>
+			            
+          </tr>
+
+          <tr>
+            <td class="col-icon"><i class="bi bi-house-gear"></i></td>
+            <td>Family Law&ndash;I (Hindu Law)</td>
+            <td class="col-link">
+              <a class="notes-link html" href="Paper_II_Family_Law_I_Hindu_Law_Detailed_Notes.html">
+                <i class="bi bi-file-earmark-text"></i> Read
+              </a>
+            </td>
+           <td class="col-link">
+              <a class="notes-link docx" href="Paper_II_Family_Law_I.pdf" download>
+                <i class="bi bi-file-earmark-word"></i> Download
+              </a>
+            </td>
+			<!-- <td class="col-link">
+              <a class="notes-link docx" href="Paper_II_Family_Law_I_UNIT-1.pdf" download>
+                <i class="bi bi-file-earmark-word"></i> Download
+              </a>
+            </td> -->
+			<td class="col-link">
+              <a class="notes-link docx" href="FACULTY NOTES/FAMILY LAW -1/FL_UNIT-1.pdf" download>
+                <i class="bi bi-file-earmark-word"></i> Unit-1 Download
+              </a>
+            </td>
+			            </td>
+			            <td class="col-link">
+              <a class="notes-link docx" href="FACULTY NOTES/FAMILY LAW -1/FL_UNIT-2.pdf" download>
+                <i class="bi bi-file-earmark-word"></i> Unit-2 Download
+              </a>
+            </td>
+			            </td>
+			            <td class="col-link">
+              <a class="notes-link docx" href="FACULTY NOTES/FAMILY LAW -1/FL_UNIT-3.pdf" download>
+                <i class="bi bi-file-earmark-word"></i> Unit-3 Download
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="col-icon"><i class="bi bi-book"></i></td>
+            <td>Constitutional Law&ndash;I <span class="featured-badge">Featured</span></td>
+            <td class="col-link">
+              <a class="notes-link html" href="Paper_III_Constitutional_Law_I_Detailed_Notes.html">
+                <i class="bi bi-file-earmark-text"></i> Read
+              </a>
+            </td>
+           <td class="col-link">
+              <a class="notes-link docx" href="Paper_III_Constitutional_Law_I.pdf" download>
+                <i class="bi bi-file-earmark-word"></i> Download
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="col-icon"><i class="bi bi-airplane-engines"></i></td>
+            <td>Law of Torts incl. Motor Vehicle Accidents &amp; Consumer Protection</td>
+            <td class="col-link">
+              <a class="notes-link html" href="Paper_IV_Law_of_Torts_MV_Accidents_Consumer_Protection.html">
+                <i class="bi bi-file-earmark-text"></i> Read
+              </a>
+            </td>
+            <td class="col-link">
+              <a class="notes-link docx" href="Paper_IV_Law_of_Torts_MV_Accidents_Consumer_Protection.pdf" download>
+                <i class="bi bi-file-earmark-word"></i> Download
+              </a>
+            </td>
+			<td class="col-link">
+              <a class="notes-link docx" href="FACULTY NOTES/LAW OF TORTS/LOT_UNIT-1.pdf" download>
+                <i class="bi bi-file-earmark-word"></i> Unit-1 Download
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="col-icon"><i class="bi bi-browser-safari"></i></td>
+            <td>Environmental Law</td>
+            <td class="col-link">
+              <a class="notes-link html" href="Paper_V_Environmental_Law_Notes.html">
+                <i class="bi bi-file-earmark-text"></i> Read
+              </a>
+            </td>
+            <td class="col-link">
+              <a class="notes-link docx" href="Paper_V_Environmental_Law_Notes.pdf" download>
+                <i class="bi bi-file-earmark-word"></i> Download
+              </a>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+</section><!-- /Services Section -->
+
+    </div>
+  </main>
+
+  <footer id="footer" class="footer">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-about">
+          <a href="index.html#hero" class="logo d-flex align-items-center">
+		   <img src="assets/img/Anvesh Kumar Aavula.PNG" alt=""> 
+            <span class="sitename">@Anvesh</span>
+          </a>
+          <p>  17.348745 &deg; N, , 78.536249 &deg; E</p>
+
+          <div class="social-links d-flex mt-4">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="index.html#hero">Home</a></li>
+            <li><a href="index.html#about">About us</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#portfolio">Terms of service</a></li>
+            <li><a href="index.html#contact">Privacy policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="index.html#portfolio">Web Design</a></li>
+            <li><a href="index.html#portfolio">Web Development</a></li>
+            <li><a href="index.html#portfolio">Product Management</a></li>
+            <li><a href="index.html#portfolio">Marketing</a></li>
+            <li><a href="index.html#portfolio">Graphic Design</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contact Us</h4>
+          <p>Anvesh Kumar aavula</p>
+          <p>Hyderabad, Telanagana</p>
+          <p>India</p>
+          <p class="mt-4"><strong>Phone:</strong> <span>+91 8121 957 441</span></p>
+          <p><strong>Email:</strong> <span>anveshkumaraavula1987@gmail.com</span></p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>&copy; <span>Copyright</span> <strong class="px-1 sitename">@.28.Leo</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> | <a href="https://bootstrapmade.com/tools/">DevTools</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
